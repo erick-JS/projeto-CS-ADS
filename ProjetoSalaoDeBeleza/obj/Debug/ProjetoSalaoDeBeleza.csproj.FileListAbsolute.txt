@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\bin\Debug\ProjetoSalaoDeBeleza.exe.config
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\bin\Debug\ProjetoSalaoDeBeleza.exe
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\bin\Debug\ProjetoSalaoDeBeleza.pdb
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.Properties.Resources.resources
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.exe
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.pdb
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormLogin.resources
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormCadCliente.resources
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormCadSalao.resources
