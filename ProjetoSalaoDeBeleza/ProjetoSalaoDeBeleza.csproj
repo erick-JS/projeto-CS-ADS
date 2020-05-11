@@ -53,17 +53,11 @@
     <Compile Include="FormAreaSalao.Designer.cs">
       <DependentUpon>FormAreaSalao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadCliente.cs">
+    <Compile Include="FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadCliente.Designer.cs">
-      <DependentUpon>FormCadCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCadSalao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadSalao.Designer.cs">
-      <DependentUpon>FormCadSalao.cs</DependentUpon>
+    <Compile Include="FormCadastro.Designer.cs">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -73,11 +67,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCadCliente.resx">
-      <DependentUpon>FormCadCliente.cs</DependentUpon>
+    <EmbeddedResource Include="FormAreaSalao.resx">
+      <DependentUpon>FormAreaSalao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadSalao.resx">
-      <DependentUpon>FormCadSalao.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastro.resx">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

@@ -16,5 +16,10 @@ namespace ProjetoSalaoDeBeleza
         {
             InitializeComponent();
         }
+
+        private void criarServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
