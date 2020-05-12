@@ -16,7 +16,7 @@ namespace ProjetoSalaoDeBeleza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAreaSalao());
+            Application.Run(new FormServicos());
         }
     }
 }

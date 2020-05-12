@@ -149,7 +149,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormAreaSalao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Área Salão de Beleza";
             this.groupBox1.ResumeLayout(false);
             this.gpxDetalhes.ResumeLayout(false);

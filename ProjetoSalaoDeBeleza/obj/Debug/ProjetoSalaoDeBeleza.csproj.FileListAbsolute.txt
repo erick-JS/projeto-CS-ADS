@@ -20,3 +20,5 @@ C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\
 C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.pdb
 C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormCadastro.resources
 C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormAreaSalao.resources
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormAtendimento.resources
+C:\Users\Admin\Desktop\ProjetoSalaoDeBeleza\projeto-CS-ADS\ProjetoSalaoDeBeleza\obj\Debug\ProjetoSalaoDeBeleza.FormServicos.resources
