@@ -1,0 +1,11 @@
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.exe
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.pdb
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csprojAssemblyReference.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Home.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.GenerateResource.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.exe
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.pdb
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Empresa.Cadastro.resources

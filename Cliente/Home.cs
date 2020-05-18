@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empresa;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Empresa
+namespace Cliente
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+
+            Close();
+            Login newForm2 = new Login();
+            newForm2.ShowDialog();
         }
     }
 }

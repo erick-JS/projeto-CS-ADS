@@ -1,0 +1,12 @@
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csprojAssemblyReference.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Properties.Resources.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.GenerateResource.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.CoreCompileInputs.cache
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.exe.config
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.exe
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.pdb
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.exe
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.pdb
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Home.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Login.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Cadastro.resources
