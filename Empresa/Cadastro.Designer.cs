@@ -92,7 +92,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(661, 392);
+            this.button1.Location = new System.Drawing.Point(612, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 46);
             this.button1.TabIndex = 1;
@@ -108,7 +108,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(12, 392);
+            this.button2.Location = new System.Drawing.Point(52, 392);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 46);
             this.button2.TabIndex = 2;
@@ -119,7 +119,7 @@
             // panel_nome
             // 
             this.panel_nome.BackColor = System.Drawing.Color.Silver;
-            this.panel_nome.Location = new System.Drawing.Point(12, 117);
+            this.panel_nome.Location = new System.Drawing.Point(52, 117);
             this.panel_nome.Name = "panel_nome";
             this.panel_nome.Size = new System.Drawing.Size(299, 3);
             this.panel_nome.TabIndex = 8;
@@ -130,7 +130,7 @@
             this.Nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nome.ForeColor = System.Drawing.Color.Silver;
-            this.Nome.Location = new System.Drawing.Point(12, 89);
+            this.Nome.Location = new System.Drawing.Point(52, 89);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(300, 31);
             this.Nome.TabIndex = 7;
@@ -141,7 +141,7 @@
             // panel_endereco
             // 
             this.panel_endereco.BackColor = System.Drawing.Color.Silver;
-            this.panel_endereco.Location = new System.Drawing.Point(12, 166);
+            this.panel_endereco.Location = new System.Drawing.Point(52, 166);
             this.panel_endereco.Name = "panel_endereco";
             this.panel_endereco.Size = new System.Drawing.Size(299, 3);
             this.panel_endereco.TabIndex = 10;
@@ -152,7 +152,7 @@
             this.Endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Endereco.ForeColor = System.Drawing.Color.Silver;
-            this.Endereco.Location = new System.Drawing.Point(12, 138);
+            this.Endereco.Location = new System.Drawing.Point(52, 138);
             this.Endereco.Name = "Endereco";
             this.Endereco.Size = new System.Drawing.Size(300, 31);
             this.Endereco.TabIndex = 9;
@@ -163,7 +163,7 @@
             // panel_bairro
             // 
             this.panel_bairro.BackColor = System.Drawing.Color.Silver;
-            this.panel_bairro.Location = new System.Drawing.Point(11, 214);
+            this.panel_bairro.Location = new System.Drawing.Point(51, 214);
             this.panel_bairro.Name = "panel_bairro";
             this.panel_bairro.Size = new System.Drawing.Size(299, 3);
             this.panel_bairro.TabIndex = 12;
@@ -174,7 +174,7 @@
             this.Bairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bairro.ForeColor = System.Drawing.Color.Silver;
-            this.Bairro.Location = new System.Drawing.Point(11, 186);
+            this.Bairro.Location = new System.Drawing.Point(51, 186);
             this.Bairro.Name = "Bairro";
             this.Bairro.Size = new System.Drawing.Size(300, 31);
             this.Bairro.TabIndex = 11;
@@ -185,7 +185,7 @@
             // panel_cidade
             // 
             this.panel_cidade.BackColor = System.Drawing.Color.Silver;
-            this.panel_cidade.Location = new System.Drawing.Point(487, 214);
+            this.panel_cidade.Location = new System.Drawing.Point(438, 214);
             this.panel_cidade.Name = "panel_cidade";
             this.panel_cidade.Size = new System.Drawing.Size(299, 3);
             this.panel_cidade.TabIndex = 18;
@@ -193,7 +193,7 @@
             // panel_number
             // 
             this.panel_number.BackColor = System.Drawing.Color.Silver;
-            this.panel_number.Location = new System.Drawing.Point(488, 166);
+            this.panel_number.Location = new System.Drawing.Point(439, 166);
             this.panel_number.Name = "panel_number";
             this.panel_number.Size = new System.Drawing.Size(299, 3);
             this.panel_number.TabIndex = 16;
@@ -204,7 +204,7 @@
             this.Cidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cidade.ForeColor = System.Drawing.Color.Silver;
-            this.Cidade.Location = new System.Drawing.Point(487, 186);
+            this.Cidade.Location = new System.Drawing.Point(438, 186);
             this.Cidade.Name = "Cidade";
             this.Cidade.Size = new System.Drawing.Size(300, 31);
             this.Cidade.TabIndex = 17;
@@ -215,7 +215,7 @@
             // panel_telefone
             // 
             this.panel_telefone.BackColor = System.Drawing.Color.Silver;
-            this.panel_telefone.Location = new System.Drawing.Point(488, 117);
+            this.panel_telefone.Location = new System.Drawing.Point(439, 117);
             this.panel_telefone.Name = "panel_telefone";
             this.panel_telefone.Size = new System.Drawing.Size(299, 3);
             this.panel_telefone.TabIndex = 14;
@@ -226,7 +226,7 @@
             this.number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.number.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number.ForeColor = System.Drawing.Color.Silver;
-            this.number.Location = new System.Drawing.Point(488, 138);
+            this.number.Location = new System.Drawing.Point(439, 138);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(300, 31);
             this.number.TabIndex = 15;
@@ -241,7 +241,7 @@
             this.Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefone.ForeColor = System.Drawing.Color.Silver;
             this.Telefone.HideSelection = false;
-            this.Telefone.Location = new System.Drawing.Point(488, 89);
+            this.Telefone.Location = new System.Drawing.Point(439, 89);
             this.Telefone.MaxLength = 11;
             this.Telefone.Name = "Telefone";
             this.Telefone.Size = new System.Drawing.Size(300, 31);
@@ -253,7 +253,7 @@
             // panel_senha
             // 
             this.panel_senha.BackColor = System.Drawing.Color.Silver;
-            this.panel_senha.Location = new System.Drawing.Point(12, 314);
+            this.panel_senha.Location = new System.Drawing.Point(52, 314);
             this.panel_senha.Name = "panel_senha";
             this.panel_senha.Size = new System.Drawing.Size(299, 3);
             this.panel_senha.TabIndex = 22;
@@ -264,7 +264,7 @@
             this.Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Senha.ForeColor = System.Drawing.Color.Silver;
-            this.Senha.Location = new System.Drawing.Point(12, 286);
+            this.Senha.Location = new System.Drawing.Point(52, 286);
             this.Senha.Name = "Senha";
             this.Senha.Size = new System.Drawing.Size(300, 31);
             this.Senha.TabIndex = 21;
@@ -275,7 +275,7 @@
             // panel_usuario
             // 
             this.panel_usuario.BackColor = System.Drawing.Color.Silver;
-            this.panel_usuario.Location = new System.Drawing.Point(10, 263);
+            this.panel_usuario.Location = new System.Drawing.Point(50, 263);
             this.panel_usuario.Name = "panel_usuario";
             this.panel_usuario.Size = new System.Drawing.Size(299, 3);
             this.panel_usuario.TabIndex = 20;
@@ -286,7 +286,7 @@
             this.Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuario.ForeColor = System.Drawing.Color.Silver;
-            this.Usuario.Location = new System.Drawing.Point(10, 235);
+            this.Usuario.Location = new System.Drawing.Point(50, 235);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(300, 31);
             this.Usuario.TabIndex = 19;
@@ -297,7 +297,7 @@
             // panel_comfirmsenha
             // 
             this.panel_comfirmsenha.BackColor = System.Drawing.Color.Silver;
-            this.panel_comfirmsenha.Location = new System.Drawing.Point(11, 365);
+            this.panel_comfirmsenha.Location = new System.Drawing.Point(51, 365);
             this.panel_comfirmsenha.Name = "panel_comfirmsenha";
             this.panel_comfirmsenha.Size = new System.Drawing.Size(299, 3);
             this.panel_comfirmsenha.TabIndex = 24;
@@ -308,7 +308,7 @@
             this.ComfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ComfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComfirmSenha.ForeColor = System.Drawing.Color.Silver;
-            this.ComfirmSenha.Location = new System.Drawing.Point(11, 337);
+            this.ComfirmSenha.Location = new System.Drawing.Point(51, 337);
             this.ComfirmSenha.Name = "ComfirmSenha";
             this.ComfirmSenha.Size = new System.Drawing.Size(300, 31);
             this.ComfirmSenha.TabIndex = 23;
@@ -321,7 +321,7 @@
             this.groupBox1.Controls.Add(this.Dinheiro);
             this.groupBox1.Controls.Add(this.Credito);
             this.groupBox1.Controls.Add(this.Debito);
-            this.groupBox1.Location = new System.Drawing.Point(487, 286);
+            this.groupBox1.Location = new System.Drawing.Point(438, 286);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 82);
             this.groupBox1.TabIndex = 25;
@@ -364,7 +364,7 @@
             // panel_uf
             // 
             this.panel_uf.BackColor = System.Drawing.Color.Silver;
-            this.panel_uf.Location = new System.Drawing.Point(488, 263);
+            this.panel_uf.Location = new System.Drawing.Point(439, 263);
             this.panel_uf.Name = "panel_uf";
             this.panel_uf.Size = new System.Drawing.Size(299, 3);
             this.panel_uf.TabIndex = 27;
@@ -405,7 +405,7 @@
             this.Uf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Uf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Uf.ForeColor = System.Drawing.Color.Silver;
-            this.Uf.Location = new System.Drawing.Point(488, 235);
+            this.Uf.Location = new System.Drawing.Point(439, 235);
             this.Uf.Name = "Uf";
             this.Uf.Size = new System.Drawing.Size(300, 31);
             this.Uf.TabIndex = 26;
