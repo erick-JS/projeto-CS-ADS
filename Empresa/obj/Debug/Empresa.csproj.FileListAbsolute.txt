@@ -10,3 +10,8 @@ C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.pdb
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Home.resources
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Login.resources
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.Cadastro.resources
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\DB.mdf
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\DB_log.ldf
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Newtonsoft.Json.dll
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Newtonsoft.Json.xml
+C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.CopyComplete

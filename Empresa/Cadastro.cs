@@ -352,6 +352,10 @@ namespace Empresa
                     var result = streamReader.ReadToEnd();
                 }
 
+                Hide();
+                Login newForm2 = new Login();
+                newForm2.ShowDialog();
+
             }
         }
     }

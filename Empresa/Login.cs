@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Empresa
 {
@@ -62,9 +65,30 @@ namespace Empresa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Hide();
-            Home newForm2 = new Home();
-            newForm2.ShowDialog();
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/"+ User.Text +"/");
+            httpWebRequest.Accept = "application/json";
+            httpWebRequest.Method = "GET";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+            try
+            {
+                string nome = m.nome, endereco = m.endereco, bairro = m.bairro, telefone = m.telefone, numero = m.numero, cidade = m.cidade, uf = m.uf;
+                string user = m.usuario;
+                string pass = m.senha;
+                if (User.Text == user && Passwd.Text == pass)
+                {
+                    MessageBox.Show("logado");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("erro ao logar tente de novo");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
