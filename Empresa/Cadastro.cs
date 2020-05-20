@@ -335,7 +335,9 @@ namespace Empresa
 	                    senha = Senha.Text,
 	                    nome = Nome.Text,
 	                    numero = number.Text,
-	                    telefone = Telefone.Text,
+                        endereco = Endereco.Text,
+	                    bairro = Bairro.Text,
+                        telefone = Telefone.Text,
 	                    cidade = Cidade.Text,
 	                    uf = Uf.Text
                     });
