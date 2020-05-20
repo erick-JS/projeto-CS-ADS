@@ -35,7 +35,7 @@ namespace Empresa
                 this.mensagem = "sucesso";
                 MessageBox.Show(mensagem);
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 this.mensagem = "falha";
                 MessageBox.Show(mensagem);

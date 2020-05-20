@@ -65,7 +65,6 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Empresa.Properties.Resources.icons8_configurações_24_1_;
             this.button1.Location = new System.Drawing.Point(874, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 46);
