@@ -83,6 +83,7 @@ namespace Empresa
                 if (User.Text == user && Passwd.Text == pass)
                 {
                     MessageBox.Show("logado");
+
                 }
             }
             catch (Exception)
