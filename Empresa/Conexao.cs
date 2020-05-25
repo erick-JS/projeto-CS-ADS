@@ -14,7 +14,7 @@ namespace Empresa
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\DB.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\DB.mdf;Integrated Security=True";
         }
 
         public SqlConnection conectar()

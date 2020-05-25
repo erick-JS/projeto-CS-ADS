@@ -134,7 +134,7 @@
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(300, 31);
             this.Nome.TabIndex = 7;
-            this.Nome.Text = "Nome";
+            this.Nome.Text = "Nome da Empresa";
             this.Nome.Enter += new System.EventHandler(this.Nome_Enter);
             this.Nome.Leave += new System.EventHandler(this.Nome_Leave);
             // 
