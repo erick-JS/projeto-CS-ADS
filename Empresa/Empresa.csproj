@@ -73,8 +73,6 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroLocal.cs" />
-    <Compile Include="Conexao.cs" />
     <Compile Include="Conf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,15 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-configurações-24%281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

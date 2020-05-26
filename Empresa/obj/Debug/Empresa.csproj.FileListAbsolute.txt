@@ -15,8 +15,6 @@ C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\DB_log.ldf
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Newtonsoft.Json.dll
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Newtonsoft.Json.xml
 C:\Users\libus\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.CopyComplete
-C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\DB.mdf
-C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\DB_log.ldf
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.exe.config
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.exe
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\Empresa.pdb

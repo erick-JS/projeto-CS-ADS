@@ -220,7 +220,7 @@ namespace Empresa
 
         private void Nome_Enter(object sender, EventArgs e)
         {
-            if (Nome.Text == "Nome")
+            if (Nome.Text == "Nome da Empresa")
             {
                 Nome.Text = "";
             }
@@ -231,7 +231,7 @@ namespace Empresa
         {
             if (Nome.Text == "")
             {
-                Nome.Text = "Nome";
+                Nome.Text = "Nome da Empresa";
             }
             panel_nome.BackColor = Color.Silver;
         }
@@ -322,6 +322,31 @@ namespace Empresa
             }
             if (cout == 9)
             {
+                string dinheiroo, debitoo, creditoo;
+                if (Dinheiro.Checked)
+                {
+                    dinheiroo = "sim";
+                }
+                else
+                {
+                    dinheiroo = "nao";
+                }
+                if (Debito.Checked)
+                {
+                    debitoo = "sim";
+                }
+                else
+                {
+                    debitoo = "nao";
+                }
+                if (Credito.Checked)
+                {
+                    creditoo = "sim";
+                }
+                else
+                {
+                    creditoo = "nao";
+                }
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresas/");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
@@ -339,7 +364,10 @@ namespace Empresa
 	                    bairro = Bairro.Text,
                         telefone = Telefone.Text,
 	                    cidade = Cidade.Text,
-	                    uf = Uf.Text
+	                    uf = Uf.Text,
+                        dinheiro = dinheiroo,
+                        debito = debitoo,
+                        credito = creditoo
                     });
                     streamWriter.Write(json);
                     streamWriter.Flush();
