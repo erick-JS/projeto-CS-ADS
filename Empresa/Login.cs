@@ -20,21 +20,6 @@ namespace Empresa
         public Login()
         {
             InitializeComponent();
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com");
-            httpWebRequest.Accept = "application/json";
-            httpWebRequest.Method = "GET";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            var stream = httpResponse.GetResponseStream();
-            var sr = new StreamReader(stream);
-            var content = sr.ReadToEnd();
-            dynamic m = JsonConvert.DeserializeObject(content);
-            if (m.status != "online")
-            {
-                MessageBox.Show("Sistema off");
-                Close();
-            }
         }
 
         private void User_Enter(object sender, EventArgs e)
