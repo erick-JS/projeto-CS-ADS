@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Data.SQLite;
 
 namespace Empresa
 {
@@ -97,8 +98,27 @@ namespace Empresa
                 string pass = m.senha;
                 if (User.Text == user && Passwd.Text == pass)
                 {
-                    MessageBox.Show("logado");
+                    InitializeComponent();
+                    SQLiteConnection.CreateFile(@"dados.db");
+                    SQLiteConnection ligacao = new SQLiteConnection();
+                    ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+                    ligacao.Open();
+                    string query = "CREATE TABLE login (id int primary key, usuario varchar(50), senha varchar(50))";
+                    SQLiteCommand comando = new SQLiteCommand(query, ligacao);
+                    comando.ExecuteNonQuery();
 
+                    SQLiteConnection liga = new SQLiteConnection();
+                    liga.ConnectionString = @"Data source = dados.db; Version=3;";
+                    liga.Open();
+                    string querry = "INSERT INTO login VALUES (0,'"+user+"','"+pass+"')";
+                    SQLiteCommand como = new SQLiteCommand(querry, liga);
+                    como.ExecuteNonQuery();
+                    como.Dispose();
+                    liga.Dispose();
+                    
+                    Hide();
+                    Home newForm2 = new Home();
+                    newForm2.ShowDialog();
                 }
             }
             catch (Exception)

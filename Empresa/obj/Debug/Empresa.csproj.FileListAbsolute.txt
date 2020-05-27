@@ -30,3 +30,12 @@ C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.csproj.CopyComplete
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.exe
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\obj\Debug\Empresa.pdb
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\EntityFramework.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\System.Data.SQLite.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\EntityFramework.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\System.Data.SQLite.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Empresa\bin\Debug\System.Data.SQLite.dll.config

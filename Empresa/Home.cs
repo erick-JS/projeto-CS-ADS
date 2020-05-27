@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.IO;
 
 namespace Empresa
 {
@@ -16,13 +18,11 @@ namespace Empresa
         {
             InitializeComponent();
 
-            int login = 0;
-
-            if (login == 0)
+            if (!File.Exists(@"dados.db"))
             {
                 Close();
-                Login newLogin = new Login();
-                newLogin.ShowDialog();
+                Login newForm2 = new Login();
+                newForm2.ShowDialog();
             }
         }
 
