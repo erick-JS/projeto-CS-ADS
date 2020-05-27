@@ -20,3 +20,15 @@ C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.exe
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.pdb
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\EntityFramework.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\EntityFramework.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.xml
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.CopyComplete

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,12 @@ namespace Cliente
         {
             InitializeComponent();
 
-            Close();
-            Login newForm2 = new Login();
-            newForm2.ShowDialog();
+            if (!File.Exists(@"dados.db"))
+            {
+                Close();
+                Login newForm2 = new Login();
+                newForm2.ShowDialog();
+            }
         }
     }
 }
