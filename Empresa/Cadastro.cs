@@ -248,7 +248,7 @@ namespace Empresa
                 errorProvider1.SetError(ComfirmSenha, "");
                 cout++;
             }
-            if (Nome.Text == "Nome")
+            if (Nome.Text == "Nome da Empresa")
             {
                 errorProvider1.SetError(Nome, "Obrigatorio");
             }
