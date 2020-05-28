@@ -382,5 +382,29 @@ namespace Empresa
 
             }
         }
+        int x, y;
+        Point Point = new Point();
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point = Control.MousePosition;
+                Point.X -= x;
+                Point.Y -= y;
+                this.Location = Point;
+                Application.DoEvents();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = Control.MousePosition.X - this.Location.X;
+            y = Control.MousePosition.Y - this.Location.Y;
+        }
     }
 }

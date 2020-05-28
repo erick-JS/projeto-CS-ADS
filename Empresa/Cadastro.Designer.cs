@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel_nome = new System.Windows.Forms.Panel();
@@ -58,31 +57,24 @@
             this.panel_uf = new System.Windows.Forms.Panel();
             this.Uf = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1.SuspendLayout();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 52);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(327, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro";
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 38);
+            this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
             // button1
             // 
@@ -126,7 +118,7 @@
             // 
             // Nome
             // 
-            this.Nome.BackColor = System.Drawing.Color.White;
+            this.Nome.BackColor = System.Drawing.Color.GhostWhite;
             this.Nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nome.ForeColor = System.Drawing.Color.Silver;
@@ -148,7 +140,7 @@
             // 
             // Endereco
             // 
-            this.Endereco.BackColor = System.Drawing.Color.White;
+            this.Endereco.BackColor = System.Drawing.Color.GhostWhite;
             this.Endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Endereco.ForeColor = System.Drawing.Color.Silver;
@@ -170,7 +162,7 @@
             // 
             // Bairro
             // 
-            this.Bairro.BackColor = System.Drawing.Color.White;
+            this.Bairro.BackColor = System.Drawing.Color.GhostWhite;
             this.Bairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bairro.ForeColor = System.Drawing.Color.Silver;
@@ -200,7 +192,7 @@
             // 
             // Cidade
             // 
-            this.Cidade.BackColor = System.Drawing.Color.White;
+            this.Cidade.BackColor = System.Drawing.Color.GhostWhite;
             this.Cidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cidade.ForeColor = System.Drawing.Color.Silver;
@@ -222,7 +214,7 @@
             // 
             // number
             // 
-            this.number.BackColor = System.Drawing.Color.White;
+            this.number.BackColor = System.Drawing.Color.GhostWhite;
             this.number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.number.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number.ForeColor = System.Drawing.Color.Silver;
@@ -236,7 +228,7 @@
             // 
             // Telefone
             // 
-            this.Telefone.BackColor = System.Drawing.Color.White;
+            this.Telefone.BackColor = System.Drawing.Color.GhostWhite;
             this.Telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefone.ForeColor = System.Drawing.Color.Silver;
@@ -260,7 +252,7 @@
             // 
             // Senha
             // 
-            this.Senha.BackColor = System.Drawing.Color.White;
+            this.Senha.BackColor = System.Drawing.Color.GhostWhite;
             this.Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Senha.ForeColor = System.Drawing.Color.Silver;
@@ -282,7 +274,7 @@
             // 
             // Usuario
             // 
-            this.Usuario.BackColor = System.Drawing.Color.White;
+            this.Usuario.BackColor = System.Drawing.Color.GhostWhite;
             this.Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuario.ForeColor = System.Drawing.Color.Silver;
@@ -304,7 +296,7 @@
             // 
             // ComfirmSenha
             // 
-            this.ComfirmSenha.BackColor = System.Drawing.Color.White;
+            this.ComfirmSenha.BackColor = System.Drawing.Color.GhostWhite;
             this.ComfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ComfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComfirmSenha.ForeColor = System.Drawing.Color.Silver;
@@ -401,7 +393,7 @@
             "DF"});
             this.Uf.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Uf.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.Uf.BackColor = System.Drawing.Color.White;
+            this.Uf.BackColor = System.Drawing.Color.GhostWhite;
             this.Uf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Uf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Uf.ForeColor = System.Drawing.Color.Silver;
@@ -419,12 +411,38 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(744, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(56, 38);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Location = new System.Drawing.Point(0, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 10);
+            this.panel1.TabIndex = 28;
+            // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_uf);
             this.Controls.Add(this.Uf);
             this.Controls.Add(this.groupBox1);
@@ -448,13 +466,11 @@
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Cadastro";
             this.ShowIcon = false;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -464,9 +480,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel_nome;
@@ -494,5 +507,8 @@
         private System.Windows.Forms.CheckBox Credito;
         private System.Windows.Forms.CheckBox Debito;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
     }
 }
