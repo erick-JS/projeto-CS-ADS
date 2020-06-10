@@ -396,9 +396,26 @@ namespace Empresa
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)

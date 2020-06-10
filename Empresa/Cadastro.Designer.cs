@@ -57,8 +57,10 @@
             this.panel_uf = new System.Windows.Forms.Panel();
             this.Uf = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -68,6 +70,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -78,6 +82,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -94,6 +99,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -110,6 +116,7 @@
             // 
             // panel_nome
             // 
+            this.panel_nome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_nome.BackColor = System.Drawing.Color.Silver;
             this.panel_nome.Location = new System.Drawing.Point(52, 117);
             this.panel_nome.Name = "panel_nome";
@@ -118,6 +125,7 @@
             // 
             // Nome
             // 
+            this.Nome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Nome.BackColor = System.Drawing.Color.GhostWhite;
             this.Nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +140,7 @@
             // 
             // panel_endereco
             // 
+            this.panel_endereco.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_endereco.BackColor = System.Drawing.Color.Silver;
             this.panel_endereco.Location = new System.Drawing.Point(52, 166);
             this.panel_endereco.Name = "panel_endereco";
@@ -140,6 +149,7 @@
             // 
             // Endereco
             // 
+            this.Endereco.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Endereco.BackColor = System.Drawing.Color.GhostWhite;
             this.Endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,6 +164,7 @@
             // 
             // panel_bairro
             // 
+            this.panel_bairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_bairro.BackColor = System.Drawing.Color.Silver;
             this.panel_bairro.Location = new System.Drawing.Point(51, 214);
             this.panel_bairro.Name = "panel_bairro";
@@ -162,6 +173,7 @@
             // 
             // Bairro
             // 
+            this.Bairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bairro.BackColor = System.Drawing.Color.GhostWhite;
             this.Bairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +188,7 @@
             // 
             // panel_cidade
             // 
+            this.panel_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_cidade.BackColor = System.Drawing.Color.Silver;
             this.panel_cidade.Location = new System.Drawing.Point(438, 214);
             this.panel_cidade.Name = "panel_cidade";
@@ -184,6 +197,7 @@
             // 
             // panel_number
             // 
+            this.panel_number.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_number.BackColor = System.Drawing.Color.Silver;
             this.panel_number.Location = new System.Drawing.Point(439, 166);
             this.panel_number.Name = "panel_number";
@@ -192,6 +206,7 @@
             // 
             // Cidade
             // 
+            this.Cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cidade.BackColor = System.Drawing.Color.GhostWhite;
             this.Cidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,6 +221,7 @@
             // 
             // panel_telefone
             // 
+            this.panel_telefone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_telefone.BackColor = System.Drawing.Color.Silver;
             this.panel_telefone.Location = new System.Drawing.Point(439, 117);
             this.panel_telefone.Name = "panel_telefone";
@@ -214,6 +230,7 @@
             // 
             // number
             // 
+            this.number.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.number.BackColor = System.Drawing.Color.GhostWhite;
             this.number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.number.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,6 +245,7 @@
             // 
             // Telefone
             // 
+            this.Telefone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Telefone.BackColor = System.Drawing.Color.GhostWhite;
             this.Telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,6 +262,7 @@
             // 
             // panel_senha
             // 
+            this.panel_senha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_senha.BackColor = System.Drawing.Color.Silver;
             this.panel_senha.Location = new System.Drawing.Point(52, 314);
             this.panel_senha.Name = "panel_senha";
@@ -252,6 +271,7 @@
             // 
             // Senha
             // 
+            this.Senha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Senha.BackColor = System.Drawing.Color.GhostWhite;
             this.Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,6 +286,7 @@
             // 
             // panel_usuario
             // 
+            this.panel_usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_usuario.BackColor = System.Drawing.Color.Silver;
             this.panel_usuario.Location = new System.Drawing.Point(50, 263);
             this.panel_usuario.Name = "panel_usuario";
@@ -274,6 +295,7 @@
             // 
             // Usuario
             // 
+            this.Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Usuario.BackColor = System.Drawing.Color.GhostWhite;
             this.Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,6 +310,7 @@
             // 
             // panel_comfirmsenha
             // 
+            this.panel_comfirmsenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_comfirmsenha.BackColor = System.Drawing.Color.Silver;
             this.panel_comfirmsenha.Location = new System.Drawing.Point(51, 365);
             this.panel_comfirmsenha.Name = "panel_comfirmsenha";
@@ -296,6 +319,7 @@
             // 
             // ComfirmSenha
             // 
+            this.ComfirmSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ComfirmSenha.BackColor = System.Drawing.Color.GhostWhite;
             this.ComfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ComfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,6 +334,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.Dinheiro);
             this.groupBox1.Controls.Add(this.Credito);
             this.groupBox1.Controls.Add(this.Debito);
@@ -355,6 +380,7 @@
             // 
             // panel_uf
             // 
+            this.panel_uf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_uf.BackColor = System.Drawing.Color.Silver;
             this.panel_uf.Location = new System.Drawing.Point(439, 263);
             this.panel_uf.Name = "panel_uf";
@@ -363,6 +389,7 @@
             // 
             // Uf
             // 
+            this.Uf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Uf.AutoCompleteCustomSource.AddRange(new string[] {
             "AC",
             "AL",
@@ -411,29 +438,69 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Location = new System.Drawing.Point(0, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 10);
+            this.panel1.TabIndex = 28;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackgroundImage = global::Empresa.Properties.Resources.icons8_maximize_button_32;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(700, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(47, 37);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackgroundImage = global::Empresa.Properties.Resources.icons8_minimizar_janela_32;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(647, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(47, 37);
+            this.button5.TabIndex = 3;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackgroundImage = global::Empresa.Properties.Resources.icons8_fechar_janela_32;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(744, 0);
+            this.button3.Location = new System.Drawing.Point(753, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 38);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "X";
+            this.button3.Size = new System.Drawing.Size(47, 37);
+            this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Location = new System.Drawing.Point(0, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 10);
-            this.panel1.TabIndex = 28;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // Cadastro
             // 
@@ -508,7 +575,9 @@
         private System.Windows.Forms.CheckBox Debito;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button3;
     }
 }
