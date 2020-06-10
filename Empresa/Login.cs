@@ -137,6 +137,26 @@ namespace Empresa
             Application.Exit();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+                panel3.Size = new Size(404, 325);
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+                panel3.Size = new Size(404, 425);
+            }
+            
+        }
+
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             x = Control.MousePosition.X - this.Location.X;
