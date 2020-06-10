@@ -6,3 +6,5 @@ Empresa/.vs/Empresa/v16/.suo
 *.dll
 Cliente/obj/
 Empresa/obj/
+Cliente/bin/
+Empresa/bin/
