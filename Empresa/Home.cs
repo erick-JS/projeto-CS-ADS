@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 
+=======
+using System.Data.SQLite;
+using System.IO;
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
 
 namespace Empresa
 {
@@ -18,6 +23,7 @@ namespace Empresa
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         int mes = 1;
         String[] mesExtenso = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
@@ -98,6 +104,13 @@ namespace Empresa
                 }
 
                 flowDias.Controls.Add(flow);
+=======
+            if (!File.Exists(@"dados.db"))
+            {
+                Close();
+                Login newForm2 = new Login();
+                newForm2.ShowDialog();
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
             }
         }
         private void Home_Load(object sender, EventArgs e)

@@ -51,15 +51,10 @@
             this.Usuario = new System.Windows.Forms.TextBox();
             this.panel_comfirmsenha = new System.Windows.Forms.Panel();
             this.ComfirmSenha = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Dinheiro = new System.Windows.Forms.CheckBox();
-            this.Credito = new System.Windows.Forms.CheckBox();
-            this.Debito = new System.Windows.Forms.CheckBox();
             this.panel_uf = new System.Windows.Forms.Panel();
             this.Uf = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +114,7 @@
             // panel_nome
             // 
             this.panel_nome.BackColor = System.Drawing.Color.Silver;
-            this.panel_nome.Location = new System.Drawing.Point(65, 117);
+            this.panel_nome.Location = new System.Drawing.Point(65, 133);
             this.panel_nome.Name = "panel_nome";
             this.panel_nome.Size = new System.Drawing.Size(299, 3);
             this.panel_nome.TabIndex = 8;
@@ -130,7 +125,7 @@
             this.Nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nome.ForeColor = System.Drawing.Color.Silver;
-            this.Nome.Location = new System.Drawing.Point(65, 89);
+            this.Nome.Location = new System.Drawing.Point(65, 105);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(300, 31);
             this.Nome.TabIndex = 7;
@@ -141,7 +136,7 @@
             // panel_endereco
             // 
             this.panel_endereco.BackColor = System.Drawing.Color.Silver;
-            this.panel_endereco.Location = new System.Drawing.Point(65, 166);
+            this.panel_endereco.Location = new System.Drawing.Point(65, 182);
             this.panel_endereco.Name = "panel_endereco";
             this.panel_endereco.Size = new System.Drawing.Size(299, 3);
             this.panel_endereco.TabIndex = 10;
@@ -152,7 +147,7 @@
             this.Endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Endereco.ForeColor = System.Drawing.Color.Silver;
-            this.Endereco.Location = new System.Drawing.Point(65, 138);
+            this.Endereco.Location = new System.Drawing.Point(65, 154);
             this.Endereco.Name = "Endereco";
             this.Endereco.Size = new System.Drawing.Size(300, 31);
             this.Endereco.TabIndex = 9;
@@ -163,7 +158,7 @@
             // panel_bairro
             // 
             this.panel_bairro.BackColor = System.Drawing.Color.Silver;
-            this.panel_bairro.Location = new System.Drawing.Point(64, 214);
+            this.panel_bairro.Location = new System.Drawing.Point(64, 230);
             this.panel_bairro.Name = "panel_bairro";
             this.panel_bairro.Size = new System.Drawing.Size(299, 3);
             this.panel_bairro.TabIndex = 12;
@@ -174,7 +169,7 @@
             this.Bairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bairro.ForeColor = System.Drawing.Color.Silver;
-            this.Bairro.Location = new System.Drawing.Point(64, 186);
+            this.Bairro.Location = new System.Drawing.Point(64, 202);
             this.Bairro.Name = "Bairro";
             this.Bairro.Size = new System.Drawing.Size(300, 31);
             this.Bairro.TabIndex = 11;
@@ -185,7 +180,7 @@
             // panel_cidade
             // 
             this.panel_cidade.BackColor = System.Drawing.Color.Silver;
-            this.panel_cidade.Location = new System.Drawing.Point(419, 214);
+            this.panel_cidade.Location = new System.Drawing.Point(419, 230);
             this.panel_cidade.Name = "panel_cidade";
             this.panel_cidade.Size = new System.Drawing.Size(299, 3);
             this.panel_cidade.TabIndex = 18;
@@ -193,7 +188,7 @@
             // panel_number
             // 
             this.panel_number.BackColor = System.Drawing.Color.Silver;
-            this.panel_number.Location = new System.Drawing.Point(420, 166);
+            this.panel_number.Location = new System.Drawing.Point(420, 182);
             this.panel_number.Name = "panel_number";
             this.panel_number.Size = new System.Drawing.Size(299, 3);
             this.panel_number.TabIndex = 16;
@@ -204,7 +199,7 @@
             this.Cidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cidade.ForeColor = System.Drawing.Color.Silver;
-            this.Cidade.Location = new System.Drawing.Point(419, 186);
+            this.Cidade.Location = new System.Drawing.Point(419, 202);
             this.Cidade.Name = "Cidade";
             this.Cidade.Size = new System.Drawing.Size(300, 31);
             this.Cidade.TabIndex = 17;
@@ -215,7 +210,7 @@
             // panel_telefone
             // 
             this.panel_telefone.BackColor = System.Drawing.Color.Silver;
-            this.panel_telefone.Location = new System.Drawing.Point(420, 117);
+            this.panel_telefone.Location = new System.Drawing.Point(420, 133);
             this.panel_telefone.Name = "panel_telefone";
             this.panel_telefone.Size = new System.Drawing.Size(299, 3);
             this.panel_telefone.TabIndex = 14;
@@ -226,7 +221,7 @@
             this.number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.number.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number.ForeColor = System.Drawing.Color.Silver;
-            this.number.Location = new System.Drawing.Point(420, 138);
+            this.number.Location = new System.Drawing.Point(420, 154);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(300, 31);
             this.number.TabIndex = 15;
@@ -241,7 +236,7 @@
             this.Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefone.ForeColor = System.Drawing.Color.Silver;
             this.Telefone.HideSelection = false;
-            this.Telefone.Location = new System.Drawing.Point(420, 89);
+            this.Telefone.Location = new System.Drawing.Point(420, 105);
             this.Telefone.MaxLength = 11;
             this.Telefone.Name = "Telefone";
             this.Telefone.Size = new System.Drawing.Size(300, 31);
@@ -253,7 +248,7 @@
             // panel_senha
             // 
             this.panel_senha.BackColor = System.Drawing.Color.Silver;
-            this.panel_senha.Location = new System.Drawing.Point(65, 314);
+            this.panel_senha.Location = new System.Drawing.Point(65, 330);
             this.panel_senha.Name = "panel_senha";
             this.panel_senha.Size = new System.Drawing.Size(299, 3);
             this.panel_senha.TabIndex = 22;
@@ -264,7 +259,7 @@
             this.Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Senha.ForeColor = System.Drawing.Color.Silver;
-            this.Senha.Location = new System.Drawing.Point(65, 286);
+            this.Senha.Location = new System.Drawing.Point(65, 302);
             this.Senha.Name = "Senha";
             this.Senha.Size = new System.Drawing.Size(300, 31);
             this.Senha.TabIndex = 21;
@@ -275,7 +270,7 @@
             // panel_usuario
             // 
             this.panel_usuario.BackColor = System.Drawing.Color.Silver;
-            this.panel_usuario.Location = new System.Drawing.Point(63, 263);
+            this.panel_usuario.Location = new System.Drawing.Point(63, 279);
             this.panel_usuario.Name = "panel_usuario";
             this.panel_usuario.Size = new System.Drawing.Size(299, 3);
             this.panel_usuario.TabIndex = 20;
@@ -286,7 +281,7 @@
             this.Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuario.ForeColor = System.Drawing.Color.Silver;
-            this.Usuario.Location = new System.Drawing.Point(63, 235);
+            this.Usuario.Location = new System.Drawing.Point(63, 251);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(300, 31);
             this.Usuario.TabIndex = 19;
@@ -297,7 +292,7 @@
             // panel_comfirmsenha
             // 
             this.panel_comfirmsenha.BackColor = System.Drawing.Color.Silver;
-            this.panel_comfirmsenha.Location = new System.Drawing.Point(64, 365);
+            this.panel_comfirmsenha.Location = new System.Drawing.Point(420, 330);
             this.panel_comfirmsenha.Name = "panel_comfirmsenha";
             this.panel_comfirmsenha.Size = new System.Drawing.Size(299, 3);
             this.panel_comfirmsenha.TabIndex = 24;
@@ -308,7 +303,7 @@
             this.ComfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ComfirmSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComfirmSenha.ForeColor = System.Drawing.Color.Silver;
-            this.ComfirmSenha.Location = new System.Drawing.Point(64, 337);
+            this.ComfirmSenha.Location = new System.Drawing.Point(420, 302);
             this.ComfirmSenha.Name = "ComfirmSenha";
             this.ComfirmSenha.Size = new System.Drawing.Size(300, 31);
             this.ComfirmSenha.TabIndex = 23;
@@ -316,55 +311,10 @@
             this.ComfirmSenha.Enter += new System.EventHandler(this.ComfirmSenha_Enter);
             this.ComfirmSenha.Leave += new System.EventHandler(this.ComfirmSenha_Leave);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Dinheiro);
-            this.groupBox1.Controls.Add(this.Credito);
-            this.groupBox1.Controls.Add(this.Debito);
-            this.groupBox1.Location = new System.Drawing.Point(419, 286);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 82);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Aceita";
-            // 
-            // Dinheiro
-            // 
-            this.Dinheiro.AutoSize = true;
-            this.Dinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dinheiro.Location = new System.Drawing.Point(193, 33);
-            this.Dinheiro.Name = "Dinheiro";
-            this.Dinheiro.Size = new System.Drawing.Size(100, 28);
-            this.Dinheiro.TabIndex = 2;
-            this.Dinheiro.Text = "Dinheiro";
-            this.Dinheiro.UseVisualStyleBackColor = true;
-            // 
-            // Credito
-            // 
-            this.Credito.AutoSize = true;
-            this.Credito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Credito.Location = new System.Drawing.Point(98, 33);
-            this.Credito.Name = "Credito";
-            this.Credito.Size = new System.Drawing.Size(89, 28);
-            this.Credito.TabIndex = 1;
-            this.Credito.Text = "Credito";
-            this.Credito.UseVisualStyleBackColor = true;
-            // 
-            // Debito
-            // 
-            this.Debito.AutoSize = true;
-            this.Debito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Debito.Location = new System.Drawing.Point(9, 33);
-            this.Debito.Name = "Debito";
-            this.Debito.Size = new System.Drawing.Size(83, 28);
-            this.Debito.TabIndex = 0;
-            this.Debito.Text = "Debito";
-            this.Debito.UseVisualStyleBackColor = true;
-            // 
             // panel_uf
             // 
             this.panel_uf.BackColor = System.Drawing.Color.Silver;
-            this.panel_uf.Location = new System.Drawing.Point(420, 263);
+            this.panel_uf.Location = new System.Drawing.Point(420, 279);
             this.panel_uf.Name = "panel_uf";
             this.panel_uf.Size = new System.Drawing.Size(299, 3);
             this.panel_uf.TabIndex = 27;
@@ -405,7 +355,7 @@
             this.Uf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Uf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Uf.ForeColor = System.Drawing.Color.Silver;
-            this.Uf.Location = new System.Drawing.Point(420, 235);
+            this.Uf.Location = new System.Drawing.Point(420, 251);
             this.Uf.Name = "Uf";
             this.Uf.Size = new System.Drawing.Size(300, 31);
             this.Uf.TabIndex = 26;
@@ -427,7 +377,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel_uf);
             this.Controls.Add(this.Uf);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel_comfirmsenha);
             this.Controls.Add(this.ComfirmSenha);
             this.Controls.Add(this.panel_senha);
@@ -455,8 +404,6 @@
             this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -487,12 +434,8 @@
         private System.Windows.Forms.TextBox Usuario;
         private System.Windows.Forms.Panel panel_comfirmsenha;
         private System.Windows.Forms.TextBox ComfirmSenha;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel_uf;
         private System.Windows.Forms.TextBox Uf;
-        private System.Windows.Forms.CheckBox Dinheiro;
-        private System.Windows.Forms.CheckBox Credito;
-        private System.Windows.Forms.CheckBox Debito;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

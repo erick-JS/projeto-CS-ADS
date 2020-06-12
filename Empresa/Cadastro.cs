@@ -217,12 +217,28 @@ namespace Empresa
 
         private void Nome_Enter(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             alterarAparencia(panel_nome, txtNome, "Nome", "", Color.Black);
+=======
+            if (Nome.Text == "Nome da Empresa")
+            {
+                Nome.Text = "";
+            }
+            panel_nome.BackColor = Color.Black;
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
         }
 
         private void Nome_Leave(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             alterarAparencia(panel_nome, txtNome, "", "Nome", Color.Silver);
+=======
+            if (Nome.Text == "")
+            {
+                Nome.Text = "Nome da Empresa";
+            }
+            panel_nome.BackColor = Color.Silver;
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -257,9 +273,13 @@ namespace Empresa
                 erroP.SetError(txtConfirmSenha, "");
                 cont_valido++;
             }
+<<<<<<< HEAD
 
             if(chkCredito.Checked == false && chkDebito.Checked == false &&
                 chkDinheiro.Checked == false)
+=======
+            if (Nome.Text == "Nome da Empresa")
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
             {
                 erroP.SetError(gpxFormaPagamento, "Selecione ao menos uma forma de pagamento");
             }
@@ -341,6 +361,31 @@ namespace Empresa
             }*/
             if (cont_valido == 9)
             {
+                string dinheiroo, debitoo, creditoo;
+                if (Dinheiro.Checked)
+                {
+                    dinheiroo = "sim";
+                }
+                else
+                {
+                    dinheiroo = "nao";
+                }
+                if (Debito.Checked)
+                {
+                    debitoo = "sim";
+                }
+                else
+                {
+                    debitoo = "nao";
+                }
+                if (Credito.Checked)
+                {
+                    creditoo = "sim";
+                }
+                else
+                {
+                    creditoo = "nao";
+                }
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresas/");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
@@ -350,6 +395,7 @@ namespace Empresa
                 {
                     string json = new JavaScriptSerializer().Serialize(new
                     {
+<<<<<<< HEAD
                         usuario = txtUsuario.Text,
 	                    senha = txtSenha.Text,
 	                    nome = txtNome.Text,
@@ -359,6 +405,20 @@ namespace Empresa
                         telefone = txtTelefone.Text,
 	                    cidade = txtCidade.Text,
 	                    uf = txtUF.Text
+=======
+                        usuario = Usuario.Text,
+	                    senha = Senha.Text,
+	                    nome = Nome.Text,
+	                    numero = number.Text,
+                        endereco = Endereco.Text,
+	                    bairro = Bairro.Text,
+                        telefone = Telefone.Text,
+	                    cidade = Cidade.Text,
+	                    uf = Uf.Text,
+                        dinheiro = dinheiroo,
+                        debito = debitoo,
+                        credito = creditoo
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
                     });
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -366,10 +426,6 @@ namespace Empresa
                 }
 
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                }
 
                 Hide();
                 Login formLogin = new Login();
@@ -394,6 +450,47 @@ namespace Empresa
             {
                 e.Handled = false;
             }
+        }
+        int x, y;
+        Point Point = new Point();
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point = Control.MousePosition;
+                Point.X -= x;
+                Point.Y -= y;
+                this.Location = Point;
+                Application.DoEvents();
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = Control.MousePosition.X - this.Location.X;
+            y = Control.MousePosition.Y - this.Location.Y;
         }
     }
 }

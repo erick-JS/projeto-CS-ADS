@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace Empresa
 {
@@ -235,6 +238,7 @@ namespace Empresa
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int cout = 0;
             if (Senha.Text != ComfirmSenha.Text)
             {
                 errorProvider1.SetError(ComfirmSenha,"As senhas nao estão iguais");
@@ -242,6 +246,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(ComfirmSenha,"");
+                cout++;
             }
             if (Nome.Text == "Nome")
             {
@@ -250,6 +255,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Nome, "");
+                cout++;
             }
             if (Endereco.Text == "Endereço")
             {
@@ -258,6 +264,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Endereco, "");
+                cout++;
             }
             if (Bairro.Text == "Bairro")
             {
@@ -266,6 +273,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Bairro, "");
+                cout++;
             }
             if (Usuario.Text == "Usuario")
             {
@@ -274,6 +282,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Usuario, "");
+                cout++;
             }
             if (Telefone.Text == "Telefone")
             {
@@ -282,6 +291,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Telefone, "");
+                cout++;
             }
             if (number.Text == "Nº")
             {
@@ -290,6 +300,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(number, "");
+                cout++;
             }
             if (Cidade.Text == "Cidade")
             {
@@ -298,6 +309,7 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Cidade, "");
+                cout++;
             }
             if (Uf.Text == "UF")
             {
@@ -306,8 +318,42 @@ namespace Empresa
             else
             {
                 errorProvider1.SetError(Uf, "");
+                cout++;
             }
-   
+
+            if (cout == 9)
+            {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/clientes/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(new
+                    {
+                        usuario = Usuario.Text,
+                        senha = Senha.Text,
+                        nome = Nome.Text,
+                        numero = number.Text,
+                        endereco = Endereco.Text,
+                        bairro = Bairro.Text,
+                        telefone = Telefone.Text,
+                        cidade = Cidade.Text,
+                        uf = Uf.Text,
+                    });
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+
+                Hide();
+                Login newForm2 = new Login();
+                newForm2.ShowDialog();
+            }
+
         }
     }
 }

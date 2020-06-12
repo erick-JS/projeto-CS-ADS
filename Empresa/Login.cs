@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Data.SQLite;
 
 namespace Empresa
 {
@@ -82,8 +83,27 @@ namespace Empresa
                 string pass = m.senha;
                 if (txtUser.Text == user && txtPasswordd.Text == pass)
                 {
-                    MessageBox.Show("logado");
+                    InitializeComponent();
+                    SQLiteConnection.CreateFile(@"dados.db");
+                    SQLiteConnection ligacao = new SQLiteConnection();
+                    ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+                    ligacao.Open();
+                    string query = "CREATE TABLE login (id int primary key, usuario varchar(50), senha varchar(50))";
+                    SQLiteCommand comando = new SQLiteCommand(query, ligacao);
+                    comando.ExecuteNonQuery();
 
+                    SQLiteConnection liga = new SQLiteConnection();
+                    liga.ConnectionString = @"Data source = dados.db; Version=3;";
+                    liga.Open();
+                    string querry = "INSERT INTO login VALUES (0,'"+user+"','"+pass+"')";
+                    SQLiteCommand como = new SQLiteCommand(querry, liga);
+                    como.ExecuteNonQuery();
+                    como.Dispose();
+                    liga.Dispose();
+                    
+                    Hide();
+                    Home newForm2 = new Home();
+                    newForm2.ShowDialog();
                 }
             }
             catch (Exception)
@@ -102,6 +122,50 @@ namespace Empresa
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+        int x, y;
+        Point Point = new Point();
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point = Control.MousePosition;
+                Point.X -= x;
+                Point.Y -= y;
+                this.Location = Point;
+                Application.DoEvents();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+                panel3.Size = new Size(404, 325);
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+                panel3.Size = new Size(404, 425);
+            }
+            
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = Control.MousePosition.X - this.Location.X;
+            y = Control.MousePosition.Y - this.Location.Y;
         }
     }
 }
