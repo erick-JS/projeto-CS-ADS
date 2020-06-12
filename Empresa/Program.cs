@@ -18,11 +18,11 @@ namespace Empresa
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Application.Run(new Home());
+                Application.Run(new Atendimento());
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show("Erro ao abrir formulário\nMensagem: " + ex.Message);
             }
             
         }

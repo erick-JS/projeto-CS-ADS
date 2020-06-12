@@ -24,49 +24,49 @@ namespace Empresa
 
         private void User_Enter(object sender, EventArgs e)
         {
-            if (User.Text == "Usuario")
+            if (txtUser.Text == "Usuario")
             {
-                User.Text = "";
-                User.ForeColor = Color.Gray;
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.Gray;
             }
             panel_user.BackColor = Color.Black;
         }
 
         private void Passwd_Enter(object sender, EventArgs e)
         {
-            if (Passwd.Text == "Senha")
+            if (txtPasswordd.Text == "Senha")
             {
-                Passwd.Text = "";
-                Passwd.ForeColor = Color.Gray;
-                Passwd.PasswordChar = '*';
+                txtPasswordd.Text = "";
+                txtPasswordd.ForeColor = Color.Gray;
+                txtPasswordd.PasswordChar = '*';
             }
             panel_passwd.BackColor = Color.Black;
         }
 
         private void User_Leave(object sender, EventArgs e)
         {
-            if (User.Text == "")
+            if (txtUser.Text == "")
             {
-                User.Text = "Usuario";
-                User.ForeColor = Color.Silver;
+                txtUser.Text = "Usuario";
+                txtUser.ForeColor = Color.Silver;
             }
             panel_user.BackColor = Color.Silver;
         }
 
         private void Passwd_Leave(object sender, EventArgs e)
         {
-            if (Passwd.Text == "")
+            if (txtPasswordd.Text == "")
             {
-                Passwd.Text = "Senha";
-                Passwd.ForeColor = Color.Silver;
-                Passwd.PasswordChar = vazio;
+                txtPasswordd.Text = "Senha";
+                txtPasswordd.ForeColor = Color.Silver;
+                txtPasswordd.PasswordChar = vazio;
             }
             panel_passwd.BackColor = Color.Silver;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/"+ User.Text +"/");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/"+ txtUser.Text +"/");
             httpWebRequest.Accept = "application/json";
             httpWebRequest.Method = "GET";
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
@@ -81,7 +81,7 @@ namespace Empresa
                 string nome = m.nome, endereco = m.endereco, bairro = m.bairro, telefone = m.telefone, numero = m.numero, cidade = m.cidade, uf = m.uf;
                 string user = m.usuario;
                 string pass = m.senha;
-                if (User.Text == user && Passwd.Text == pass)
+                if (txtUser.Text == user && txtPasswordd.Text == pass)
                 {
                     InitializeComponent();
                     SQLiteConnection.CreateFile(@"dados.db");
@@ -112,11 +112,16 @@ namespace Empresa
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Hide();
-            Cadastro newForm2 = new Cadastro();
-            newForm2.ShowDialog();
+            Cadastro formCadastro = new Cadastro();
+            formCadastro.ShowDialog();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
         int x, y;
         Point Point = new Point();
