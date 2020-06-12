@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
+using System.Runtime.InteropServices;
+
 
 namespace Empresa
 {
@@ -21,91 +23,112 @@ namespace Empresa
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void abrirLogin()
         {
-            Hide();
-            Login newForm2 = new Login();
-            newForm2.ShowDialog();
+            this.Hide();
+            Login formLogin = new Login();
+            formLogin.ShowDialog();
+        }
+
+        //Método para alterar a aparência de cada textbox
+        private void alterarAparencia(Panel panel, TextBox txt, string old_placeholder, string new_placeholder, Color cor)
+        {
+            if (txt.Text == old_placeholder)
+            {
+                txt.Text = new_placeholder;
+            }
+
+            panel.BackColor = cor;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var msg = MessageBox.Show("Os dados do usuário não serão cadastrados. Deseja realmente sair?",
+                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if(msg == DialogResult.Yes)
+            {
+                abrirLogin();
+            }
         }
 
         private void Uf_Enter(object sender, EventArgs e)
         {
-            if (Uf.Text == "UF")
+            if (txtUF.Text == "UF")
             {
-                Uf.Text = "";
+                txtUF.Text = "";
             }
             panel_uf.BackColor = Color.Black;
         }
 
         private void Uf_Leave(object sender, EventArgs e)
         {
-            if (Uf.Text == "")
+            if (txtUF.Text == "")
             {
-                Uf.Text = "UF";
+                txtUF.Text = "UF";
             }
             panel_uf.BackColor = Color.Silver;
-            Uf.Text = Uf.Text.ToUpper();
+            txtUF.Text = txtUF.Text.ToUpper();
         }
 
         private void Cidade_Enter(object sender, EventArgs e)
         {
-            if (Cidade.Text == "Cidade")
-            {
-                Cidade.Text = "";
-            }
-            panel_cidade.BackColor = Color.Black;
+            alterarAparencia(panel_cidade, txtCidade, "Cidade", "", Color.Black);
         }
 
         private void Cidade_Leave(object sender, EventArgs e)
         {
-            if (Cidade.Text == "")
-            {
-                Cidade.Text = "Cidade";
-            }
-            panel_cidade.BackColor = Color.Silver;
+            alterarAparencia(panel_cidade, txtCidade, "", "Cidade", Color.Silver);
         }
 
         private void number_Enter(object sender, EventArgs e)
         {
-            if (number.Text == "Nº")
-            {
-                number.Text = "";
-            }
-            panel_number.BackColor = Color.Black;
+            alterarAparencia(panel_number, txtNumero, "Nº", "", Color.Black);
         }
 
         private void number_Leave(object sender, EventArgs e)
         {
-            if (number.Text == "")
-            {
-                number.Text = "Nº";
-            }
-            panel_number.BackColor = Color.Silver;
+            alterarAparencia(panel_number, txtNumero, "", "Nº", Color.Silver);
         }
 
         private void Telefone_Enter(object sender, EventArgs e)
         {
-            if (Telefone.Text == "Telefone")
+            alterarAparencia(panel_telefone, txtTelefone, "Telefone", "", Color.Black);
+            /*if (txtTelefone.Text == "Telefone")
             {
-                Telefone.Text = "";
+                txtTelefone.Text = "";
             }
-            panel_telefone.BackColor = Color.Black;
+            panel_telefone.BackColor = Color.Black;*/
         }
 
         private void Telefone_Leave(object sender, EventArgs e)
         {
-            if (Telefone.Text == "")
+            alterarAparencia(panel_number, txtTelefone, "", "Telefone", Color.Silver);
+            if (txtTelefone.Text.Length >= 10)
             {
-                Telefone.Text = "Telefone";
+                if (txtTelefone.Text.Substring(0, 1) != "(")
+                {
+                    String content = txtTelefone.Text;
+                    txtTelefone.Text = "(" + content.Substring(0, 2) + ") " + content.Substring(2, 6) + "-" + content.Substring(6);
+                }
             }
             else
             {
-                if(Telefone.Text.Length >= 10)
+                MessageBox.Show("Esta faltando o número no telefone");
+                txtTelefone.Focus();
+            }
+            /*if (txtTelefone.Text == "")
+            {
+                txtTelefone.Text = "Telefone";
+            }
+            else
+            {
+                if(txtTelefone.Text.Length >= 10)
                 {
-                    if (Telefone.Text.Substring(0,1) != "(")
+                    if (txtTelefone.Text.Substring(0,1) != "(")
                     {
-                        String content = Telefone.Text;
-                        Telefone.Text = "(" + content.Substring(0, 2) + ") " + content.Substring(2, 6) + "-" + content.Substring(6);
+                        String content = txtTelefone.Text;
+                        txtTelefone.Text = "(" + content.Substring(0, 2) + ") " + content.Substring(2, 6) + "-" + content.Substring(6);
                     }
                 }
                 else
@@ -113,214 +136,210 @@ namespace Empresa
                     MessageBox.Show("Esta faltando numero no telefone");
                 }
             }
-            panel_telefone.BackColor = Color.Silver;
+            panel_telefone.BackColor = Color.Silver;*/
         }
 
         private void ComfirmSenha_Enter(object sender, EventArgs e)
         {
-            if (ComfirmSenha.Text == "Confirmar Senha")
-            {
-                ComfirmSenha.Text = "";
-                ComfirmSenha.PasswordChar = '*';
-            }
-            panel_comfirmsenha.BackColor = Color.Black;
+            alterarAparencia(panel_comfirmsenha, txtConfirmSenha, "Confirmar Senha", "", Color.Black);
+            txtConfirmSenha.PasswordChar = '*';
         }
 
         private void ComfirmSenha_Leave(object sender, EventArgs e)
         {
-            if (ComfirmSenha.Text == "")
+            alterarAparencia(panel_comfirmsenha, txtConfirmSenha, "", "Confirmar Senha", Color.Silver);
+            
+            if(txtConfirmSenha.Text == "Confirmar Senha")
             {
-                ComfirmSenha.Text = "Confirmar Senha";
-                ComfirmSenha.PasswordChar = vazio;
+                txtConfirmSenha.PasswordChar = vazio;
             }
-            panel_comfirmsenha.BackColor = Color.Silver;
-            if (ComfirmSenha.Text != Senha.Text)
+
+            /*if (txtComfirmSenha.Text == "")
             {
-                errorProvider1.SetError(ComfirmSenha, "As senhas nao estão iguais");
+                txtComfirmSenha.Text = "Confirmar Senha";
+                txtComfirmSenha.PasswordChar = vazio;
+            }
+            panel_comfirmsenha.BackColor = Color.Silver;*/
+            if (txtConfirmSenha.Text != txtSenha.Text)
+            {
+                erroP.SetError(txtConfirmSenha, "As senhas nao estão iguais");
             }
             else
             {
-                errorProvider1.SetError(ComfirmSenha, "");
+                erroP.SetError(txtConfirmSenha, "");
             }
         }
 
         private void Senha_Enter(object sender, EventArgs e)
         {
-            if (Senha.Text == "Senha")
-            {
-                Senha.Text = "";
-                Senha.PasswordChar = '*';
-            }
-            panel_senha.BackColor = Color.Black;
+            alterarAparencia(panel_senha, txtSenha, "Senha", "", Color.Black);
+            txtSenha.PasswordChar = '*';
         }
 
         private void Senha_Leave(object sender, EventArgs e)
         {
-            if (Senha.Text == "")
+            alterarAparencia(panel_senha, txtSenha, "", "Senha", Color.Silver);
+            if (txtSenha.Text == "Senha")
             {
-                Senha.Text = "Senha";
-                Senha.PasswordChar = vazio;
+                txtSenha.PasswordChar = vazio;
             }
-            panel_senha.BackColor = Color.Silver;
         }
 
         private void Usuario_Enter(object sender, EventArgs e)
         {
-            if (Usuario.Text == "Usuario")
-            {
-                Usuario.Text = "";
-            }
-            panel_usuario.BackColor = Color.Black;
+            alterarAparencia(panel_usuario, txtUsuario, "Usuário", "", Color.Black);
         }
 
         private void Usuario_Leave(object sender, EventArgs e)
         {
-            if (Usuario.Text == "")
-            {
-                Usuario.Text = "Usuario";
-            }
-            panel_usuario.BackColor = Color.Silver;
+            alterarAparencia(panel_usuario, txtUsuario, "", "Usuário", Color.Silver);
         }
 
         private void Bairro_Enter(object sender, EventArgs e)
         {
-            if (Bairro.Text == "Bairro")
-            {
-                Bairro.Text = "";
-            }
-            panel_bairro.BackColor = Color.Black;
+            alterarAparencia(panel_bairro, txtBairro, "Bairro", "", Color.Black);
         }
 
         private void Bairro_Leave(object sender, EventArgs e)
         {
-            if (Bairro.Text == "")
-            {
-                Bairro.Text = "Bairro";
-            }
-            panel_bairro.BackColor = Color.Silver;
+            alterarAparencia(panel_bairro, txtBairro, "", "Bairro", Color.Silver);
         }
 
         private void Endereco_Enter(object sender, EventArgs e)
         {
-            if (Endereco.Text == "Endereço")
-            {
-                Endereco.Text = "";
-            }
-            panel_endereco.BackColor = Color.Black;
+            alterarAparencia(panel_endereco, txtEndereco, "Endereço", "", Color.Black);
         }
 
         private void Endereco_Leave(object sender, EventArgs e)
         {
-            if(Endereco.Text == "")
-            {
-                Endereco.Text = "Endereço";
-            }
-            panel_endereco.BackColor = Color.Silver;
+            alterarAparencia(panel_endereco, txtEndereco, "", "Endereço", Color.Silver);
         }
 
         private void Nome_Enter(object sender, EventArgs e)
         {
-            if (Nome.Text == "Nome")
-            {
-                Nome.Text = "";
-            }
-            panel_nome.BackColor = Color.Black;
+            alterarAparencia(panel_nome, txtNome, "Nome", "", Color.Black);
         }
 
         private void Nome_Leave(object sender, EventArgs e)
         {
-            if (Nome.Text == "")
-            {
-                Nome.Text = "Nome";
-            }
-            panel_nome.BackColor = Color.Silver;
+            alterarAparencia(panel_nome, txtNome, "", "Nome", Color.Silver);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            int cout = 0;
-            if (Senha.Text != ComfirmSenha.Text)
+            int cont_valido = 0, i = 0;
+
+            TextBox[] array = new TextBox[] { txtNome, txtEndereco, txtBairro, txtCidade, 
+            txtNumero, txtUF, txtUsuario, txtTelefone };
+
+            string[] placeholder = { "Nome", "Endereço", "Bairro", "Cidade", "Nº", "UF", "Usuário", "Telefone" };
+
+            while(i < array.Length)
             {
-                errorProvider1.SetError(ComfirmSenha, "As senhas nao estão iguais");
+                if(array[i].Text == placeholder[i])
+                {
+                    erroP.SetError(array[i], "Obrigatório");
+                }
+                else
+                {
+                    erroP.SetError(array[i], "");
+                    cont_valido++;
+                }                
+                i++;
+            }
+
+            if (txtSenha.Text != txtConfirmSenha.Text)
+            {
+                erroP.SetError(txtConfirmSenha, "As senhas nao estão iguais");
             }
             else
             {
-                errorProvider1.SetError(ComfirmSenha, "");
-                cout++;
+                erroP.SetError(txtConfirmSenha, "");
+                cont_valido++;
             }
-            if (Nome.Text == "Nome")
+
+            if(chkCredito.Checked == false && chkDebito.Checked == false &&
+                chkDinheiro.Checked == false)
             {
-                errorProvider1.SetError(Nome, "Obrigatorio");
+                erroP.SetError(gpxFormaPagamento, "Selecione ao menos uma forma de pagamento");
             }
             else
             {
-                errorProvider1.SetError(Nome, "");
-                cout++;
+                erroP.SetError(gpxFormaPagamento, "");
             }
-            if (Endereco.Text == "Endereço")
+            /*if (txtNome.Text == "Nome")
             {
-                errorProvider1.SetError(Endereco, "Obrigatorio");
+                erroP.SetError(txtNome, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Endereco, "");
+                erroP.SetError(txtNome, "");
                 cout++;
             }
-            if (Bairro.Text == "Bairro")
+            if (txtEndereco.Text == "Endereço")
             {
-                errorProvider1.SetError(Bairro, "Obrigatorio");
+                erroP.SetError(txtEndereco, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Bairro, "");
+                erroP.SetError(txtEndereco, "");
                 cout++;
             }
-            if (Usuario.Text == "Usuario")
+            if (txtBairro.Text == "Bairro")
             {
-                errorProvider1.SetError(Usuario, "Obrigatorio");
+                erroP.SetError(txtBairro, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Usuario, "");
+                erroP.SetError(txtBairro, "");
                 cout++;
             }
-            if (Telefone.Text == "Telefone")
+            if (txtUsuario.Text == "Usuário")
             {
-                errorProvider1.SetError(Telefone, "Obrigatorio");
+                erroP.SetError(txtUsuario, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Telefone, "");
+                erroP.SetError(txtUsuario, "");
                 cout++;
             }
-            if (number.Text == "Nº")
+            if (txtTelefone.Text == "Telefone")
             {
-                errorProvider1.SetError(number, "Obrigatorio");
+                erroP.SetError(txtTelefone, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(number, "");
+                erroP.SetError(txtTelefone, "");
                 cout++;
             }
-            if (Cidade.Text == "Cidade")
+            if (txtNumero.Text == "Nº")
             {
-                errorProvider1.SetError(Cidade, "Obrigatorio");
+                erroP.SetError(txtNumero, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Cidade, "");
+                erroP.SetError(txtNumero, "");
                 cout++;
             }
-            if (Uf.Text == "UF")
+            if (txtCidade.Text == "Cidade")
             {
-                errorProvider1.SetError(Uf, "Obrigatorio");
+                erroP.SetError(txtCidade, "Obrigatorio");
             }
             else
             {
-                errorProvider1.SetError(Uf, "");
+                erroP.SetError(txtCidade, "");
                 cout++;
             }
-            if (cout == 9)
+            if (txtUF.Text == "UF")
+            {
+                erroP.SetError(txtUF, "Obrigatorio");
+            }
+            else
+            {
+                erroP.SetError(txtUF, "");
+                cout++;
+            }*/
+            if (cont_valido == 9)
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresas/");
                 httpWebRequest.ContentType = "application/json";
@@ -331,15 +350,15 @@ namespace Empresa
                 {
                     string json = new JavaScriptSerializer().Serialize(new
                     {
-                        usuario = Usuario.Text,
-	                    senha = Senha.Text,
-	                    nome = Nome.Text,
-	                    numero = number.Text,
-                        endereco = Endereco.Text,
-	                    bairro = Bairro.Text,
-                        telefone = Telefone.Text,
-	                    cidade = Cidade.Text,
-	                    uf = Uf.Text
+                        usuario = txtUsuario.Text,
+	                    senha = txtSenha.Text,
+	                    nome = txtNome.Text,
+	                    numero = txtNumero.Text,
+                        endereco = txtEndereco.Text,
+	                    bairro = txtBairro.Text,
+                        telefone = txtTelefone.Text,
+	                    cidade = txtCidade.Text,
+	                    uf = txtUF.Text
                     });
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -353,9 +372,27 @@ namespace Empresa
                 }
 
                 Hide();
-                Login newForm2 = new Login();
-                newForm2.ShowDialog();
+                Login formLogin = new Login();
+                formLogin.ShowDialog();
+            }
+        }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            base.OnClosing(e);
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)8)
+            {
+                e.Handled = false;
             }
         }
     }
