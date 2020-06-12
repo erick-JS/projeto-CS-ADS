@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+<<<<<<< HEAD
+=======
+            this.label1 = new System.Windows.Forms.Label();
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSenha = new System.Windows.Forms.Button();
             this.btnConta = new System.Windows.Forms.Button();
@@ -351,6 +355,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+<<<<<<< HEAD
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Home";
@@ -358,6 +363,10 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Home_Load);
+=======
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Home";
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

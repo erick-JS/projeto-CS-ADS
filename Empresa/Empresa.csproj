@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atendimento.Designer.cs">
+      <DependentUpon>Atendimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Atendimento.resx">
+      <DependentUpon>Atendimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +156,26 @@
     <None Include="Resources\icons8-configurações-24%281%29.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Content Include="DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="img\agreement.png" />
+    <Content Include="img\barber.png" />
+    <Content Include="img\coin.png" />
+    <Content Include="img\hair.png" />
+    <Content Include="img\lock.png" />
+    <Content Include="img\person.png" />
+    <Content Include="img\support.png" />
+    <Content Include="img\together.png" />
+  </ItemGroup>
+  <ItemGroup>
+=======
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
@@ -158,6 +187,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup />
+=======
   <ItemGroup>
     <None Include="Resources\calendario%281%29.png" />
   </ItemGroup>
@@ -170,6 +202,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-minimizar-janela-32.png" />
   </ItemGroup>
+>>>>>>> 83d6ebc29bd46b46f094f39f911168cdee21d2f7
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
