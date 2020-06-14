@@ -133,7 +133,7 @@ namespace Empresa
                 btnProximo.Enabled = false;
             }
 
-            Console.WriteLine(mes);
+            //Console.WriteLine(mes);
         }
 
         private void btnAntes_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace Empresa
                 btnAntes.Enabled = false;
             }
            
-            Console.WriteLine(mes);
+            //Console.WriteLine(mes);
         }
 
         private void lblDataAtual_Click(object sender, EventArgs e)
