@@ -18,7 +18,7 @@ namespace Empresa
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Application.Run(new Login());
+                Application.Run(new Home());
             }
             catch
             {

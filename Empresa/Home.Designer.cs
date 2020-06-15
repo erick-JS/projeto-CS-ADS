@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSenha = new System.Windows.Forms.Button();
-            this.btnConta = new System.Windows.Forms.Button();
-            this.btnCaixa = new System.Windows.Forms.Button();
-            this.btnServicos = new System.Windows.Forms.Button();
-            this.btnAtendimento = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,6 +46,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flowDias = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDataAtual = new System.Windows.Forms.Label();
+            this.btnSenha = new System.Windows.Forms.Button();
+            this.btnConta = new System.Windows.Forms.Button();
+            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnServicos = new System.Windows.Forms.Button();
+            this.btnAtendimento = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,96 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(823, 100);
             this.panel1.TabIndex = 0;
-            // 
-            // btnSenha
-            // 
-            this.btnSenha.BackColor = System.Drawing.Color.DarkRed;
-            this.btnSenha.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSenha.FlatAppearance.BorderSize = 0;
-            this.btnSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSenha.ForeColor = System.Drawing.Color.White;
-            this.btnSenha.Image = ((System.Drawing.Image)(resources.GetObject("btnSenha.Image")));
-            this.btnSenha.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSenha.Location = new System.Drawing.Point(682, 5);
-            this.btnSenha.Name = "btnSenha";
-            this.btnSenha.Size = new System.Drawing.Size(130, 89);
-            this.btnSenha.TabIndex = 5;
-            this.btnSenha.Text = "Alterar senha";
-            this.btnSenha.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSenha.UseVisualStyleBackColor = false;
-            // 
-            // btnConta
-            // 
-            this.btnConta.BackColor = System.Drawing.Color.DarkRed;
-            this.btnConta.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConta.FlatAppearance.BorderSize = 0;
-            this.btnConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConta.ForeColor = System.Drawing.Color.White;
-            this.btnConta.Image = ((System.Drawing.Image)(resources.GetObject("btnConta.Image")));
-            this.btnConta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConta.Location = new System.Drawing.Point(546, 5);
-            this.btnConta.Name = "btnConta";
-            this.btnConta.Size = new System.Drawing.Size(130, 89);
-            this.btnConta.TabIndex = 4;
-            this.btnConta.Text = "Minha conta";
-            this.btnConta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnConta.UseVisualStyleBackColor = false;
-            // 
-            // btnCaixa
-            // 
-            this.btnCaixa.BackColor = System.Drawing.Color.DarkRed;
-            this.btnCaixa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCaixa.FlatAppearance.BorderSize = 0;
-            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.ForeColor = System.Drawing.Color.White;
-            this.btnCaixa.Image = ((System.Drawing.Image)(resources.GetObject("btnCaixa.Image")));
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCaixa.Location = new System.Drawing.Point(410, 5);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(130, 89);
-            this.btnCaixa.TabIndex = 3;
-            this.btnCaixa.Text = "Caixa";
-            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCaixa.UseVisualStyleBackColor = false;
-            // 
-            // btnServicos
-            // 
-            this.btnServicos.BackColor = System.Drawing.Color.DarkRed;
-            this.btnServicos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnServicos.FlatAppearance.BorderSize = 0;
-            this.btnServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicos.ForeColor = System.Drawing.Color.White;
-            this.btnServicos.Image = ((System.Drawing.Image)(resources.GetObject("btnServicos.Image")));
-            this.btnServicos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnServicos.Location = new System.Drawing.Point(274, 5);
-            this.btnServicos.Name = "btnServicos";
-            this.btnServicos.Size = new System.Drawing.Size(130, 89);
-            this.btnServicos.TabIndex = 2;
-            this.btnServicos.Text = "Serviços";
-            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnServicos.UseVisualStyleBackColor = false;
-            // 
-            // btnAtendimento
-            // 
-            this.btnAtendimento.BackColor = System.Drawing.Color.DarkRed;
-            this.btnAtendimento.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAtendimento.FlatAppearance.BorderSize = 0;
-            this.btnAtendimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtendimento.ForeColor = System.Drawing.Color.White;
-            this.btnAtendimento.Image = ((System.Drawing.Image)(resources.GetObject("btnAtendimento.Image")));
-            this.btnAtendimento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAtendimento.Location = new System.Drawing.Point(139, 5);
-            this.btnAtendimento.Name = "btnAtendimento";
-            this.btnAtendimento.Size = new System.Drawing.Size(130, 89);
-            this.btnAtendimento.TabIndex = 0;
-            this.btnAtendimento.Text = "Atendimento";
-            this.btnAtendimento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAtendimento.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -339,6 +249,98 @@
             this.lblDataAtual.TabIndex = 4;
             this.lblDataAtual.Text = "Quinta-feira, 30 de fevereiro de 2020";
             this.lblDataAtual.Click += new System.EventHandler(this.lblDataAtual_Click);
+            // 
+            // btnSenha
+            // 
+            this.btnSenha.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSenha.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSenha.FlatAppearance.BorderSize = 0;
+            this.btnSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSenha.ForeColor = System.Drawing.Color.White;
+            this.btnSenha.Image = ((System.Drawing.Image)(resources.GetObject("btnSenha.Image")));
+            this.btnSenha.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSenha.Location = new System.Drawing.Point(682, 5);
+            this.btnSenha.Name = "btnSenha";
+            this.btnSenha.Size = new System.Drawing.Size(130, 89);
+            this.btnSenha.TabIndex = 5;
+            this.btnSenha.Text = "Alterar senha";
+            this.btnSenha.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSenha.UseVisualStyleBackColor = false;
+            // 
+            // btnConta
+            // 
+            this.btnConta.BackColor = System.Drawing.Color.DarkRed;
+            this.btnConta.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConta.FlatAppearance.BorderSize = 0;
+            this.btnConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConta.ForeColor = System.Drawing.Color.White;
+            this.btnConta.Image = ((System.Drawing.Image)(resources.GetObject("btnConta.Image")));
+            this.btnConta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnConta.Location = new System.Drawing.Point(546, 5);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(130, 89);
+            this.btnConta.TabIndex = 4;
+            this.btnConta.Text = "Minha conta";
+            this.btnConta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConta.UseVisualStyleBackColor = false;
+            // 
+            // btnCaixa
+            // 
+            this.btnCaixa.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCaixa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCaixa.FlatAppearance.BorderSize = 0;
+            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaixa.ForeColor = System.Drawing.Color.White;
+            this.btnCaixa.Image = ((System.Drawing.Image)(resources.GetObject("btnCaixa.Image")));
+            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCaixa.Location = new System.Drawing.Point(410, 5);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(130, 89);
+            this.btnCaixa.TabIndex = 3;
+            this.btnCaixa.Text = "Caixa";
+            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCaixa.UseVisualStyleBackColor = false;
+            // 
+            // btnServicos
+            // 
+            this.btnServicos.BackColor = System.Drawing.Color.DarkRed;
+            this.btnServicos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnServicos.FlatAppearance.BorderSize = 0;
+            this.btnServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicos.ForeColor = System.Drawing.Color.White;
+            this.btnServicos.Image = ((System.Drawing.Image)(resources.GetObject("btnServicos.Image")));
+            this.btnServicos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnServicos.Location = new System.Drawing.Point(274, 5);
+            this.btnServicos.Name = "btnServicos";
+            this.btnServicos.Size = new System.Drawing.Size(130, 89);
+            this.btnServicos.TabIndex = 2;
+            this.btnServicos.Text = "Serviços";
+            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnServicos.UseVisualStyleBackColor = false;
+            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
+            // 
+            // btnAtendimento
+            // 
+            this.btnAtendimento.BackColor = System.Drawing.Color.DarkRed;
+            this.btnAtendimento.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAtendimento.FlatAppearance.BorderSize = 0;
+            this.btnAtendimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtendimento.ForeColor = System.Drawing.Color.White;
+            this.btnAtendimento.Image = ((System.Drawing.Image)(resources.GetObject("btnAtendimento.Image")));
+            this.btnAtendimento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAtendimento.Location = new System.Drawing.Point(139, 5);
+            this.btnAtendimento.Name = "btnAtendimento";
+            this.btnAtendimento.Size = new System.Drawing.Size(130, 89);
+            this.btnAtendimento.TabIndex = 0;
+            this.btnAtendimento.Text = "Atendimento";
+            this.btnAtendimento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAtendimento.UseVisualStyleBackColor = false;
+            this.btnAtendimento.Click += new System.EventHandler(this.btnAtendimento_Click);
             // 
             // Home
             // 

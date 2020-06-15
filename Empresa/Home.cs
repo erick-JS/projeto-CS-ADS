@@ -18,12 +18,12 @@ namespace Empresa
         {
             InitializeComponent();
 
-            if (!File.Exists(@"dados.db"))
+            /*if (!File.Exists(@"dados.db"))
             {
                 Close();
                 Login newForm2 = new Login();
                 newForm2.ShowDialog();
-            }
+            }*/
         }
 
         int mes = 1;
@@ -165,6 +165,18 @@ namespace Empresa
             }
 
             Home_Load(null, null);
+        }
+
+        private void btnAtendimento_Click(object sender, EventArgs e)
+        {
+            Atendimento atendimento = new Atendimento();
+            atendimento.ShowDialog();
+        }
+
+        private void btnServicos_Click(object sender, EventArgs e)
+        {
+            Servicos servicos = new Servicos();
+            servicos.ShowDialog();
         }
     }
 }
