@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using System.Drawing.Text;
 
 namespace Empresa
 {
@@ -18,14 +18,14 @@ namespace Empresa
         {
             InitializeComponent();
 
-            /*if (!File.Exists(@"dados.db"))
+            if (!File.Exists(@"dados.db"))
             {
                 Close();
                 Login newForm2 = new Login();
                 newForm2.ShowDialog();
-            }*/
+            }
         }
-
+        int k = 0;
         int mes = 1;
         String[] mesExtenso = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
@@ -33,10 +33,12 @@ namespace Empresa
         private void gerarTituloMes(int mes)
         {
             lblTitulo.Text = mesExtenso[mes] + ", " + DateTime.Now.Year.ToString();
+            lblTitulo.Anchor = AnchorStyles.None;
         }
 
         private void gerarDias(int mes)
         {
+            k = 0;
             //int data = DateTime.DaysInMonth(DateTime.Now.Year, mes);
             gerarCalendario();
 
@@ -67,15 +69,14 @@ namespace Empresa
             flowDias.Controls.Clear();
             DateTime primeiroDia = new DateTime(DateTime.Now.Year, mes, 1);
             int primeiroDiaSem = Convert.ToInt32(primeiroDia.DayOfWeek);
-
             int j = 1;
-           
+
             //Console.WriteLine(primeiroDiaSem);
             for (int i = 0; i < 42; i++)
             {
                 FlowLayoutPanel flow = new FlowLayoutPanel();
                 flow.Name = $"flowDias{i}";
-                flow.Size = new Size(60, 84);
+                flow.Size = new Size(50, 74);
                 flow.BorderStyle = BorderStyle.FixedSingle;
                 flow.BackColor = Color.White;
                 flow.Location = new Point(7, 219);
@@ -102,12 +103,33 @@ namespace Empresa
                         break;
                     }
 
+                    if (j == k)
+                    {
+                        if (flow.BackColor != Color.DarkRed)
+                        {
+                            flow.BackColor = Color.LightBlue;
+                        }
+                    }
+
                     j++;
+                }
+
+                flow.Click += new EventHandler(bt);
+
+                void bt(Object sender, EventArgs e)
+                {
+                    if (label.Text != "")
+                    {
+                        k = Int32.Parse(label.Text);
+                        gerarCalendario();
+                    }
                 }
 
                 flowDias.Controls.Add(flow);
             }
+
         }
+
         private void Home_Load(object sender, EventArgs e)
         {
             DateTime dia = DateTime.Today;
@@ -177,6 +199,68 @@ namespace Empresa
         {
             Servicos servicos = new Servicos();
             servicos.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        int x, y;
+        Point Point = new Point();
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point = Control.MousePosition;
+                Point.X -= x;
+                Point.Y -= y;
+                this.Location = Point;
+                Application.DoEvents();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Conf conf = new Conf();
+            conf.ShowDialog();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("foi");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("foi");
+        }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = Control.MousePosition.X - this.Location.X;
+            y = Control.MousePosition.Y - this.Location.Y;
         }
     }
 }
