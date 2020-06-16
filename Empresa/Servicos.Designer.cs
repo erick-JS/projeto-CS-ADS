@@ -41,12 +41,12 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.dgvServicos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnProximo = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnApagar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnProximo = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
@@ -59,8 +59,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 100);
+            this.panel1.Size = new System.Drawing.Size(688, 81);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -68,10 +69,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(372, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 39);
+            this.label1.Size = new System.Drawing.Size(119, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Serviços";
             // 
@@ -79,64 +79,63 @@
             // 
             this.pnlServico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlServico.BackColor = System.Drawing.Color.Silver;
-            this.pnlServico.Location = new System.Drawing.Point(19, 174);
-            this.pnlServico.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlServico.Location = new System.Drawing.Point(24, 152);
             this.pnlServico.Name = "pnlServico";
-            this.pnlServico.Size = new System.Drawing.Size(399, 4);
+            this.pnlServico.Size = new System.Drawing.Size(299, 3);
             this.pnlServico.TabIndex = 10;
             // 
             // pnlPreco
             // 
             this.pnlPreco.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlPreco.BackColor = System.Drawing.Color.Silver;
-            this.pnlPreco.Location = new System.Drawing.Point(19, 249);
-            this.pnlPreco.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlPreco.Location = new System.Drawing.Point(24, 213);
             this.pnlPreco.Name = "pnlPreco";
-            this.pnlPreco.Size = new System.Drawing.Size(399, 4);
+            this.pnlPreco.Size = new System.Drawing.Size(299, 3);
             this.pnlPreco.TabIndex = 12;
             // 
             // pnlTempo
             // 
             this.pnlTempo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlTempo.BackColor = System.Drawing.Color.Silver;
-            this.pnlTempo.Location = new System.Drawing.Point(18, 333);
-            this.pnlTempo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTempo.Location = new System.Drawing.Point(24, 282);
             this.pnlTempo.Name = "pnlTempo";
-            this.pnlTempo.Size = new System.Drawing.Size(399, 4);
+            this.pnlTempo.Size = new System.Drawing.Size(299, 3);
             this.pnlTempo.TabIndex = 14;
             // 
             // txtServico
             // 
+            this.txtServico.BackColor = System.Drawing.SystemColors.Control;
             this.txtServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServico.ForeColor = System.Drawing.Color.Silver;
-            this.txtServico.Location = new System.Drawing.Point(15, 129);
-            this.txtServico.Margin = new System.Windows.Forms.Padding(4);
+            this.txtServico.Location = new System.Drawing.Point(24, 120);
             this.txtServico.Name = "txtServico";
-            this.txtServico.Size = new System.Drawing.Size(400, 38);
+            this.txtServico.Size = new System.Drawing.Size(300, 30);
             this.txtServico.TabIndex = 0;
             this.txtServico.Text = "Serviço";
             // 
             // txtPreco
             // 
+            this.txtPreco.BackColor = System.Drawing.SystemColors.Control;
             this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPreco.ForeColor = System.Drawing.Color.Silver;
-            this.txtPreco.Location = new System.Drawing.Point(16, 211);
-            this.txtPreco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPreco.Location = new System.Drawing.Point(24, 177);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(400, 38);
+            this.txtPreco.Size = new System.Drawing.Size(300, 30);
             this.txtPreco.TabIndex = 1;
             this.txtPreco.Text = "Preço";
             // 
             // maskedTextBox1
             // 
+            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox1.Location = new System.Drawing.Point(15, 293);
+            this.maskedTextBox1.Location = new System.Drawing.Point(24, 247);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(400, 38);
+            this.maskedTextBox1.Size = new System.Drawing.Size(300, 30);
             this.maskedTextBox1.TabIndex = 2;
             this.maskedTextBox1.Text = "Tempo estimado";
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
@@ -150,10 +149,9 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(15, 523);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(20, 311);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(169, 57);
+            this.btnEditar.Size = new System.Drawing.Size(127, 46);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -167,10 +165,9 @@
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(708, 523);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(549, 362);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(169, 57);
+            this.btnSalvar.Size = new System.Drawing.Size(127, 46);
             this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -178,11 +175,12 @@
             // dgvServicos
             // 
             this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicos.Location = new System.Drawing.Point(447, 190);
+            this.dgvServicos.Location = new System.Drawing.Point(355, 169);
+            this.dgvServicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvServicos.Name = "dgvServicos";
             this.dgvServicos.RowHeadersWidth = 51;
             this.dgvServicos.RowTemplate.Height = 24;
-            this.dgvServicos.Size = new System.Drawing.Size(430, 208);
+            this.dgvServicos.Size = new System.Drawing.Size(322, 188);
             this.dgvServicos.TabIndex = 10;
             // 
             // panel2
@@ -193,14 +191,96 @@
             this.panel2.Controls.Add(this.btnProximo);
             this.panel2.Controls.Add(this.btnAnterior);
             this.panel2.Controls.Add(this.btnPesquisar);
-            this.panel2.Location = new System.Drawing.Point(447, 129);
+            this.panel2.Location = new System.Drawing.Point(355, 120);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 55);
+            this.panel2.Size = new System.Drawing.Size(322, 45);
             this.panel2.TabIndex = 21;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdicionar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
+            this.btnAdicionar.Location = new System.Drawing.Point(275, 0);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(49, 45);
+            this.btnAdicionar.TabIndex = 9;
+            this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnApagar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnApagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(220, 0);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(55, 45);
+            this.btnApagar.TabIndex = 8;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNovo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(165, 0);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(55, 45);
+            this.btnNovo.TabIndex = 7;
+            this.btnNovo.UseVisualStyleBackColor = false;
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProximo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnProximo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnProximo.FlatAppearance.BorderSize = 0;
+            this.btnProximo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProximo.Image = ((System.Drawing.Image)(resources.GetObject("btnProximo.Image")));
+            this.btnProximo.Location = new System.Drawing.Point(110, 0);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(55, 45);
+            this.btnProximo.TabIndex = 6;
+            this.btnProximo.UseVisualStyleBackColor = false;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAnterior.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAnterior.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
+            this.btnAnterior.Location = new System.Drawing.Point(55, 0);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(55, 45);
+            this.btnAnterior.TabIndex = 5;
+            this.btnAnterior.UseVisualStyleBackColor = false;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.White;
+            this.btnPesquisar.BackColor = System.Drawing.SystemColors.Control;
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPesquisar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnPesquisar.FlatAppearance.BorderSize = 0;
@@ -209,97 +289,10 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
             this.btnPesquisar.Location = new System.Drawing.Point(0, 0);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(73, 55);
+            this.btnPesquisar.Size = new System.Drawing.Size(55, 45);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.UseVisualStyleBackColor = false;
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.BackColor = System.Drawing.Color.White;
-            this.btnAnterior.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAnterior.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAnterior.FlatAppearance.BorderSize = 0;
-            this.btnAnterior.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
-            this.btnAnterior.Location = new System.Drawing.Point(73, 0);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(73, 55);
-            this.btnAnterior.TabIndex = 5;
-            this.btnAnterior.UseVisualStyleBackColor = false;
-            // 
-            // btnProximo
-            // 
-            this.btnProximo.BackColor = System.Drawing.Color.White;
-            this.btnProximo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnProximo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnProximo.FlatAppearance.BorderSize = 0;
-            this.btnProximo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProximo.Image = ((System.Drawing.Image)(resources.GetObject("btnProximo.Image")));
-            this.btnProximo.Location = new System.Drawing.Point(146, 0);
-            this.btnProximo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(73, 55);
-            this.btnProximo.TabIndex = 6;
-            this.btnProximo.UseVisualStyleBackColor = false;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.White;
-            this.btnNovo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.Location = new System.Drawing.Point(219, 0);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(73, 55);
-            this.btnNovo.TabIndex = 7;
-            this.btnNovo.UseVisualStyleBackColor = false;
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.White;
-            this.btnApagar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnApagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(292, 0);
-            this.btnApagar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(73, 55);
-            this.btnApagar.TabIndex = 8;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAdicionar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
-            this.btnAdicionar.Location = new System.Drawing.Point(365, 0);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(65, 55);
-            this.btnAdicionar.TabIndex = 9;
-            this.btnAdicionar.UseVisualStyleBackColor = false;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnConfirmar
             // 
@@ -310,20 +303,19 @@
             this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Location = new System.Drawing.Point(18, 355);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirmar.Location = new System.Drawing.Point(196, 311);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(169, 57);
+            this.btnConfirmar.Size = new System.Drawing.Size(127, 46);
             this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // Servicos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(890, 593);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(688, 475);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvServicos);
@@ -336,8 +328,11 @@
             this.Controls.Add(this.pnlPreco);
             this.Controls.Add(this.pnlServico);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Servicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
