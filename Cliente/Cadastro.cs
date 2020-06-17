@@ -323,37 +323,45 @@ namespace Cliente
 
             if (cout == 9)
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/clientes/");
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Method = "POST";
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                try
                 {
-                    string json = new JavaScriptSerializer().Serialize(new
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/clientes/");
+                    httpWebRequest.ContentType = "application/json";
+                    httpWebRequest.Method = "POST";
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                     {
-                        usuario = Usuario.Text,
-                        senha = Senha.Text,
-                        nome = Nome.Text,
-                        numero = number.Text,
-                        endereco = Endereco.Text,
-                        bairro = Bairro.Text,
-                        telefone = Telefone.Text,
-                        cidade = Cidade.Text,
-                        uf = Uf.Text,
-                    });
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
+                        string json = new JavaScriptSerializer().Serialize(new
+                        {
+                            usuario = Usuario.Text,
+                            senha = Senha.Text,
+                            nome = Nome.Text,
+                            numero = number.Text,
+                            endereco = Endereco.Text,
+                            bairro = Bairro.Text,
+                            telefone = Telefone.Text,
+                            cidade = Cidade.Text,
+                            uf = Uf.Text,
+                        });
+                        streamWriter.Write(json);
+                        streamWriter.Flush();
+                        streamWriter.Close();
+
+                        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+
+                        Hide();
+                        Login newForm2 = new Login();
+                        newForm2.ShowDialog();
+                    }
                 }
-
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-
-                Hide();
-                Login newForm2 = new Login();
-                newForm2.ShowDialog();
+                catch
+                {
+                    MessageBox.Show("Usuario ja existe");
+                }
             }
-
         }
+
     }
 }
+
