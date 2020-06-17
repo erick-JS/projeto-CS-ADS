@@ -18,12 +18,12 @@ namespace Empresa
         {
             InitializeComponent();
 
-            /*if (!File.Exists(@"dados.db"))
+            if (!File.Exists(@"dados.db"))
             {
                 Close();
                 Login newForm2 = new Login();
                 newForm2.ShowDialog();
-            }*/
+            }
         }
         int k = 0;
         int mes = 1;
