@@ -11,7 +11,7 @@ using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
 
-namespace Empresa
+namespace Cliente
 {
     public partial class Cadastro : Form
     {

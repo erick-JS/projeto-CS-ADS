@@ -1,4 +1,4 @@
-﻿namespace Empresa
+﻿namespace Cliente
 {
     partial class Cadastro
     {

@@ -13,7 +13,6 @@ C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.exe.con
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.exe
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Cliente.pdb
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csprojAssemblyReference.cache
-C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Empresa.Cadastro.resources
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Home.resources
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Properties.Resources.resources
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.GenerateResource.cache
@@ -32,3 +31,5 @@ C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\Newtonsoft.Json
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.xml
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.CopyComplete
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Login.resources
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.Cadastro.resources
