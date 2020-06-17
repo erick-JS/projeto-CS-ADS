@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
+
 
 namespace Empresa
 {
@@ -347,38 +342,45 @@ namespace Empresa
                 {
                     creditoo = "nao";
                 }
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresas/");
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Method = "POST";
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                try
                 {
-                    string json = new JavaScriptSerializer().Serialize(new
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresas/");
+                    httpWebRequest.ContentType = "application/json";
+                    httpWebRequest.Method = "POST";
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                     {
-                        usuario = txtUsuario.Text,
-	                    senha = txtSenha.Text,
-	                    nome = txtNome.Text,
-	                    numero = txtNumero.Text,
-                        endereco = txtEndereco.Text,
-	                    bairro = txtBairro.Text,
-                        telefone = txtTelefone.Text,
-	                    cidade = txtCidade.Text,
-	                    uf = txtUF.Text,
-                        dinheiro = dinheiroo,
-                        debito = debitoo,
-                        credito = creditoo
-                    });
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
+                        string json = new JavaScriptSerializer().Serialize(new
+                        {
+                            usuario = txtUsuario.Text,
+                            senha = txtSenha.Text,
+                            nome = txtNome.Text,
+                            numero = txtNumero.Text,
+                            endereco = txtEndereco.Text,
+                            bairro = txtBairro.Text,
+                            telefone = txtTelefone.Text,
+                            cidade = txtCidade.Text,
+                            uf = txtUF.Text,
+                            dinheiro = dinheiroo,
+                            debito = debitoo,
+                            credito = creditoo
+                        });
+                        streamWriter.Write(json);
+                        streamWriter.Flush();
+                        streamWriter.Close();
+                    }
+
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+
+                    Hide();
+                    Login newForm2 = new Login();
+                    newForm2.ShowDialog();
                 }
-
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-
-                Hide();
-                Login newForm2 = new Login();
-                newForm2.ShowDialog();
+                catch
+                {
+                    MessageBox.Show("Erro ao cadastrar");
+                }
 
             }
         }
