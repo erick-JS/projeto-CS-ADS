@@ -19,12 +19,15 @@ namespace Empresa
 
         Atendimento aten = new Atendimento();
         Servicos servi = new Servicos();
+        Conta cont = new Conta();
 
         private void btnAtendimento_Click(object sender, EventArgs e)
         {
             aten.TopLevel = false;
             aten.Visible = true;
             servi.Visible = false;
+            cont.Visible = false;
+
             info.Controls.Add(aten);
         }
 
@@ -33,7 +36,24 @@ namespace Empresa
             servi.TopLevel = false;
             servi.Visible = true;
             aten.Visible = false;
+            cont.Visible = false;
+
             info.Controls.Add(servi);
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConta_Click(object sender, EventArgs e)
+        {
+            cont.TopLevel = false;
+            cont.Visible = true;
+            servi.Visible = false;
+            aten.Visible = false;
+
+            info.Controls.Add(cont);
         }
     }
 }

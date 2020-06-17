@@ -102,6 +102,12 @@
     <Compile Include="Conf.Designer.cs">
       <DependentUpon>Conf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conta.Designer.cs">
+      <DependentUpon>Conta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="conf.resx">
       <DependentUpon>Conf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conta.resx">
+      <DependentUpon>Conta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

@@ -18,12 +18,12 @@ namespace Empresa
         {
             InitializeComponent();
 
-            if (!File.Exists(@"dados.db"))
+            /*if (!File.Exists(@"dados.db"))
             {
                 Close();
                 Login newForm2 = new Login();
                 newForm2.ShowDialog();
-            }
+            }*/
         }
         int k = 0;
         int mes = 1;
@@ -76,7 +76,7 @@ namespace Empresa
             {
                 FlowLayoutPanel flow = new FlowLayoutPanel();
                 flow.Name = $"flowDias{i}";
-                flow.Size = new Size(50, 74);
+                flow.Size = new Size(70, 74);
                 flow.BorderStyle = BorderStyle.FixedSingle;
                 flow.BackColor = Color.White;
                 flow.Location = new Point(7, 219);
@@ -174,17 +174,25 @@ namespace Empresa
 
         private void lblDataAtual_Click(object sender, EventArgs e)
         {
-            if(mes == 1)
+            int mesAtual = DateTime.Today.Month;
+
+            if (mesAtual == 1)
             {
                 btnAntes.Enabled = false;
                 btnProximo.Enabled = true;
             }
-
-            if(mes == 12)
+            else if(mesAtual == 12)
             {
                 btnProximo.Enabled = false;
                 btnAntes.Enabled = true;
             }
+            else
+            {
+                btnProximo.Enabled = true;
+                btnAntes.Enabled = true;
+            }
+
+            k = 0;
 
             Home_Load(null, null);
         }
