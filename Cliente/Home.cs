@@ -41,7 +41,6 @@ namespace Cliente
             var sr = new StreamReader(stream);
             var content = sr.ReadToEnd();
 
-            content = content.Replace('"',' ');
             var ar = content.ToArray();
             int qt = 0;
             for (int i = 0; i < content.Length; i++)
@@ -56,7 +55,6 @@ namespace Cliente
             int o = 0;
             for (int i = 0; i < qt+1; i++)
             {
-                int bk = 0;
                 String nome = "";
                 FlowLayoutPanel flow = new FlowLayoutPanel();
                 flow.Name = $"flowNome{i}";
@@ -71,7 +69,11 @@ namespace Cliente
                     {
                         break;
                     }
-                    if (ar[o] != ' ')
+                    if (ar[o] == '"')
+                    {
+
+                    }
+                    else if (ar[o] != ' ')
                     {
                         nome += content[o];
                     }
@@ -79,7 +81,6 @@ namespace Cliente
 
                 Label label = new Label();
                 label.Name = $"lblItem{i}";
-
                 label.Text = nome.ToString();
 
                 if (label.Text != " ")
