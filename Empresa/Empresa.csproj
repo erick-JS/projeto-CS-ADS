@@ -192,6 +192,7 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\teamwork-makes-the-dream-work.jpg" />
     <None Include="img\lock.png" />
     <None Include="img\support.png" />
     <None Include="img\together.png" />

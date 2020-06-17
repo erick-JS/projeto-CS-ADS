@@ -153,6 +153,16 @@ namespace Empresa.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap teamwork_makes_the_dream_work {
+            get {
+                object obj = ResourceManager.GetObject("teamwork-makes-the-dream-work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap together {
             get {
                 object obj = ResourceManager.GetObject("together", resourceCulture);
