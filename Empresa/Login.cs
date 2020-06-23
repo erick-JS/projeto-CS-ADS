@@ -69,7 +69,7 @@ namespace Empresa
         {
             string u = User.Text;
             string p = Passwd.Text;
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/login/");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
@@ -90,10 +90,10 @@ namespace Empresa
             var stream = httpResponse.GetResponseStream();
             var sr = new StreamReader(stream);
             var content = sr.ReadToEnd();
-            dynamic m = JsonConvert.DeserializeObject(content);
+            dynamic data = JsonConvert.DeserializeObject(content);
             try
             {
-                string sta = m.status;
+                string sta = data.status;
                 if (sta == "sim")
                 {
                     InitializeComponent();
@@ -105,45 +105,9 @@ namespace Empresa
                     SQLiteCommand comando = new SQLiteCommand(query, ligacao);
                     comando.ExecuteNonQuery();
 
-                    httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
-                    httpWebRequest.ContentType = "application/json";
-                    httpWebRequest.Method = "POST";
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                    {
-                        string json = new JavaScriptSerializer().Serialize(new
-                        {
-                            usuario = u,
-                            senha = p,
-                        });
-                        streamWriter.Write(json);
-                        streamWriter.Flush();
-                        streamWriter.Close();
-                    }
-
-                    httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                    stream = httpResponse.GetResponseStream();
-                    sr = new StreamReader(stream);
-                    content = sr.ReadToEnd();
-                    dynamic data = JsonConvert.DeserializeObject(content);
-
                     SQLiteConnection liga = new SQLiteConnection();
                     liga.ConnectionString = @"Data source = dados.db; Version=3;";
                     liga.Open();
-                    /*
-                    'nome': name,
-                    'cidade': cit,
-                    'numero': numero,
-                    'endereco': endereco,
-                    'bairro': bairro,
-                    'telefone': telefone,
-                    'uf': uf,
-                    'credito': credito,
-                    'usuario': user,
-                    'debito': debito,
-                    'dinheiro': dinheiro
-                     */
                     string querry = "INSERT INTO login VALUES (0,'"+u+"','"+p+ "','" + data.nome + "','" + data.numero + "','" + data.endereco + "','" + data.bairro + "', '" + data.telefone + "','" + data.cidade + "','" + data.uf + "','" + data.dinheiro + "','" + data.credito + "','" + data.debito + "')";
                     SQLiteCommand como = new SQLiteCommand(querry, liga);
                     como.ExecuteNonQuery();
