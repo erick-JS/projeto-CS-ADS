@@ -28,51 +28,29 @@ namespace Empresa
             SQLiteCommand data = new SQLiteCommand(query, ligacao);
             SQLiteDataReader rdr = data.ExecuteReader();
 
-            string name = " ", pass = " ";
+            string dinheiro = " ", credito = " ",debito = " ";
 
             while (rdr.Read())
             {
-                name = rdr.GetString(1);
-                pass = rdr.GetString(2);
+                dinheiro = rdr.GetString(10);
+                credito = rdr.GetString(11);
+                debito = rdr.GetString(12);
             }
 
-
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
-                string json = new JavaScriptSerializer().Serialize(new
-                {
-                    usuario = name,
-                    senha = pass,
-                });
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
-
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            var stream = httpResponse.GetResponseStream();
-            var sr = new StreamReader(stream);
-            var content = sr.ReadToEnd();
-            dynamic m = JsonConvert.DeserializeObject(content);
-
-            if (m.credito == "sim")
-            {
-                chkCredito.Checked = true;
-            }
-            if (m.debito == "sim")
-            {
-                chkDebito.Checked = true;
-            }
-            if (m.dinheiro == "sim")
+            if (dinheiro == "sim")
             {
                 chkDinheiro.Checked = true;
             }
 
+            if (credito == "sim")
+            {
+                chkCredito.Checked = true;
+            }
+
+            if (debito == "sim")
+            {
+                chkDebito.Checked = true;
+            }
         }
 
         private void alterarStatus(Panel panel, MaskedTextBox mktAbre, MaskedTextBox mktFecha, Boolean status)

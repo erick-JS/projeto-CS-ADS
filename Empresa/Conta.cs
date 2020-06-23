@@ -38,46 +38,17 @@ namespace Empresa
             SQLiteCommand data = new SQLiteCommand(query, ligacao);
             SQLiteDataReader rdr = data.ExecuteReader();
 
-            string name = " ", pass = " ";
-
             while (rdr.Read())
             {
-                name = rdr.GetString(1);
-                pass = rdr.GetString(2);
+                nome = rdr.GetString(3);
+                endereco = rdr.GetString(5);
+                bairro = rdr.GetString(6);
+                numero = rdr.GetString(4);
+                cidade = rdr.GetString(9);
+                uf = rdr.GetString(4);
+                telefone = rdr.GetString(7);
+                usuario = rdr.GetString(1);
             }
-
-            
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
-                string json = new JavaScriptSerializer().Serialize(new
-                {
-                    usuario = name,
-                    senha = pass,
-                });
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
-
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            var stream = httpResponse.GetResponseStream();
-            var sr = new StreamReader(stream);
-            var content = sr.ReadToEnd();
-            dynamic m = JsonConvert.DeserializeObject(content);
-
-            nome = m.nome;
-            endereco = m.endereco;
-            bairro = m.bairro;
-            numero = m.numero;
-            cidade = m.cidade;
-            uf = m.uf;
-            telefone = m.telefone;
-            usuario = m.usuario;
         }
 
         char vazio;
