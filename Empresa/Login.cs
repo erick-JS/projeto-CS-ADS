@@ -101,14 +101,50 @@ namespace Empresa
                     SQLiteConnection ligacao = new SQLiteConnection();
                     ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
                     ligacao.Open();
-                    string query = "CREATE TABLE login (id int primary key, usuario varchar(50), senha varchar(50))";
+                    string query = "CREATE TABLE login (id int primary key, usuario varchar(50), senha varchar(50),nome VARCHAR(50) NOT NULL,numero VARCHAR(8) NOT NULL,endereco VARCHAR(50) NOT NULL,bairro VARCHAR(20) NOT NULL,telefone VARCHAR(20) NOT NULL,cidade VARCHAR(50) NOT NULL,uf VARCHAR(2) NOT NULL,dinheiro VARCHAR(3) NOT NULL,credito VARCHAR(3) NOT NULL,debito VARCHAR(3) NOT NULL)";
                     SQLiteCommand comando = new SQLiteCommand(query, ligacao);
                     comando.ExecuteNonQuery();
+
+                    httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
+                    httpWebRequest.ContentType = "application/json";
+                    httpWebRequest.Method = "POST";
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                    {
+                        string json = new JavaScriptSerializer().Serialize(new
+                        {
+                            usuario = u,
+                            senha = p,
+                        });
+                        streamWriter.Write(json);
+                        streamWriter.Flush();
+                        streamWriter.Close();
+                    }
+
+                    httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    stream = httpResponse.GetResponseStream();
+                    sr = new StreamReader(stream);
+                    content = sr.ReadToEnd();
+                    dynamic data = JsonConvert.DeserializeObject(content);
 
                     SQLiteConnection liga = new SQLiteConnection();
                     liga.ConnectionString = @"Data source = dados.db; Version=3;";
                     liga.Open();
-                    string querry = "INSERT INTO login VALUES (0,'"+u+"','"+p+"')";
+                    /*
+                    'nome': name,
+                    'cidade': cit,
+                    'numero': numero,
+                    'endereco': endereco,
+                    'bairro': bairro,
+                    'telefone': telefone,
+                    'uf': uf,
+                    'credito': credito,
+                    'usuario': user,
+                    'debito': debito,
+                    'dinheiro': dinheiro
+                     */
+                    string querry = "INSERT INTO login VALUES (0,'"+u+"','"+p+ "','" + data.nome + "','" + data.numero + "','" + data.endereco + "','" + data.bairro + "', '" + data.telefone + "','" + data.cidade + "','" + data.uf + "','" + data.dinheiro + "','" + data.credito + "','" + data.debito + "')";
                     SQLiteCommand como = new SQLiteCommand(querry, liga);
                     como.ExecuteNonQuery();
                     como.Dispose();
@@ -123,9 +159,9 @@ namespace Empresa
                     MessageBox.Show("Senha ou usuario incorreto");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("erro ao logar tente de novo");
+                MessageBox.Show("erro ao logar tente de novo \nerro: " + ex.Message);
             }
         }
 
