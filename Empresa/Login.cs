@@ -67,6 +67,8 @@ namespace Empresa
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string u = User.Text;
+            string p = Passwd.Text;
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/login/");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
@@ -76,8 +78,8 @@ namespace Empresa
             {
                 string json = new JavaScriptSerializer().Serialize(new
                 {
-                    usuario = User.Text,
-                    senha = Passwd.Text,
+                    usuario = u,
+                    senha = p,
                 });
                 streamWriter.Write(json);
                 streamWriter.Flush();
@@ -106,7 +108,7 @@ namespace Empresa
                     SQLiteConnection liga = new SQLiteConnection();
                     liga.ConnectionString = @"Data source = dados.db; Version=3;";
                     liga.Open();
-                    string querry = "INSERT INTO login VALUES (0,'"+User.Text+"','"+Passwd.Text+"')";
+                    string querry = "INSERT INTO login VALUES (0,'"+u+"','"+p+"')";
                     SQLiteCommand como = new SQLiteCommand(querry, liga);
                     como.ExecuteNonQuery();
                     como.Dispose();

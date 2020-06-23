@@ -1,23 +1,22 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace Empresa
 {
     public partial class Conta : Form
     {
-        public Conta()
-        {
-            InitializeComponent();
-        }
-
-        char vazio;
 
         String nome = "Fulano";
         String endereco = "Rua X";
@@ -27,6 +26,61 @@ namespace Empresa
         String uf = "SP";
         String telefone = "(11) 99999-9999";
         String usuario = "fulano123";
+
+        public Conta()
+        {
+            InitializeComponent();
+
+            SQLiteConnection ligacao = new SQLiteConnection();
+            ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+            ligacao.Open();
+            string query = "SELECT * FROM login";
+            SQLiteCommand data = new SQLiteCommand(query, ligacao);
+            SQLiteDataReader rdr = data.ExecuteReader();
+
+            string name = " ", pass = " ";
+
+            while (rdr.Read())
+            {
+                name = rdr.GetString(1);
+                pass = rdr.GetString(2);
+            }
+
+            
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    usuario = name,
+                    senha = pass,
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+
+            nome = m.nome;
+            endereco = m.endereco;
+            bairro = m.bairro;
+            numero = m.numero;
+            cidade = m.cidade;
+            uf = m.uf;
+            telefone = m.telefone;
+            usuario = m.usuario;
+        }
+
+        char vazio;
 
         //Método para alterar a aparência de cada textbox
         private void alterarAparencia(Panel panel, TextBox txt, string old_placeholder, string new_placeholder, Color cor)

@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace Empresa
@@ -15,6 +20,59 @@ namespace Empresa
         public Atendimento()
         {
             InitializeComponent();
+
+            SQLiteConnection ligacao = new SQLiteConnection();
+            ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+            ligacao.Open();
+            string query = "SELECT * FROM login";
+            SQLiteCommand data = new SQLiteCommand(query, ligacao);
+            SQLiteDataReader rdr = data.ExecuteReader();
+
+            string name = " ", pass = " ";
+
+            while (rdr.Read())
+            {
+                name = rdr.GetString(1);
+                pass = rdr.GetString(2);
+            }
+
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    usuario = name,
+                    senha = pass,
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+
+            if (m.credito == "sim")
+            {
+                chkCredito.Checked = true;
+            }
+            if (m.debito == "sim")
+            {
+                chkDebito.Checked = true;
+            }
+            if (m.dinheiro == "sim")
+            {
+                chkDinheiro.Checked = true;
+            }
+
         }
 
         private void alterarStatus(Panel panel, MaskedTextBox mktAbre, MaskedTextBox mktFecha, Boolean status)
