@@ -55,5 +55,47 @@ namespace Empresa
 
             info.Controls.Add(cont);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int x, y;
+        Point Point = new Point();
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = Control.MousePosition.X - this.Location.X;
+            y = Control.MousePosition.Y - this.Location.Y;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point = Control.MousePosition;
+                Point.X -= x;
+                Point.Y -= y;
+                this.Location = Point;
+                Application.DoEvents();
+            }
+        }
     }
 }

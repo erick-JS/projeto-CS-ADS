@@ -44,8 +44,8 @@ namespace Empresa
                 endereco = rdr.GetString(5);
                 bairro = rdr.GetString(6);
                 numero = rdr.GetString(4);
-                cidade = rdr.GetString(9);
-                uf = rdr.GetString(4);
+                cidade = rdr.GetString(8);
+                uf = rdr.GetString(9);
                 telefone = rdr.GetString(7);
                 usuario = rdr.GetString(1);
             }
@@ -92,6 +92,79 @@ namespace Empresa
                 MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSalvarDados.Enabled = false;
                 btnEditarDados.Enabled = true;
+
+                string userv = " ", senhav = " ";
+
+                SQLiteConnection ligacao = new SQLiteConnection();
+                ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+                ligacao.Open();
+                string query0 = "SELECT * FROM login";
+                SQLiteCommand datav = new SQLiteCommand(query0, ligacao);
+                SQLiteDataReader rdrv = datav.ExecuteReader();
+
+                while (rdrv.Read())
+                {
+                    userv = rdrv.GetString(1);
+                    senhav = rdrv.GetString(2);
+                }
+                string quary1 = "UPDATE login SET usuario = '"+ txtUsuario.Text +"', nome ='" + txtNome.Text +"', numero ='" + txtNumero.Text + "', endereco ='" + txtEndereco.Text + "', bairro ='" + txtBairro.Text + "',telefone ='" + txtTelefone.Text + "',cidade ='" + txtCidade.Text + "',uf ='" + txtUF.Text + "'";
+                SQLiteCommand up = new SQLiteCommand(quary1, ligacao);
+                up.ExecuteNonQuery();
+                string query = "SELECT * FROM login";
+                SQLiteCommand data = new SQLiteCommand(query, ligacao);
+                SQLiteDataReader rdr = data.ExecuteReader();
+
+                string user = " ", senhaa = " ",nomee = " ", enderecoo = " ", bairroo = " ", numeroo = " ", cidadee = " ", uff = " ", telefonee = " ", dinheiroo = " ", creditoo = " ", debitoo = " ";
+
+                while (rdr.Read())
+                {
+                    user = rdr.GetString(1);
+                    senhaa = rdr.GetString(2);
+                    nomee = rdr.GetString(3);
+                    enderecoo = rdr.GetString(5);
+                    bairroo = rdr.GetString(6);
+                    numeroo = rdr.GetString(4);
+                    cidadee = rdr.GetString(8);
+                    uff = rdr.GetString(9);
+                    telefonee = rdr.GetString(7);
+                    dinheiroo = rdr.GetString(10);
+                    creditoo = rdr.GetString(11);
+                    debitoo = rdr.GetString(12);
+                }
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "PUT";
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(new
+                    {
+                        usuario = user,
+                        senha = senhaa,
+                        nome = nomee,
+                        numero = numeroo,
+                        endereco = enderecoo,
+                        bairro = bairroo,
+                        telefone = telefonee,
+                        cidade = cidadee,
+                        uf = uff,
+                        dinheiro = dinheiroo,
+                        debito = debitoo,
+                        credito = creditoo,
+                        uv = userv,
+                        sv = senhav
+                    });
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                var stream = httpResponse.GetResponseStream();
+                var sr = new StreamReader(stream);
+                var content = sr.ReadToEnd();
+                dynamic m = JsonConvert.DeserializeObject(content);
 
                 i = 0;
 
@@ -320,9 +393,89 @@ namespace Empresa
             {
                 if(arraySenha[1].Text == arraySenha[2].Text)
                 {
-                    MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnEditarSenha.Enabled = true;
                     btnSalvarSenha.Enabled = false;
+
+                    string userv = " ", senhav = " ";
+
+                    SQLiteConnection ligacao = new SQLiteConnection();
+                    ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+                    ligacao.Open();
+                    string query0 = "SELECT * FROM login";
+                    SQLiteCommand datav = new SQLiteCommand(query0, ligacao);
+                    SQLiteDataReader rdrv = datav.ExecuteReader();
+                    while (rdrv.Read())
+                    {
+                        userv = rdrv.GetString(1);
+                        senhav = rdrv.GetString(2);
+                    }
+
+                    if (txtSenhaAtual.Text == senhav)
+                    {
+                        string quary1 = "UPDATE login SET senha ='" + txtConfSenha.Text + "'";
+                        SQLiteCommand up = new SQLiteCommand(quary1, ligacao);
+                        up.ExecuteNonQuery();
+                        string query = "SELECT * FROM login";
+                        SQLiteCommand data = new SQLiteCommand(query, ligacao);
+                        SQLiteDataReader rdr = data.ExecuteReader();
+
+                        string user = " ", senhaa = " ", nomee = " ", enderecoo = " ", bairroo = " ", numeroo = " ", cidadee = " ", uff = " ", telefonee = " ", dinheiroo = " ", creditoo = " ", debitoo = " ";
+
+                        while (rdr.Read())
+                        {
+                            user = rdr.GetString(1);
+                            senhaa = rdr.GetString(2);
+                            nomee = rdr.GetString(3);
+                            enderecoo = rdr.GetString(5);
+                            bairroo = rdr.GetString(6);
+                            numeroo = rdr.GetString(4);
+                            cidadee = rdr.GetString(8);
+                            uff = rdr.GetString(9);
+                            telefonee = rdr.GetString(7);
+                            dinheiroo = rdr.GetString(10);
+                            creditoo = rdr.GetString(11);
+                            debitoo = rdr.GetString(12);
+                        }
+                        MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
+                        httpWebRequest.ContentType = "application/json";
+                        httpWebRequest.Method = "PUT";
+                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                        using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                        {
+                            string json = new JavaScriptSerializer().Serialize(new
+                            {
+                                usuario = user,
+                                senha = senhaa,
+                                nome = nomee,
+                                numero = numeroo,
+                                endereco = enderecoo,
+                                bairro = bairroo,
+                                telefone = telefonee,
+                                cidade = cidadee,
+                                uf = uff,
+                                dinheiro = dinheiroo,
+                                debito = debitoo,
+                                credito = creditoo,
+                                uv = userv,
+                                sv = senhav
+                            });
+                            streamWriter.Write(json);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
+
+                        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                        var stream = httpResponse.GetResponseStream();
+                        var sr = new StreamReader(stream);
+                        var content = sr.ReadToEnd();
+                        dynamic m = JsonConvert.DeserializeObject(content);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha atual esta errada");
+                    }
 
                     i = 0;
                     while (i < arraySenha.Length)
