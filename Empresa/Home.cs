@@ -18,12 +18,12 @@ namespace Empresa
         {
             InitializeComponent();
 
-            if (!File.Exists(@"dados.db"))
+            /*if (!File.Exists(@"dados.db"))
             {
                 Close();
                 Login newForm2 = new Login();
                 newForm2.ShowDialog();
-            }
+            }*/
         }
         int k = 0;
         int mes = 1;
@@ -76,10 +76,10 @@ namespace Empresa
             {
                 FlowLayoutPanel flow = new FlowLayoutPanel();
                 flow.Name = $"flowDias{i}";
-                flow.Size = new Size(60, 74);
+                flow.Size = new Size(75, 74);
                 flow.BorderStyle = BorderStyle.FixedSingle;
                 flow.BackColor = Color.White;
-                flow.Location = new Point(7, 219);
+                //flow.Location = new Point(7, 219);
 
                 Label label = new Label();
                 if (i >= primeiroDiaSem)
