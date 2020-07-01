@@ -87,7 +87,7 @@ namespace Empresa
                     label.Name = $"lblItem{j}";
                     label.Text = Convert.ToString(j);
 
-                    if (i == DateTime.Now.Day && mes == DateTime.Now.Month)
+                    if (Convert.ToInt32(label.Text) == DateTime.Now.Day && mes == DateTime.Now.Month)
                     {
                         flow.BackColor = Color.DarkRed;
                         label.ForeColor = Color.White;
