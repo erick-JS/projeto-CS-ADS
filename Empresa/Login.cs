@@ -113,10 +113,11 @@ namespace Empresa
                     como.ExecuteNonQuery();
                     como.Dispose();
                     liga.Dispose();
-                    
-                    Hide();
+
+                    Application.Restart();
+                   /* Hide();
                     Home newForm2 = new Home();
-                    newForm2.ShowDialog();
+                    newForm2.ShowDialog();*/
                 }
                 else
                 {

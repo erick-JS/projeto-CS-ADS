@@ -113,6 +113,16 @@ namespace Empresa.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_arredondado_à_esquerda_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-arredondado-à-esquerda-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_maximize_button_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-maximize-button-32", resourceCulture);
@@ -126,6 +136,16 @@ namespace Empresa.Properties {
         internal static System.Drawing.Bitmap icons8_minimizar_janela_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-minimizar-janela-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sair_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sair-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

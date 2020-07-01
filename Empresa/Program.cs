@@ -16,15 +16,7 @@ namespace Empresa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run(new Home());
-            }
-            catch
-            {
-
-            }
-            
+            Application.Run(new Home()); 
         }
     }
 }

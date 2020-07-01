@@ -212,6 +212,8 @@
     <Content Include="Resources\arrow_down_download_downloading_file_save_icon_123800.png" />
     <Content Include="Resources\emblemnew_93501.png" />
     <Content Include="Resources\floppydisk_83674.png" />
+    <None Include="Resources\icons8-logout-arredondado-à-esquerda-50.png" />
+    <None Include="Resources\icons8-sair-24.png" />
     <Content Include="Resources\left-arrow-7_icon-icons.com_70077.png" />
     <Content Include="Resources\lupa.png" />
     <Content Include="Resources\right-arrow-7_icon-icons.com_69946.png" />
