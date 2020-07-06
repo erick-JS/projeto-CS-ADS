@@ -57,3 +57,4 @@ C:\Users\Admin\projeto-CS-ADS\Cliente\obj\Debug\Cliente.csproj.CopyComplete
 C:\Users\Admin\projeto-CS-ADS\Cliente\obj\Debug\Cliente.exe
 C:\Users\Admin\projeto-CS-ADS\Cliente\obj\Debug\Cliente.pdb
 C:\Users\Admin\projeto-CS-ADS\Cliente\obj\Debug\Cliente.EscolherServico.resources
+C:\Users\ovoov\Documents\GitHub\projeto-CS-ADS\Cliente\obj\Debug\Cliente.EscolherServico.resources
