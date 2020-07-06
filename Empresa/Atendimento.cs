@@ -203,5 +203,10 @@ namespace Empresa
 
             btnSalvar.Enabled = true;
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

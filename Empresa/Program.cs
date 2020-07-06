@@ -16,7 +16,7 @@ namespace Empresa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Caixa()); 
+            Application.Run(new Home()); 
         }
     }
 }

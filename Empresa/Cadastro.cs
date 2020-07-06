@@ -89,7 +89,20 @@ namespace Empresa
 
         private void Telefone_Leave(object sender, EventArgs e)
         {
-            if (txtTelefone.Text == "")
+            if (txtTelefone.Text.Length >= 10)
+            {
+                if (txtTelefone.Text.Substring(0, 1) != "(")
+                {
+                    String content = txtTelefone.Text;
+                    txtTelefone.Text = "(" + content.Substring(0, 2) + ") " + content.Substring(2, 5) + "-" + content.Substring(7);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Esta faltando o número no telefone");
+                txtTelefone.Focus();
+            }
+            /*if (txtTelefone.Text == "")
             {
                 txtTelefone.Text = "Telefone";
             }
@@ -107,7 +120,7 @@ namespace Empresa
                 {
                     MessageBox.Show("Esta faltando numero no telefone");
                 }
-            }
+            }*/
             panel_telefone.BackColor = Color.Silver;
         }
 
