@@ -20,6 +20,7 @@ namespace Empresa
         Atendimento aten = new Atendimento();
         Servicos servi = new Servicos();
         Conta cont = new Conta();
+        Caixa cai = new Caixa();
 
         private void btnAtendimento_Click(object sender, EventArgs e)
         {
@@ -27,6 +28,7 @@ namespace Empresa
             aten.Visible = true;
             servi.Visible = false;
             cont.Visible = false;
+            cai.Visible = false;
 
             info.Controls.Add(aten);
         }
@@ -37,13 +39,20 @@ namespace Empresa
             servi.Visible = true;
             aten.Visible = false;
             cont.Visible = false;
+            cai.Visible = false;
 
             info.Controls.Add(servi);
         }
 
         private void btnCaixa_Click(object sender, EventArgs e)
         {
+            cai.TopLevel = false;
+            cai.Visible = true;
+            aten.Visible = false;
+            cont.Visible = false;
+            servi.Visible = false;
 
+            info.Controls.Add(cai);
         }
 
         private void btnConta_Click(object sender, EventArgs e)
@@ -52,6 +61,7 @@ namespace Empresa
             cont.Visible = true;
             servi.Visible = false;
             aten.Visible = false;
+            cai.Visible = false;
 
             info.Controls.Add(cont);
         }

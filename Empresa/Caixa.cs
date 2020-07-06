@@ -16,5 +16,10 @@ namespace Empresa
         {
             InitializeComponent();
         }
+
+        private void chGrafico_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
