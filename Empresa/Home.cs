@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
+using System.Data.SQLite;
 
 namespace Empresa
 {
@@ -18,12 +19,24 @@ namespace Empresa
         {
             InitializeComponent();
 
-            if (!File.Exists(@"dados.db"))
-            {
-                Hide();
-                Login newForm2 = new Login();
-                newForm2.ShowDialog();
-            }
+            string logado = bd.Logado();
+
+            if (logado != "foi")
+           {
+               Hide();
+               Login newForm2 = new Login();
+               newForm2.ShowDialog();
+           }
+            
+           string segunda = bd.GetLogin();
+
+           if (segunda == "")
+           {
+              Hide();
+              preconf newForm2 = new preconf();
+              newForm2.ShowDialog();
+           }
+        
         }
         int k = 0;
         int mes = 1;
@@ -267,8 +280,15 @@ namespace Empresa
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            File.Delete(@"dados.db");
-            Application.Restart();
+            try
+            {
+                bd.Delete();
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("erro:\n" + ex.Message);
+            }
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)

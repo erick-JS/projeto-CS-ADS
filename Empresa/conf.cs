@@ -68,7 +68,7 @@ namespace Empresa
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            this.Close();
         }
         int x, y;
         Point Point = new Point();

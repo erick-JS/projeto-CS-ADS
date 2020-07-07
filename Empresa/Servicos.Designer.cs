@@ -48,9 +48,11 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,7 +61,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 81);
             this.panel1.TabIndex = 1;
@@ -79,7 +81,7 @@
             // 
             this.pnlServico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlServico.BackColor = System.Drawing.Color.Silver;
-            this.pnlServico.Location = new System.Drawing.Point(24, 152);
+            this.pnlServico.Location = new System.Drawing.Point(26, 69);
             this.pnlServico.Name = "pnlServico";
             this.pnlServico.Size = new System.Drawing.Size(299, 3);
             this.pnlServico.TabIndex = 10;
@@ -88,7 +90,7 @@
             // 
             this.pnlPreco.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlPreco.BackColor = System.Drawing.Color.Silver;
-            this.pnlPreco.Location = new System.Drawing.Point(24, 213);
+            this.pnlPreco.Location = new System.Drawing.Point(26, 130);
             this.pnlPreco.Name = "pnlPreco";
             this.pnlPreco.Size = new System.Drawing.Size(299, 3);
             this.pnlPreco.TabIndex = 12;
@@ -97,7 +99,7 @@
             // 
             this.pnlTempo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlTempo.BackColor = System.Drawing.Color.Silver;
-            this.pnlTempo.Location = new System.Drawing.Point(24, 282);
+            this.pnlTempo.Location = new System.Drawing.Point(26, 199);
             this.pnlTempo.Name = "pnlTempo";
             this.pnlTempo.Size = new System.Drawing.Size(299, 3);
             this.pnlTempo.TabIndex = 14;
@@ -108,7 +110,7 @@
             this.txtServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServico.ForeColor = System.Drawing.Color.Silver;
-            this.txtServico.Location = new System.Drawing.Point(24, 120);
+            this.txtServico.Location = new System.Drawing.Point(26, 37);
             this.txtServico.Name = "txtServico";
             this.txtServico.Size = new System.Drawing.Size(300, 30);
             this.txtServico.TabIndex = 0;
@@ -120,7 +122,7 @@
             this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPreco.ForeColor = System.Drawing.Color.Silver;
-            this.txtPreco.Location = new System.Drawing.Point(24, 177);
+            this.txtPreco.Location = new System.Drawing.Point(26, 94);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(300, 30);
             this.txtPreco.TabIndex = 1;
@@ -132,8 +134,8 @@
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox1.Location = new System.Drawing.Point(24, 247);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox1.Location = new System.Drawing.Point(26, 164);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(300, 30);
             this.maskedTextBox1.TabIndex = 2;
@@ -149,7 +151,7 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(20, 311);
+            this.btnEditar.Location = new System.Drawing.Point(22, 228);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(127, 46);
             this.btnEditar.TabIndex = 11;
@@ -165,7 +167,7 @@
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(549, 362);
+            this.btnSalvar.Location = new System.Drawing.Point(551, 279);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(127, 46);
             this.btnSalvar.TabIndex = 12;
@@ -175,8 +177,8 @@
             // dgvServicos
             // 
             this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicos.Location = new System.Drawing.Point(355, 169);
-            this.dgvServicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvServicos.Location = new System.Drawing.Point(357, 86);
+            this.dgvServicos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvServicos.Name = "dgvServicos";
             this.dgvServicos.RowHeadersWidth = 51;
             this.dgvServicos.RowTemplate.Height = 24;
@@ -192,7 +194,7 @@
             this.panel2.Controls.Add(this.btnAnterior);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Location = new System.Drawing.Point(355, 120);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 45);
             this.panel2.TabIndex = 21;
@@ -303,12 +305,29 @@
             this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Location = new System.Drawing.Point(196, 311);
+            this.btnConfirmar.Location = new System.Drawing.Point(198, 228);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(127, 46);
             this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnConfirmar);
+            this.panel3.Controls.Add(this.dgvServicos);
+            this.panel3.Controls.Add(this.pnlServico);
+            this.panel3.Controls.Add(this.pnlPreco);
+            this.panel3.Controls.Add(this.btnSalvar);
+            this.panel3.Controls.Add(this.pnlTempo);
+            this.panel3.Controls.Add(this.btnEditar);
+            this.panel3.Controls.Add(this.txtServico);
+            this.panel3.Controls.Add(this.maskedTextBox1);
+            this.panel3.Controls.Add(this.txtPreco);
+            this.panel3.Location = new System.Drawing.Point(0, 86);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(688, 379);
+            this.panel3.TabIndex = 22;
             // 
             // Servicos
             // 
@@ -316,29 +335,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(688, 475);
-            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgvServicos);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.txtPreco);
-            this.Controls.Add(this.txtServico);
-            this.Controls.Add(this.pnlTempo);
-            this.Controls.Add(this.pnlPreco);
-            this.Controls.Add(this.pnlServico);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Servicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.Servicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,5 +375,6 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Panel panel3;
     }
 }

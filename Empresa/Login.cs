@@ -96,28 +96,10 @@ namespace Empresa
                 string sta = data.status;
                 if (sta == "sim")
                 {
-                    InitializeComponent();
-                    SQLiteConnection.CreateFile(@"dados.db");
-                    SQLiteConnection ligacao = new SQLiteConnection();
-                    ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
-                    ligacao.Open();
-                    string query = "CREATE TABLE login (id int primary key, usuario varchar(50), senha varchar(50),nome VARCHAR(50) NOT NULL,numero VARCHAR(8) NOT NULL,endereco VARCHAR(50) NOT NULL,bairro VARCHAR(20) NOT NULL,telefone VARCHAR(20) NOT NULL,cidade VARCHAR(50) NOT NULL,uf VARCHAR(2) NOT NULL,dinheiro VARCHAR(3) NOT NULL,credito VARCHAR(3) NOT NULL,debito VARCHAR(3) NOT NULL)";
-                    SQLiteCommand comando = new SQLiteCommand(query, ligacao);
-                    comando.ExecuteNonQuery();
-
-                    SQLiteConnection liga = new SQLiteConnection();
-                    liga.ConnectionString = @"Data source = dados.db; Version=3;";
-                    liga.Open();
-                    string querry = "INSERT INTO login VALUES (0,'"+u+"','"+p+ "','" + data.nome + "','" + data.numero + "','" + data.endereco + "','" + data.bairro + "', '" + data.telefone + "','" + data.cidade + "','" + data.uf + "','" + data.dinheiro + "','" + data.credito + "','" + data.debito + "')";
-                    SQLiteCommand como = new SQLiteCommand(querry, liga);
-                    como.ExecuteNonQuery();
-                    como.Dispose();
-                    liga.Dispose();
+                    bd.CriarTabelaSQlite();
+                    bd.Add(u, p, data);
 
                     Application.Restart();
-                   /* Hide();
-                    Home newForm2 = new Home();
-                    newForm2.ShowDialog();*/
                 }
                 else
                 {
