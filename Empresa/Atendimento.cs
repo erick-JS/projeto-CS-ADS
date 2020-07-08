@@ -29,12 +29,31 @@ namespace Empresa
             SQLiteDataReader rdr = data.ExecuteReader();
 
             string dinheiro = " ", credito = " ",debito = " ";
+            string segundao = " ", tercao = " ", quartao = " ", quintao = " ", sextao = " ", sabadoo = " ", domingoo = " ", feriadoo = " ";
+            string a = " ", b = " ", c = " ", d = " ", e = " ", f = " ", g = " ",h = " ";
 
             while (rdr.Read())
             {
                 dinheiro = rdr.GetString(10);
                 credito = rdr.GetString(11);
                 debito = rdr.GetString(12);
+                segundao = rdr.GetString(15);
+                tercao = rdr.GetString(18);
+                quartao = rdr.GetString(20);
+                quintao = rdr.GetString(16);
+                sextao = rdr.GetString(19);
+                sextao = rdr.GetString(10);
+                sabadoo = rdr.GetString(21);
+                domingoo = rdr.GetString(17);
+                feriadoo = rdr.GetString(25);
+                a = rdr.GetString(22);
+                b = rdr.GetString(23);
+                c = rdr.GetString(24);
+                d = rdr.GetString(25);
+                e = rdr.GetString(23);
+                f = rdr.GetString(24);
+                g = rdr.GetString(26);
+                h = rdr.GetString(27);
             }
 
             if (dinheiro == "sim")
@@ -51,6 +70,24 @@ namespace Empresa
             {
                 chkDebito.Checked = true;
             }
+
+            if (segundao == "sim") { chkSegunda.Checked = true; } 
+            if (tercao == "sim") { chkTerca.Checked = true; } 
+            if (quartao == "sim") { chkQuarta.Checked = true; }
+            if (quintao == "sim") { chkQuinta.Checked = true; } 
+            if (sextao == "sim") { chkSexta.Checked = true; } 
+            if (sabadoo == "sim") { chkSabado.Checked = true; } 
+            if (domingoo == "sim") { chkDomingo.Checked = true; } 
+            if (feriadoo == "sim") { chkFeriado.Checked = true; }
+
+            mktHorarioAbre.Text = a;
+            mktHorarioFecha.Text = b;
+            mktAbreSab.Text = c;
+            mktFechaSab.Text = d;
+            mktAbreDom.Text = e;
+            mktFechaDom.Text = f;
+            mktAbreFeriado.Text = g;
+            mktFechaFeriado.Text = h;
         }
 
         private void alterarStatus(Panel panel, MaskedTextBox mktAbre, MaskedTextBox mktFecha, Boolean status)

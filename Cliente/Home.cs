@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace Cliente
 {
     public partial class Home : Form
     {
+        int cdempresa = 0, cdcliente = 0;
         public Home()
         {
             InitializeComponent();
@@ -42,6 +45,7 @@ namespace Cliente
             var content = sr.ReadToEnd();
 
             var ar = content.ToArray();
+            
             int qt = 0;
             for (int i = 0; i < content.Length; i++)
             {
@@ -83,6 +87,20 @@ namespace Cliente
                 label.Name = $"lblItem{i}";
                 label.Text = nome.ToString();
 
+                flow.Click += new EventHandler(bt);
+
+                void bt(Object sender, EventArgs e)
+                {
+                    text.Text = label.Text;
+
+                    string nomes = label.Text;
+
+
+
+                    pegardados("teste");
+                 
+                }
+
                 if (label.Text != " ")
                 {
                     flow.Cursor = Cursors.Hand;
@@ -107,6 +125,40 @@ namespace Cliente
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void pegardados(string nome)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    nome = nome,
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+
+            panel1.Visible = true;
+            numero.Text = m.numero;
+            telefone.Text = m.telefone;
+            cidade.Text = m.cidade;
+            cdcliente = 1;
+            cdempresa = m.id;
+
+            rua.Text = m.endereco;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -142,6 +194,34 @@ namespace Cliente
         {
             x = Control.MousePosition.X - this.Location.X;
             y = Control.MousePosition.Y - this.Location.Y;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/cliente/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    data = data.Text,
+	                horarioinicio = horario.Text,
+	                id_clientes = 1,
+	                id_empresa = 2
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

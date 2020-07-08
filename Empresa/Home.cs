@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
 using System.Data.SQLite;
+using System.Net;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace Empresa
 {
@@ -289,6 +292,46 @@ namespace Empresa
             {
                 MessageBox.Show("erro:\n" + ex.Message);
             }
+        }
+
+        private void pegarinfo(string usuario,string senha,string data,string idpessoal)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/calendario/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "PUT";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    usuario = "erick",
+	                senha = "teste",
+	                data = "07/07/2020",
+	                idpessoal = 2
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Conf newForm2 = new Conf();
+            newForm2.ShowDialog();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            bd.Delete();
+            Application.Restart();
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)

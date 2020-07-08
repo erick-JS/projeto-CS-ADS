@@ -17,7 +17,8 @@ namespace Empresa
 {
     public partial class Conta : Form
     {
-
+        string segundao = " ", tercao = " ", quartao = " ", quintao = " ", sextao = " ", sabadoo = " ", domingoo = " ", feriadoo = " ";
+        string a = " ", b = " ", c = " ", d = " ", re = " ", f = " ", g = " ", h = " ";
         String nome = "Fulano";
         String endereco = "Rua X";
         String bairro = "Vila Progresso";
@@ -153,7 +154,23 @@ namespace Empresa
                         debito = debitoo,
                         credito = creditoo,
                         uv = userv,
-                        sv = senhav
+                        sv = senhav,
+                        hatendimentoi = a,
+                        hatendimentof = b,
+                        segunda = segundao,
+                        quinta = quintao,
+                        domingo = domingoo,
+                        terca = tercao,
+                        sexta = sextao,
+                        quarta = quartao,
+                        sabado = sabadoo,
+                        fsemanaabres = c,
+                        fsemanafechas = d,
+                        fsemanaabred = re,
+                        fsemanafechad = f,
+                        feriado = feriadoo,
+                        feriadoa = g,
+                        feriadof = h
                     });
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -420,6 +437,7 @@ namespace Empresa
                         SQLiteDataReader rdr = data.ExecuteReader();
 
                         string user = " ", senhaa = " ", nomee = " ", enderecoo = " ", bairroo = " ", numeroo = " ", cidadee = " ", uff = " ", telefonee = " ", dinheiroo = " ", creditoo = " ", debitoo = " ";
+                        
 
                         while (rdr.Read())
                         {
@@ -435,6 +453,22 @@ namespace Empresa
                             dinheiroo = rdr.GetString(10);
                             creditoo = rdr.GetString(11);
                             debitoo = rdr.GetString(12);
+                            a = rdr.GetString(22);
+                            b = rdr.GetString(23);
+                            segundao = rdr.GetString(15);
+                            quintao = rdr.GetString(16);
+                            domingoo = rdr.GetString(17);
+                            tercao = rdr.GetString(18);
+                            sextao = rdr.GetString(10);
+                            quartao = rdr.GetString(20);
+                            sabadoo = rdr.GetString(21);
+                            c = rdr.GetString(24);
+                            d = rdr.GetString(25);
+                            re = rdr.GetString(23);
+                            f = rdr.GetString(24);
+                            feriadoo = rdr.GetString(25);
+                            g = rdr.GetString(26);
+                            h = rdr.GetString(27);
                         }
                         MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
@@ -459,7 +493,23 @@ namespace Empresa
                                 debito = debitoo,
                                 credito = creditoo,
                                 uv = userv,
-                                sv = senhav
+                                sv = senhav,
+                                hatendimentoi = a,
+                                hatendimentof = b,
+                                segunda = segundao,
+                                quinta = quintao,
+                                domingo = domingoo,
+                                terca = tercao,
+                                sexta = sextao,
+                                quarta = quartao,
+                                sabado = sabadoo,
+                                fsemanaabres = c,
+                                fsemanafechas = d,
+                                fsemanaabred = re,
+                                fsemanafechad = f,
+                                feriado = feriadoo,
+                                feriadoa = g,
+                                feriadof = h
                             });
                             streamWriter.Write(json);
                             streamWriter.Flush();

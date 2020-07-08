@@ -51,6 +51,7 @@
             this.flowDias = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDataAtual = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.infoscalendar = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,7 +71,7 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(889, 81);
             this.panel1.TabIndex = 0;
@@ -86,7 +87,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // pictureBox1
             // 
@@ -99,7 +100,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // panel5
             // 
@@ -189,7 +190,7 @@
             this.panel2.Controls.Add(this.btnAntes);
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(480, 49);
             this.panel2.TabIndex = 1;
@@ -201,7 +202,7 @@
             this.btnProximo.FlatAppearance.BorderSize = 0;
             this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximo.Location = new System.Drawing.Point(402, 7);
-            this.btnProximo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProximo.Margin = new System.Windows.Forms.Padding(2);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(56, 34);
             this.btnProximo.TabIndex = 1;
@@ -216,7 +217,7 @@
             this.btnAntes.FlatAppearance.BorderSize = 0;
             this.btnAntes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntes.Location = new System.Drawing.Point(340, 7);
-            this.btnAntes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAntes.Margin = new System.Windows.Forms.Padding(2);
             this.btnAntes.Name = "btnAntes";
             this.btnAntes.Size = new System.Drawing.Size(56, 34);
             this.btnAntes.TabIndex = 0;
@@ -248,7 +249,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(2, 55);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(480, 41);
             this.panel4.TabIndex = 2;
@@ -351,7 +352,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowDias.BackColor = System.Drawing.SystemColors.Control;
             this.flowDias.Location = new System.Drawing.Point(2, 100);
-            this.flowDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowDias.Margin = new System.Windows.Forms.Padding(2);
             this.flowDias.Name = "flowDias";
             this.flowDias.Size = new System.Drawing.Size(480, 491);
             this.flowDias.TabIndex = 3;
@@ -386,20 +387,31 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(484, 549);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
+            // infoscalendar
+            // 
+            this.infoscalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.infoscalendar.Location = new System.Drawing.Point(511, 131);
+            this.infoscalendar.Name = "infoscalendar";
+            this.infoscalendar.Size = new System.Drawing.Size(369, 503);
+            this.infoscalendar.TabIndex = 6;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(886, 640);
+            this.Controls.Add(this.infoscalendar);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblDataAtual);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Home";
-            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Home_Load);
@@ -443,5 +455,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel infoscalendar;
     }
 }

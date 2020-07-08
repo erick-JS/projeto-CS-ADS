@@ -45,10 +45,10 @@
             this.chkSegunda = new System.Windows.Forms.CheckBox();
             this.gpxFimSemana = new System.Windows.Forms.GroupBox();
             this.pnlDomingo = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblDomingo = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mktFechaDom = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.pnlFechaDom = new System.Windows.Forms.Panel();
             this.pnlAbreDom = new System.Windows.Forms.Panel();
             this.mktAbreDom = new System.Windows.Forms.MaskedTextBox();
@@ -61,6 +61,16 @@
             this.pnlAbreSab = new System.Windows.Forms.Panel();
             this.mktAbreSab = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.servico = new System.Windows.Forms.Panel();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.pnlServico = new System.Windows.Forms.Panel();
+            this.pnlPreco = new System.Windows.Forms.Panel();
+            this.pnlTempo = new System.Windows.Forms.Panel();
+            this.txtServico = new System.Windows.Forms.TextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.all1 = new System.Windows.Forms.TableLayoutPanel();
             this.gpxFeriados = new System.Windows.Forms.GroupBox();
             this.pnlFeriado = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,32 +80,19 @@
             this.pnlAbreFer = new System.Windows.Forms.Panel();
             this.mktAbreFeriado = new System.Windows.Forms.MaskedTextBox();
             this.chkFeriado = new System.Windows.Forms.CheckBox();
-            this.all1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.servico = new System.Windows.Forms.Panel();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.dgvServicos = new System.Windows.Forms.DataGridView();
-            this.pnlServico = new System.Windows.Forms.Panel();
-            this.pnlPreco = new System.Windows.Forms.Panel();
-            this.pnlTempo = new System.Windows.Forms.Panel();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.txtServico = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.gpxHoraAtendimento.SuspendLayout();
             this.gpxDiasSemana.SuspendLayout();
             this.gpxFimSemana.SuspendLayout();
             this.pnlDomingo.SuspendLayout();
             this.pnlSabado.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.servico.SuspendLayout();
+            this.all1.SuspendLayout();
             this.gpxFeriados.SuspendLayout();
             this.pnlFeriado.SuspendLayout();
-            this.all1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.servico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
             this.SuspendLayout();
             // 
             // gpxHoraAtendimento
@@ -299,6 +296,16 @@
             this.pnlDomingo.Size = new System.Drawing.Size(322, 31);
             this.pnlDomingo.TabIndex = 30;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(77, 6);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 20);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Abre";
+            // 
             // lblDomingo
             // 
             this.lblDomingo.AutoSize = true;
@@ -330,16 +337,6 @@
             this.mktFechaDom.Size = new System.Drawing.Size(47, 26);
             this.mktFechaDom.TabIndex = 30;
             this.mktFechaDom.ValidatingType = typeof(System.DateTime);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(77, 6);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 20);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Abre";
             // 
             // pnlFechaDom
             // 
@@ -466,6 +463,139 @@
             this.panel2.Size = new System.Drawing.Size(797, 447);
             this.panel2.TabIndex = 20;
             // 
+            // servico
+            // 
+            this.servico.Controls.Add(this.btnConfirmar);
+            this.servico.Controls.Add(this.pnlServico);
+            this.servico.Controls.Add(this.pnlPreco);
+            this.servico.Controls.Add(this.pnlTempo);
+            this.servico.Controls.Add(this.txtServico);
+            this.servico.Controls.Add(this.maskedTextBox1);
+            this.servico.Controls.Add(this.txtPreco);
+            this.servico.Location = new System.Drawing.Point(64, 64);
+            this.servico.Name = "servico";
+            this.servico.Size = new System.Drawing.Size(688, 303);
+            this.servico.TabIndex = 23;
+            this.servico.Visible = false;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Location = new System.Drawing.Point(290, 214);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(127, 46);
+            this.btnConfirmar.TabIndex = 3;
+            this.btnConfirmar.Text = "Adicionar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // pnlServico
+            // 
+            this.pnlServico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlServico.BackColor = System.Drawing.Color.Silver;
+            this.pnlServico.Location = new System.Drawing.Point(198, 57);
+            this.pnlServico.Name = "pnlServico";
+            this.pnlServico.Size = new System.Drawing.Size(299, 3);
+            this.pnlServico.TabIndex = 10;
+            // 
+            // pnlPreco
+            // 
+            this.pnlPreco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlPreco.BackColor = System.Drawing.Color.Silver;
+            this.pnlPreco.Location = new System.Drawing.Point(198, 118);
+            this.pnlPreco.Name = "pnlPreco";
+            this.pnlPreco.Size = new System.Drawing.Size(299, 3);
+            this.pnlPreco.TabIndex = 12;
+            // 
+            // pnlTempo
+            // 
+            this.pnlTempo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlTempo.BackColor = System.Drawing.Color.Silver;
+            this.pnlTempo.Location = new System.Drawing.Point(198, 187);
+            this.pnlTempo.Name = "pnlTempo";
+            this.pnlTempo.Size = new System.Drawing.Size(299, 3);
+            this.pnlTempo.TabIndex = 14;
+            // 
+            // txtServico
+            // 
+            this.txtServico.BackColor = System.Drawing.SystemColors.Control;
+            this.txtServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServico.ForeColor = System.Drawing.Color.Silver;
+            this.txtServico.Location = new System.Drawing.Point(198, 31);
+            this.txtServico.Name = "txtServico";
+            this.txtServico.Size = new System.Drawing.Size(300, 30);
+            this.txtServico.TabIndex = 0;
+            this.txtServico.Text = "Serviço";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
+            this.maskedTextBox1.Location = new System.Drawing.Point(198, 158);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(300, 30);
+            this.maskedTextBox1.TabIndex = 2;
+            this.maskedTextBox1.Text = "Tempo estimado";
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreco.ForeColor = System.Drawing.Color.Silver;
+            this.txtPreco.Location = new System.Drawing.Point(198, 88);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(300, 30);
+            this.txtPreco.TabIndex = 1;
+            this.txtPreco.Text = "Preço";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(227, 373);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(367, 55);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // all1
+            // 
+            this.all1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.all1.ColumnCount = 2;
+            this.all1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.all1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.all1.Controls.Add(this.gpxDiasSemana, 0, 1);
+            this.all1.Controls.Add(this.gpxHoraAtendimento, 0, 0);
+            this.all1.Controls.Add(this.gpxFimSemana, 1, 1);
+            this.all1.Controls.Add(this.gpxFeriados, 1, 0);
+            this.all1.Location = new System.Drawing.Point(60, 67);
+            this.all1.Name = "all1";
+            this.all1.RowCount = 2;
+            this.all1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.all1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.all1.Size = new System.Drawing.Size(715, 304);
+            this.all1.TabIndex = 19;
+            // 
             // gpxFeriados
             // 
             this.gpxFeriados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -563,42 +693,6 @@
             this.chkFeriado.Text = "Trabalha em feriados?";
             this.chkFeriado.UseVisualStyleBackColor = true;
             // 
-            // all1
-            // 
-            this.all1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.all1.ColumnCount = 2;
-            this.all1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.all1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.all1.Controls.Add(this.gpxDiasSemana, 0, 1);
-            this.all1.Controls.Add(this.gpxHoraAtendimento, 0, 0);
-            this.all1.Controls.Add(this.gpxFimSemana, 1, 1);
-            this.all1.Controls.Add(this.gpxFeriados, 1, 0);
-            this.all1.Location = new System.Drawing.Point(60, 67);
-            this.all1.Name = "all1";
-            this.all1.RowCount = 2;
-            this.all1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.all1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.all1.Size = new System.Drawing.Size(715, 304);
-            this.all1.TabIndex = 19;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(227, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(367, 55);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -623,131 +717,6 @@
             this.label1.Text = "Atendimento";
             this.label1.UseCompatibleTextRendering = true;
             // 
-            // servico
-            // 
-            this.servico.Controls.Add(this.btnConfirmar);
-            this.servico.Controls.Add(this.dgvServicos);
-            this.servico.Controls.Add(this.pnlServico);
-            this.servico.Controls.Add(this.pnlPreco);
-            this.servico.Controls.Add(this.pnlTempo);
-            this.servico.Controls.Add(this.btnEditar);
-            this.servico.Controls.Add(this.txtServico);
-            this.servico.Controls.Add(this.maskedTextBox1);
-            this.servico.Controls.Add(this.txtPreco);
-            this.servico.Location = new System.Drawing.Point(64, 64);
-            this.servico.Name = "servico";
-            this.servico.Size = new System.Drawing.Size(688, 303);
-            this.servico.TabIndex = 23;
-            this.servico.Visible = false;
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Location = new System.Drawing.Point(198, 190);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(127, 46);
-            this.btnConfirmar.TabIndex = 3;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            // 
-            // dgvServicos
-            // 
-            this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicos.Location = new System.Drawing.Point(361, 48);
-            this.dgvServicos.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvServicos.Name = "dgvServicos";
-            this.dgvServicos.RowHeadersWidth = 51;
-            this.dgvServicos.RowTemplate.Height = 24;
-            this.dgvServicos.Size = new System.Drawing.Size(322, 188);
-            this.dgvServicos.TabIndex = 10;
-            // 
-            // pnlServico
-            // 
-            this.pnlServico.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlServico.BackColor = System.Drawing.Color.Silver;
-            this.pnlServico.Location = new System.Drawing.Point(26, 31);
-            this.pnlServico.Name = "pnlServico";
-            this.pnlServico.Size = new System.Drawing.Size(299, 3);
-            this.pnlServico.TabIndex = 10;
-            // 
-            // pnlPreco
-            // 
-            this.pnlPreco.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlPreco.BackColor = System.Drawing.Color.Silver;
-            this.pnlPreco.Location = new System.Drawing.Point(26, 92);
-            this.pnlPreco.Name = "pnlPreco";
-            this.pnlPreco.Size = new System.Drawing.Size(299, 3);
-            this.pnlPreco.TabIndex = 12;
-            // 
-            // pnlTempo
-            // 
-            this.pnlTempo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlTempo.BackColor = System.Drawing.Color.Silver;
-            this.pnlTempo.Location = new System.Drawing.Point(26, 161);
-            this.pnlTempo.Name = "pnlTempo";
-            this.pnlTempo.Size = new System.Drawing.Size(299, 3);
-            this.pnlTempo.TabIndex = 14;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(22, 190);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(127, 46);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // txtServico
-            // 
-            this.txtServico.BackColor = System.Drawing.SystemColors.Control;
-            this.txtServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServico.ForeColor = System.Drawing.Color.Silver;
-            this.txtServico.Location = new System.Drawing.Point(26, 5);
-            this.txtServico.Name = "txtServico";
-            this.txtServico.Size = new System.Drawing.Size(300, 30);
-            this.txtServico.TabIndex = 0;
-            this.txtServico.Text = "Serviço";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox1.Location = new System.Drawing.Point(26, 132);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(300, 30);
-            this.maskedTextBox1.TabIndex = 2;
-            this.maskedTextBox1.Text = "Tempo estimado";
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreco.ForeColor = System.Drawing.Color.Silver;
-            this.txtPreco.Location = new System.Drawing.Point(26, 62);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(300, 30);
-            this.txtPreco.TabIndex = 1;
-            this.txtPreco.Text = "Preço";
-            // 
             // preconf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,16 +737,15 @@
             this.pnlSabado.ResumeLayout(false);
             this.pnlSabado.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.servico.ResumeLayout(false);
+            this.servico.PerformLayout();
+            this.all1.ResumeLayout(false);
             this.gpxFeriados.ResumeLayout(false);
             this.gpxFeriados.PerformLayout();
             this.pnlFeriado.ResumeLayout(false);
             this.pnlFeriado.PerformLayout();
-            this.all1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.servico.ResumeLayout(false);
-            this.servico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -832,11 +800,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel servico;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.DataGridView dgvServicos;
         private System.Windows.Forms.Panel pnlServico;
         private System.Windows.Forms.Panel pnlPreco;
         private System.Windows.Forms.Panel pnlTempo;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtServico;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox txtPreco;
