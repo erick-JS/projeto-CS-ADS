@@ -92,7 +92,7 @@ namespace Empresa
             {
                 FlowLayoutPanel flow = new FlowLayoutPanel();
                 flow.Name = $"flowDias{i}";
-                flow.Size = new Size(60, 74);
+                flow.Size = new Size(74, 74);
                 flow.BorderStyle = BorderStyle.FixedSingle;
                 flow.BackColor = Color.White;
                 //flow.Location = new Point(7, 219);
