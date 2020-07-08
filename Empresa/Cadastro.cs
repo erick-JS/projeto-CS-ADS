@@ -377,7 +377,23 @@ namespace Empresa
                             uf = txtUF.Text,
                             dinheiro = dinheiroo,
                             debito = debitoo,
-                            credito = creditoo
+                            credito = creditoo,
+                            hatendimentoi = "",
+                            hatendimentof = "",
+                            segunda = "",
+                            quinta = "",
+                            domingo = "",
+                            terca = "",
+                            sexta = "",
+                            quarta = "",
+                            sabado = "",
+                            fsemanaabres = "",
+                            fsemanafechas = "",
+                            fsemanaabred = "",
+                            fsemanafechad = "",
+                            feriado = "",
+                            feriadoa = "",
+                            feriadof = ""
                         });
                         streamWriter.Write(json);
                         streamWriter.Flush();
