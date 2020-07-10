@@ -97,7 +97,7 @@
             this.tbDadosCadastro.Controls.Add(this.tabAlteraConta);
             this.tbDadosCadastro.Controls.Add(this.tabAlteraSenha);
             this.tbDadosCadastro.Location = new System.Drawing.Point(66, 63);
-            this.tbDadosCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDadosCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.tbDadosCadastro.Name = "tbDadosCadastro";
             this.tbDadosCadastro.SelectedIndex = 0;
             this.tbDadosCadastro.Size = new System.Drawing.Size(547, 404);
@@ -124,9 +124,9 @@
             this.tabAlteraConta.Controls.Add(this.txtEndereco);
             this.tabAlteraConta.Controls.Add(this.txtNome);
             this.tabAlteraConta.Location = new System.Drawing.Point(4, 22);
-            this.tabAlteraConta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAlteraConta.Margin = new System.Windows.Forms.Padding(2);
             this.tabAlteraConta.Name = "tabAlteraConta";
-            this.tabAlteraConta.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAlteraConta.Padding = new System.Windows.Forms.Padding(2);
             this.tabAlteraConta.Size = new System.Drawing.Size(539, 378);
             this.tabAlteraConta.TabIndex = 0;
             this.tabAlteraConta.Text = "Dados cadastrais";
@@ -316,7 +316,7 @@
             this.txtTelefone.ForeColor = System.Drawing.Color.Silver;
             this.txtTelefone.HideSelection = false;
             this.txtTelefone.Location = new System.Drawing.Point(265, 154);
-            this.txtTelefone.MaxLength = 11;
+            this.txtTelefone.MaxLength = 13;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(264, 31);
             this.txtTelefone.TabIndex = 7;
@@ -411,9 +411,9 @@
             this.tabAlteraSenha.Controls.Add(this.panel_senhaatual);
             this.tabAlteraSenha.Controls.Add(this.txtSenhaAtual);
             this.tabAlteraSenha.Location = new System.Drawing.Point(4, 22);
-            this.tabAlteraSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAlteraSenha.Margin = new System.Windows.Forms.Padding(2);
             this.tabAlteraSenha.Name = "tabAlteraSenha";
-            this.tabAlteraSenha.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAlteraSenha.Padding = new System.Windows.Forms.Padding(2);
             this.tabAlteraSenha.Size = new System.Drawing.Size(539, 378);
             this.tabAlteraSenha.TabIndex = 1;
             this.tabAlteraSenha.Text = "Alterar senha";
@@ -549,7 +549,7 @@
             this.Controls.Add(this.tbDadosCadastro);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Conta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conta";

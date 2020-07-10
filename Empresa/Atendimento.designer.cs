@@ -243,7 +243,7 @@
             // 
             this.mktHorarioFecha.ForeColor = System.Drawing.Color.Silver;
             this.mktHorarioFecha.Location = new System.Drawing.Point(183, 41);
-            this.mktHorarioFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktHorarioFecha.Margin = new System.Windows.Forms.Padding(2);
             this.mktHorarioFecha.Mask = "00:00";
             this.mktHorarioFecha.Name = "mktHorarioFecha";
             this.mktHorarioFecha.Size = new System.Drawing.Size(47, 26);
@@ -274,7 +274,7 @@
             // 
             this.mktHorarioAbre.ForeColor = System.Drawing.Color.Silver;
             this.mktHorarioAbre.Location = new System.Drawing.Point(51, 41);
-            this.mktHorarioAbre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktHorarioAbre.Margin = new System.Windows.Forms.Padding(2);
             this.mktHorarioAbre.Mask = "00:00";
             this.mktHorarioAbre.Name = "mktHorarioAbre";
             this.mktHorarioAbre.Size = new System.Drawing.Size(47, 26);
@@ -307,15 +307,15 @@
             // 
             // pnlDomingo
             // 
+            this.pnlDomingo.Controls.Add(this.label9);
             this.pnlDomingo.Controls.Add(this.lblDomingo);
             this.pnlDomingo.Controls.Add(this.label7);
             this.pnlDomingo.Controls.Add(this.mktFechaDom);
-            this.pnlDomingo.Controls.Add(this.label9);
             this.pnlDomingo.Controls.Add(this.pnlFechaDom);
             this.pnlDomingo.Controls.Add(this.pnlAbreDom);
             this.pnlDomingo.Controls.Add(this.mktAbreDom);
             this.pnlDomingo.Location = new System.Drawing.Point(5, 65);
-            this.pnlDomingo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDomingo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDomingo.Name = "pnlDomingo";
             this.pnlDomingo.Size = new System.Drawing.Size(289, 31);
             this.pnlDomingo.TabIndex = 30;
@@ -345,7 +345,7 @@
             // 
             this.mktFechaDom.ForeColor = System.Drawing.Color.Silver;
             this.mktFechaDom.Location = new System.Drawing.Point(240, 2);
-            this.mktFechaDom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktFechaDom.Margin = new System.Windows.Forms.Padding(2);
             this.mktFechaDom.Mask = "00:00";
             this.mktFechaDom.Name = "mktFechaDom";
             this.mktFechaDom.Size = new System.Drawing.Size(47, 26);
@@ -384,7 +384,7 @@
             // 
             this.mktAbreDom.ForeColor = System.Drawing.Color.Silver;
             this.mktAbreDom.Location = new System.Drawing.Point(123, 2);
-            this.mktAbreDom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktAbreDom.Margin = new System.Windows.Forms.Padding(2);
             this.mktAbreDom.Mask = "00:00";
             this.mktAbreDom.Name = "mktAbreDom";
             this.mktAbreDom.Size = new System.Drawing.Size(47, 26);
@@ -395,15 +395,15 @@
             // 
             // pnlSabado
             // 
+            this.pnlSabado.Controls.Add(this.label6);
             this.pnlSabado.Controls.Add(this.label5);
             this.pnlSabado.Controls.Add(this.lblSabado);
             this.pnlSabado.Controls.Add(this.mktFechaSab);
-            this.pnlSabado.Controls.Add(this.label6);
             this.pnlSabado.Controls.Add(this.pnlFechaSab);
             this.pnlSabado.Controls.Add(this.pnlAbreSab);
             this.pnlSabado.Controls.Add(this.mktAbreSab);
             this.pnlSabado.Location = new System.Drawing.Point(5, 24);
-            this.pnlSabado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSabado.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSabado.Name = "pnlSabado";
             this.pnlSabado.Size = new System.Drawing.Size(289, 31);
             this.pnlSabado.TabIndex = 29;
@@ -433,7 +433,7 @@
             // 
             this.mktFechaSab.ForeColor = System.Drawing.Color.Silver;
             this.mktFechaSab.Location = new System.Drawing.Point(236, 2);
-            this.mktFechaSab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktFechaSab.Margin = new System.Windows.Forms.Padding(2);
             this.mktFechaSab.Mask = "00:00";
             this.mktFechaSab.Name = "mktFechaSab";
             this.mktFechaSab.Size = new System.Drawing.Size(47, 26);
@@ -472,7 +472,7 @@
             // 
             this.mktAbreSab.ForeColor = System.Drawing.Color.Silver;
             this.mktAbreSab.Location = new System.Drawing.Point(118, 2);
-            this.mktAbreSab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktAbreSab.Margin = new System.Windows.Forms.Padding(2);
             this.mktAbreSab.Mask = "00:00";
             this.mktAbreSab.Name = "mktAbreSab";
             this.mktAbreSab.Size = new System.Drawing.Size(47, 26);
@@ -504,7 +504,7 @@
             this.pnlFeriado.Controls.Add(this.pnlAbreFer);
             this.pnlFeriado.Controls.Add(this.mktAbreFeriado);
             this.pnlFeriado.Location = new System.Drawing.Point(4, 58);
-            this.pnlFeriado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFeriado.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFeriado.Name = "pnlFeriado";
             this.pnlFeriado.Size = new System.Drawing.Size(292, 41);
             this.pnlFeriado.TabIndex = 21;
@@ -523,7 +523,7 @@
             // 
             this.mktFechaFeriado.ForeColor = System.Drawing.Color.Silver;
             this.mktFechaFeriado.Location = new System.Drawing.Point(179, 1);
-            this.mktFechaFeriado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktFechaFeriado.Margin = new System.Windows.Forms.Padding(2);
             this.mktFechaFeriado.Mask = "00:00";
             this.mktFechaFeriado.Name = "mktFechaFeriado";
             this.mktFechaFeriado.Size = new System.Drawing.Size(47, 26);
@@ -562,7 +562,7 @@
             // 
             this.mktAbreFeriado.ForeColor = System.Drawing.Color.Silver;
             this.mktAbreFeriado.Location = new System.Drawing.Point(47, 1);
-            this.mktAbreFeriado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktAbreFeriado.Margin = new System.Windows.Forms.Padding(2);
             this.mktAbreFeriado.Mask = "00:00";
             this.mktAbreFeriado.Name = "mktAbreFeriado";
             this.mktAbreFeriado.Size = new System.Drawing.Size(47, 26);
@@ -575,7 +575,7 @@
             // 
             this.chkFeriado.AutoSize = true;
             this.chkFeriado.Location = new System.Drawing.Point(5, 24);
-            this.chkFeriado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkFeriado.Margin = new System.Windows.Forms.Padding(2);
             this.chkFeriado.Name = "chkFeriado";
             this.chkFeriado.Size = new System.Drawing.Size(186, 24);
             this.chkFeriado.TabIndex = 15;
@@ -694,7 +694,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Atendimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

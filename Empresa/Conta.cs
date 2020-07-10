@@ -18,10 +18,10 @@ namespace Empresa
     public partial class Conta : Form
     {
         string segundao = " ", tercao = " ", quartao = " ", quintao = " ", sextao = " ", sabadoo = " ", domingoo = " ", feriadoo = " ";
-        string a = " ", b = " ", c = " ", d = " ", re = " ", f = " ", g = " ", h = " ";
+        string amktHorarioAbre1 = " ", mktHorarioFecha1 = " ", mktAbreSab1 = " ", mktFechaSab1 = " ", mktAbreDom1 = " ", mktFechaDom1 = " ", mktAbreFeriado1 = " ", mktFechaFeriado1 = " ";
         String nome = "Fulano";
         String endereco = "Rua X";
-        String bairro = "Vila Progresso";
+         String bairro = "Vila Progresso";
         String numero = "234";
         String cidade = "Sorocaba";
         String uf = "SP";
@@ -90,7 +90,6 @@ namespace Empresa
 
             if(cont_valido == 8)
             {
-                MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSalvarDados.Enabled = false;
                 btnEditarDados.Enabled = true;
 
@@ -131,6 +130,22 @@ namespace Empresa
                     dinheiroo = rdr.GetString(10);
                     creditoo = rdr.GetString(11);
                     debitoo = rdr.GetString(12);
+                    segundao = rdr.GetString(15);
+                    tercao = rdr.GetString(18);
+                    quartao = rdr.GetString(20);
+                    quintao = rdr.GetString(16);
+                    sextao = rdr.GetString(19);
+                    sabadoo = rdr.GetString(21);
+                    domingoo = rdr.GetString(17);
+                    feriadoo = rdr.GetString(26);
+                    amktHorarioAbre1 = rdr.GetString(13);
+                    mktHorarioFecha1 = rdr.GetString(14);
+                    mktAbreSab1 = rdr.GetString(22);
+                    mktFechaSab1 = rdr.GetString(23);
+                    mktAbreDom1 = rdr.GetString(24);
+                    mktFechaDom1 = rdr.GetString(25);
+                    mktAbreFeriado1 = rdr.GetString(27);
+                    mktFechaFeriado1 = rdr.GetString(28);
                 }
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
                 httpWebRequest.ContentType = "application/json";
@@ -155,8 +170,8 @@ namespace Empresa
                         credito = creditoo,
                         uv = userv,
                         sv = senhav,
-                        hatendimentoi = a,
-                        hatendimentof = b,
+                        hatendimentoi = amktHorarioAbre1,
+                        hatendimentof = mktHorarioFecha1,
                         segunda = segundao,
                         quinta = quintao,
                         domingo = domingoo,
@@ -164,13 +179,13 @@ namespace Empresa
                         sexta = sextao,
                         quarta = quartao,
                         sabado = sabadoo,
-                        fsemanaabres = c,
-                        fsemanafechas = d,
-                        fsemanaabred = re,
-                        fsemanafechad = f,
+                        fsemanaabres = mktAbreSab1,
+                        fsemanafechas = mktFechaSab1,
+                        fsemanaabred = mktAbreDom1,
+                        fsemanafechad = mktFechaDom1,
                         feriado = feriadoo,
-                        feriadoa = g,
-                        feriadof = h
+                        feriadoa = mktAbreFeriado1,
+                        feriadof = mktFechaFeriado1
                     });
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -190,6 +205,8 @@ namespace Empresa
                     arrayDados[i].Enabled = false;
                     i++;
                 }
+
+                MessageBox.Show("Dados alterados com sucesso");
             }
         }
 
@@ -453,24 +470,23 @@ namespace Empresa
                             dinheiroo = rdr.GetString(10);
                             creditoo = rdr.GetString(11);
                             debitoo = rdr.GetString(12);
-                            a = rdr.GetString(22);
-                            b = rdr.GetString(23);
                             segundao = rdr.GetString(15);
-                            quintao = rdr.GetString(16);
-                            domingoo = rdr.GetString(17);
                             tercao = rdr.GetString(18);
-                            sextao = rdr.GetString(10);
                             quartao = rdr.GetString(20);
+                            quintao = rdr.GetString(16);
+                            sextao = rdr.GetString(19);
                             sabadoo = rdr.GetString(21);
-                            c = rdr.GetString(24);
-                            d = rdr.GetString(25);
-                            re = rdr.GetString(23);
-                            f = rdr.GetString(24);
-                            feriadoo = rdr.GetString(25);
-                            g = rdr.GetString(26);
-                            h = rdr.GetString(27);
+                            domingoo = rdr.GetString(17);
+                            feriadoo = rdr.GetString(26);
+                            amktHorarioAbre1 = rdr.GetString(13);
+                            mktHorarioFecha1 = rdr.GetString(14);
+                            mktAbreSab1 = rdr.GetString(22);
+                            mktFechaSab1 = rdr.GetString(23);
+                            mktAbreDom1 = rdr.GetString(24);
+                            mktFechaDom1 = rdr.GetString(25);
+                            mktAbreFeriado1 = rdr.GetString(27);
+                            mktFechaFeriado1 = rdr.GetString(28);
                         }
-                        MessageBox.Show("Dados validados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresaget/");
                         httpWebRequest.ContentType = "application/json";
                         httpWebRequest.Method = "PUT";
@@ -494,8 +510,8 @@ namespace Empresa
                                 credito = creditoo,
                                 uv = userv,
                                 sv = senhav,
-                                hatendimentoi = a,
-                                hatendimentof = b,
+                                hatendimentoi = amktHorarioAbre1,
+                                hatendimentof = mktHorarioFecha1,
                                 segunda = segundao,
                                 quinta = quintao,
                                 domingo = domingoo,
@@ -503,13 +519,13 @@ namespace Empresa
                                 sexta = sextao,
                                 quarta = quartao,
                                 sabado = sabadoo,
-                                fsemanaabres = c,
-                                fsemanafechas = d,
-                                fsemanaabred = re,
-                                fsemanafechad = f,
+                                fsemanaabres = mktAbreSab1,
+                                fsemanafechas = mktFechaSab1,
+                                fsemanaabred = mktAbreDom1,
+                                fsemanafechad = mktFechaDom1,
                                 feriado = feriadoo,
-                                feriadoa = g,
-                                feriadof = h
+                                feriadoa = mktAbreFeriado1,
+                                feriadof = mktFechaFeriado1
                             });
                             streamWriter.Write(json);
                             streamWriter.Flush();
@@ -521,6 +537,8 @@ namespace Empresa
                         var sr = new StreamReader(stream);
                         var content = sr.ReadToEnd();
                         dynamic m = JsonConvert.DeserializeObject(content);
+
+                        MessageBox.Show("Senha alterada com sucesso");
                     }
                     else
                     {
@@ -534,6 +552,13 @@ namespace Empresa
                         arraySenha[i].Text = "";
                         i++;
                     }
+
+                    txtSenhaAtual.PasswordChar = vazio;
+                    txtNovaSenha.PasswordChar = vazio;
+                    txtConfSenha.PasswordChar = vazio;
+                    txtSenhaAtual.Text = "Senha atual";
+                    txtNovaSenha.Text = "Nova senha";
+                    txtConfSenha.Text = "Confirmar senha";
                 }
                 else
                 {

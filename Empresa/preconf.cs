@@ -135,7 +135,7 @@ namespace Empresa
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/servicos/");
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "PUT";
+            httpWebRequest.Method = "POST";
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
@@ -145,7 +145,7 @@ namespace Empresa
                     nome = txtServico.Text,
                     preco = txtPreco.Text,
                     horario = maskedTextBox1.Text,
-                    id_empresa = id,
+                    id_empresa = id
 
                 });
                 streamWriter.Write(json);

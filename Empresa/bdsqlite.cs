@@ -125,9 +125,6 @@ namespace Empresa
                     cmd.CommandText = "drop table login";
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "drop table servicos";
-                    cmd.ExecuteNonQuery();
-
                 }
             }
             catch (Exception ex)
