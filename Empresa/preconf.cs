@@ -169,6 +169,12 @@ namespace Empresa
             var content = sr.ReadToEnd();
             dynamic m = JsonConvert.DeserializeObject(content);
 
+            txtServico.Text = "Serviço";
+            txtPreco.Text = "Preço";
+            mstTempoEstimado.Text = "Tempo estimado";
+
+            MessageBox.Show("Serviço criado com sucesso");
+
         }
 
         private void txtServico_Enter(object sender, EventArgs e)
