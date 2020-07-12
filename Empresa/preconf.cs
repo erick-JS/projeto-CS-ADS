@@ -25,6 +25,16 @@ namespace Empresa
         int j = 0;
         int id = 0;
 
+        private void alterarStatus(Panel panel, MaskedTextBox mktAbre, MaskedTextBox mktFecha, Boolean status)
+        {
+            panel.Enabled = status;
+            if (status == false)
+            {
+                mktAbre.Text = "";
+                mktFecha.Text = "";
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string segundao = " ", tercao = " ", quartao = " ", quintao = " ", sextao = " ", sabadoo = " ",domingoo = " ",feriadoo = " ";
@@ -144,7 +154,7 @@ namespace Empresa
                 {
                     nome = txtServico.Text,
                     preco = txtPreco.Text,
-                    horario = maskedTextBox1.Text,
+                    horario = mstTempoEstimado.Text,
                     id_empresa = id
 
                 });
@@ -159,6 +169,176 @@ namespace Empresa
             var content = sr.ReadToEnd();
             dynamic m = JsonConvert.DeserializeObject(content);
 
+        }
+
+        private void txtServico_Enter(object sender, EventArgs e)
+        {
+            if (txtServico.Text == "Serviço")
+            {
+                txtServico.Text = "";
+            }
+            pnlServico.BackColor = Color.Black;
+        }
+
+        private void txtServico_Leave(object sender, EventArgs e)
+        {
+            if (txtServico.Text == "")
+            {
+                txtServico.Text = "Serviço";
+            }
+            pnlServico.BackColor = Color.Silver;
+        }
+
+        private void txtPreco_Enter(object sender, EventArgs e)
+        {
+            if (txtPreco.Text == "Preço")
+            {
+                txtPreco.Text = "";
+            }
+            pnlPreco.BackColor = Color.Black;
+        }
+
+        private void txtPreco_Leave(object sender, EventArgs e)
+        {
+            if (txtPreco.Text == "")
+            {
+                txtPreco.Text = "Preço";
+            }
+            pnlPreco.BackColor = Color.Silver;
+        }
+
+        private void mstTempoEstimado_Enter(object sender, EventArgs e)
+        {
+            if (mstTempoEstimado.Text == "Tempo estimado")
+            {
+                mstTempoEstimado.Text = "";
+            }
+            pnlTempo.BackColor = Color.Black;
+        }
+
+        private void mstTempoEstimado_Leave(object sender, EventArgs e)
+        {
+            if (mstTempoEstimado.Text == "")
+            {
+                mstTempoEstimado.Text = "Tempo estimado";
+            }
+            pnlTempo.BackColor = Color.Silver;
+        }
+
+        private void chkSabado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSabado.Checked)
+            {
+                alterarStatus(pnlSabado, mktAbreSab, mktFechaSab, true);
+            }
+            else
+            {
+                alterarStatus(pnlSabado, mktAbreSab, mktFechaSab, false);
+            }
+        }
+
+        private void chkDomingo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDomingo.Checked)
+            {
+                alterarStatus(pnlDomingo, mktAbreDom, mktFechaDom, true);
+            }
+            else
+            {
+                alterarStatus(pnlDomingo, mktAbreDom, mktFechaDom, false);
+            }
+        }
+
+        private void chkFeriado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFeriado.Checked)
+            {
+                alterarStatus(pnlFeriado, mktAbreFeriado, mktFechaFeriado, true);
+            }
+            else
+            {
+                alterarStatus(pnlFeriado, mktAbreFeriado, mktFechaFeriado, false);
+            }
+        }
+
+        private void mktHorarioAbre_Enter(object sender, EventArgs e)
+        {
+            pnlAbreHora.BackColor = Color.Black;
+        }
+
+        private void mktHorarioAbre_Leave(object sender, EventArgs e)
+        {
+            pnlAbreHora.BackColor = Color.Silver;
+        }
+
+        private void mktHorarioFecha_Enter(object sender, EventArgs e)
+        {
+            pnlFechaHora.BackColor = Color.Black;
+        }
+
+        private void mktHorarioFecha_Leave(object sender, EventArgs e)
+        {
+            pnlFechaHora.BackColor = Color.Silver;
+        }
+
+        private void mktAbreFeriado_Enter(object sender, EventArgs e)
+        {
+            pnlAbreFer.BackColor = Color.Black;
+        }
+
+        private void mktAbreFeriado_Leave(object sender, EventArgs e)
+        {
+            pnlAbreFer.BackColor = Color.Silver;
+        }
+
+        private void mktFechaFeriado_Enter(object sender, EventArgs e)
+        {
+            pnlFechaFer.BackColor = Color.Black;
+        }
+
+        private void mktFechaFeriado_Leave(object sender, EventArgs e)
+        {
+            pnlFechaFer.BackColor = Color.Silver;
+        }
+
+        private void mktAbreSab_Enter(object sender, EventArgs e)
+        {
+            pnlAbreSab.BackColor = Color.Black;
+        }
+
+        private void mktAbreSab_Leave(object sender, EventArgs e)
+        {
+            pnlAbreSab.BackColor = Color.Silver;
+        }
+
+        private void mktFechaSab_Enter(object sender, EventArgs e)
+        {
+            pnlFechaSab.BackColor = Color.Black;
+        }
+
+        private void mktFechaSab_Leave(object sender, EventArgs e)
+        {
+            pnlAbreSab.BackColor = Color.Silver;
+        }
+
+        private void mktAbreDom_Enter(object sender, EventArgs e)
+        {
+            pnlAbreDom.BackColor = Color.Black;
+        }
+
+        private void mktAbreDom_Leave(object sender, EventArgs e)
+        {
+            pnlAbreDom.BackColor = Color.Silver;
+        }
+
+        private void mktFechaDom_Enter(object sender, EventArgs e)
+        {
+            pnlFechaDom.BackColor = Color.Black;
+        }
+
+        private void mktFechaDom_Leave(object sender, EventArgs e)
+        {
+            pnlFechaDom.BackColor = Color.Silver;
         }
     }
 }
