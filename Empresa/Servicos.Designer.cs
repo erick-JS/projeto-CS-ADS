@@ -38,19 +38,19 @@
             this.mstTempoEstimado = new System.Windows.Forms.MaskedTextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.servicospanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.descricao = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.nomedoservico = new System.Windows.Forms.TextBox();
-            this.tempodoservico = new System.Windows.Forms.TextBox();
-            this.precodoservico = new System.Windows.Forms.TextBox();
-            this.delete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSalvarDados = new System.Windows.Forms.Button();
             this.btnEditarDAdos = new System.Windows.Forms.Button();
+            this.btnSalvarDados = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.delete = new System.Windows.Forms.Button();
+            this.precodoservico = new System.Windows.Forms.TextBox();
+            this.tempodoservico = new System.Windows.Forms.TextBox();
+            this.nomedoservico = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.servicospanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.descricao.SuspendLayout();
@@ -183,31 +183,6 @@
             this.panel3.Size = new System.Drawing.Size(688, 379);
             this.panel3.TabIndex = 22;
             // 
-            // servicospanel
-            // 
-            this.servicospanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.servicospanel.AutoScroll = true;
-            this.servicospanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.servicospanel.Location = new System.Drawing.Point(359, 37);
-            this.servicospanel.Name = "servicospanel";
-            this.servicospanel.Size = new System.Drawing.Size(317, 237);
-            this.servicospanel.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(470, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Serviços";
-            // 
             // descricao
             // 
             this.descricao.BackColor = System.Drawing.Color.Gainsboro;
@@ -221,92 +196,28 @@
             this.descricao.Controls.Add(this.tempodoservico);
             this.descricao.Controls.Add(this.nomedoservico);
             this.descricao.Controls.Add(this.button1);
-            this.descricao.Location = new System.Drawing.Point(9, 10);
+            this.descricao.Location = new System.Drawing.Point(12, 10);
             this.descricao.Name = "descricao";
             this.descricao.Size = new System.Drawing.Size(667, 334);
             this.descricao.TabIndex = 17;
             this.descricao.Visible = false;
             // 
-            // button1
+            // btnEditarDAdos
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(571, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 31);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Fechar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // nomedoservico
-            // 
-            this.nomedoservico.Enabled = false;
-            this.nomedoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomedoservico.Location = new System.Drawing.Point(3, 27);
-            this.nomedoservico.Name = "nomedoservico";
-            this.nomedoservico.Size = new System.Drawing.Size(251, 38);
-            this.nomedoservico.TabIndex = 1;
-            // 
-            // tempodoservico
-            // 
-            this.tempodoservico.Enabled = false;
-            this.tempodoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tempodoservico.Location = new System.Drawing.Point(3, 149);
-            this.tempodoservico.Name = "tempodoservico";
-            this.tempodoservico.Size = new System.Drawing.Size(251, 38);
-            this.tempodoservico.TabIndex = 2;
-            // 
-            // precodoservico
-            // 
-            this.precodoservico.Enabled = false;
-            this.precodoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precodoservico.Location = new System.Drawing.Point(3, 87);
-            this.precodoservico.Name = "precodoservico";
-            this.precodoservico.Size = new System.Drawing.Size(251, 38);
-            this.precodoservico.TabIndex = 3;
-            // 
-            // delete
-            // 
-            this.delete.BackColor = System.Drawing.Color.DarkRed;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Location = new System.Drawing.Point(0, 278);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(254, 34);
-            this.delete.TabIndex = 4;
-            this.delete.Text = "Deletar";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nome";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Preço";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 18);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Tempo";
+            this.btnEditarDAdos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEditarDAdos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnEditarDAdos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEditarDAdos.FlatAppearance.BorderSize = 0;
+            this.btnEditarDAdos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEditarDAdos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnEditarDAdos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarDAdos.Location = new System.Drawing.Point(3, 198);
+            this.btnEditarDAdos.Name = "btnEditarDAdos";
+            this.btnEditarDAdos.Size = new System.Drawing.Size(251, 34);
+            this.btnEditarDAdos.TabIndex = 12;
+            this.btnEditarDAdos.Text = "Editar";
+            this.btnEditarDAdos.UseVisualStyleBackColor = false;
+            this.btnEditarDAdos.Click += new System.EventHandler(this.btnEditarDAdos_Click);
             // 
             // btnSalvarDados
             // 
@@ -326,22 +237,111 @@
             this.btnSalvarDados.UseVisualStyleBackColor = false;
             this.btnSalvarDados.Click += new System.EventHandler(this.btnSalvarDados_Click);
             // 
-            // btnEditarDAdos
+            // label5
             // 
-            this.btnEditarDAdos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditarDAdos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnEditarDAdos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEditarDAdos.FlatAppearance.BorderSize = 0;
-            this.btnEditarDAdos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEditarDAdos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnEditarDAdos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarDAdos.Location = new System.Drawing.Point(3, 198);
-            this.btnEditarDAdos.Name = "btnEditarDAdos";
-            this.btnEditarDAdos.Size = new System.Drawing.Size(251, 34);
-            this.btnEditarDAdos.TabIndex = 12;
-            this.btnEditarDAdos.Text = "Editar";
-            this.btnEditarDAdos.UseVisualStyleBackColor = false;
-            this.btnEditarDAdos.Click += new System.EventHandler(this.btnEditarDAdos_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(4, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Tempo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(4, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Preço";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nome";
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.DarkRed;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.ForeColor = System.Drawing.Color.White;
+            this.delete.Location = new System.Drawing.Point(0, 278);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(254, 34);
+            this.delete.TabIndex = 4;
+            this.delete.Text = "Deletar";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // precodoservico
+            // 
+            this.precodoservico.Enabled = false;
+            this.precodoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precodoservico.Location = new System.Drawing.Point(3, 87);
+            this.precodoservico.Name = "precodoservico";
+            this.precodoservico.Size = new System.Drawing.Size(251, 38);
+            this.precodoservico.TabIndex = 3;
+            // 
+            // tempodoservico
+            // 
+            this.tempodoservico.Enabled = false;
+            this.tempodoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempodoservico.Location = new System.Drawing.Point(3, 149);
+            this.tempodoservico.Name = "tempodoservico";
+            this.tempodoservico.Size = new System.Drawing.Size(251, 38);
+            this.tempodoservico.TabIndex = 2;
+            // 
+            // nomedoservico
+            // 
+            this.nomedoservico.Enabled = false;
+            this.nomedoservico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomedoservico.Location = new System.Drawing.Point(3, 27);
+            this.nomedoservico.Name = "nomedoservico";
+            this.nomedoservico.Size = new System.Drawing.Size(251, 38);
+            this.nomedoservico.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(571, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 31);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Fechar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(470, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Serviços";
+            // 
+            // servicospanel
+            // 
+            this.servicospanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.servicospanel.AutoScroll = true;
+            this.servicospanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.servicospanel.Location = new System.Drawing.Point(359, 37);
+            this.servicospanel.Name = "servicospanel";
+            this.servicospanel.Size = new System.Drawing.Size(317, 237);
+            this.servicospanel.TabIndex = 15;
             // 
             // Servicos
             // 

@@ -294,6 +294,7 @@ namespace Empresa
             txtPreco.Text = "Preço";
             mstTempoEstimado.Text = "Tempo estimado";
 
+            servicospanel.Controls.Clear();
             puxarservicos();
 
             MessageBox.Show("Serviço adicionando com sucesso");
@@ -329,6 +330,9 @@ namespace Empresa
             var content = sr.ReadToEnd();
             dynamic m = JsonConvert.DeserializeObject(content);
 
+            servicospanel.Controls.Clear();
+            puxarservicos();
+            descricao.Visible = false;
         }
 
         private void btnEditarDAdos_Click(object sender, EventArgs e)
@@ -356,7 +360,8 @@ namespace Empresa
                     nome = nomedoservico.Text,
                     preco = precodoservico.Text,
                     horario = tempodoservico.Text,
-                    id_empresa = idd
+                    id_empresa = idd,
+                    id_servico = idsalvo
 
                 });
                 streamWriter.Write(json);
@@ -376,6 +381,10 @@ namespace Empresa
             nomedoservico.Enabled = false;
             precodoservico.Enabled = false;
             tempodoservico.Enabled = false;
+
+            servicospanel.Controls.Clear();
+            puxarservicos();
+            descricao.Visible = false;
         }
     }
 }
