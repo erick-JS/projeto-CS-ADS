@@ -31,7 +31,6 @@
             this.info = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnConta = new System.Windows.Forms.Button();
-            this.btnCaixa = new System.Windows.Forms.Button();
             this.btnServicos = new System.Windows.Forms.Button();
             this.btnAtendimento = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,7 +57,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
             this.panel1.Controls.Add(this.btnConta);
-            this.panel1.Controls.Add(this.btnCaixa);
             this.panel1.Controls.Add(this.btnServicos);
             this.panel1.Controls.Add(this.btnAtendimento);
             this.panel1.Location = new System.Drawing.Point(0, 36);
@@ -78,7 +76,7 @@
             this.btnConta.ForeColor = System.Drawing.Color.White;
             this.btnConta.Image = global::Empresa.Properties.Resources.person;
             this.btnConta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConta.Location = new System.Drawing.Point(2, 285);
+            this.btnConta.Location = new System.Drawing.Point(2, 186);
             this.btnConta.Margin = new System.Windows.Forms.Padding(2);
             this.btnConta.Name = "btnConta";
             this.btnConta.Size = new System.Drawing.Size(196, 88);
@@ -87,28 +85,6 @@
             this.btnConta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConta.UseVisualStyleBackColor = false;
             this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
-            // 
-            // btnCaixa
-            // 
-            this.btnCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCaixa.BackColor = System.Drawing.Color.DarkRed;
-            this.btnCaixa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCaixa.FlatAppearance.BorderSize = 0;
-            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.ForeColor = System.Drawing.Color.White;
-            this.btnCaixa.Image = global::Empresa.Properties.Resources.coin;
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCaixa.Location = new System.Drawing.Point(2, 193);
-            this.btnCaixa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(196, 88);
-            this.btnCaixa.TabIndex = 3;
-            this.btnCaixa.Text = "Caixa";
-            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCaixa.UseVisualStyleBackColor = false;
-            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // btnServicos
             // 
@@ -230,7 +206,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnServicos;
         private System.Windows.Forms.Button btnConta;
-        private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;

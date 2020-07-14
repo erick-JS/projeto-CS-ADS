@@ -138,6 +138,8 @@ namespace Empresa
                     {
                         k = Int32.Parse(label.Text);
                         gerarCalendario();
+                        infoscalendar.Controls.Clear();
+                        pegarinfo(label.Text+"/"+mes+"/"+DateTime.Now.Year.ToString());
                     }
                 }
 
@@ -158,6 +160,7 @@ namespace Empresa
             gerarCalendario();
             gerarTituloMes(DateTime.Now.Month - 1);
             lblDataAtual.Text = DateTime.Now.Date.ToString("D");
+            pegarinfo(DateTime.Now.Date.ToString("d"));
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -294,21 +297,38 @@ namespace Empresa
             }
         }
 
-        private void pegarinfo(string usuario,string senha,string data,string idpessoal)
+        private void pegarinfo(string data)
         {
+            SQLiteConnection ligacao = new SQLiteConnection();
+            ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+            ligacao.Open();
+            string query = "SELECT * FROM login";
+            SQLiteCommand dataa = new SQLiteCommand(query, ligacao);
+            SQLiteDataReader rdr = dataa.ExecuteReader();
+            string user = " ", pass = " ";
+            int idpe = 0;
+
+            while (rdr.Read())
+            {
+                user = rdr.GetString(1);
+                pass = rdr.GetString(2);
+                idpe = rdr.GetInt32(0);
+                
+            }
+
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/calendario/");
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "PUT";
+            httpWebRequest.Method = "POST";
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 string json = new JavaScriptSerializer().Serialize(new
                 {
-                    usuario = "erick",
-	                senha = "teste",
-	                data = "07/07/2020",
-	                idpessoal = 2
+                    usuario = user,
+	                senha = pass,
+	                data = data,
+	                idpessoal = idpe
                 });
                 streamWriter.Write(json);
                 streamWriter.Flush();
@@ -320,6 +340,88 @@ namespace Empresa
             var sr = new StreamReader(stream);
             var content = sr.ReadToEnd();
             dynamic m = JsonConvert.DeserializeObject(content);
+
+            string cliente = m.cliente;
+            string horario = m.horariodeinicio;
+            string serv = m.nomeservico;
+            var serva = serv.ToArray();
+            var horarioa = horario.ToArray();
+            int qtd = 0;
+            var clientea = cliente.ToArray();
+
+            for (int i = 0;i < cliente.Length ;i++)
+            {
+                if (i == 0)
+                {
+                    qtd++;
+                }
+                if (clientea[i] == ' ')
+                {
+                    qtd++;
+                }
+            }
+
+            int o = 0,d = 0,n = 0,t = 0;
+
+            for (int i = 0;i < qtd; i++)
+            {
+                Button calendario = new Button();
+                calendario.Size = new Size(360,50);
+                calendario.Location = new Point(0,n);
+                string nome = "", horariode = "",servicode = "";
+
+                for (;o < cliente.Length;o++)
+                {
+                    if (clientea[o] == ' ')
+                    {
+                        break;
+                    }
+                    nome += clientea[o];
+                }
+
+                for (; d < horario.Length; d++)
+                {
+                    if (horarioa[d] == ' ')
+                    {
+                        break;
+                    }
+                    horariode += horarioa[d];
+                }
+
+                for (; t < serv.Length; t++)
+                {
+                    if (serva[t] == ' ')
+                    {
+                        break;
+                    }
+                    servicode += serva[t];
+                }
+
+                calendario.Text = horariode +" "+nome;
+
+                string lnome = nome;
+                string lhorario = horariode;
+                string lservico = servicode;
+
+                calendario.Click += new EventHandler(bt);
+
+                void bt(Object sender, EventArgs e)
+                {
+                    paneldescri.Visible = true;
+                    clientelabel.Text = lnome;
+                    horariolabel.Text = lhorario;
+                    servicolabel.Text = lservico;
+                }
+
+                infoscalendar.Controls.Add(calendario);
+                o++;
+                nome = "";
+                d++;
+                horariode = "";
+                servicode = "";
+                t++;
+                n += 55;
+            }
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -332,6 +434,11 @@ namespace Empresa
         {
             bd.Delete();
             Application.Restart();
+        }
+
+        private void fechar_Click(object sender, EventArgs e)
+        {
+            paneldescri.Visible = false;
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)
