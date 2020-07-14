@@ -33,10 +33,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.servicoslista = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.horario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.data = new System.Windows.Forms.TextBox();
             this.cidade = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.telefone = new System.Windows.Forms.Label();
@@ -48,7 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.text = new System.Windows.Forms.Label();
-            this.servicoslista = new System.Windows.Forms.Panel();
+            this.data = new System.Windows.Forms.MaskedTextBox();
+            this.horario = new System.Windows.Forms.MaskedTextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -129,11 +129,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Brown;
+            this.panel1.Controls.Add(this.horario);
+            this.panel1.Controls.Add(this.data);
             this.panel1.Controls.Add(this.servicoslista);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.horario);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.data);
             this.panel1.Controls.Add(this.cidade);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.telefone);
@@ -151,6 +151,14 @@
             this.panel1.TabIndex = 11;
             this.panel1.Visible = false;
             // 
+            // servicoslista
+            // 
+            this.servicoslista.AutoScroll = true;
+            this.servicoslista.Location = new System.Drawing.Point(11, 207);
+            this.servicoslista.Name = "servicoslista";
+            this.servicoslista.Size = new System.Drawing.Size(254, 187);
+            this.servicoslista.TabIndex = 24;
+            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -163,14 +171,6 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Horario inicio";
             // 
-            // horario
-            // 
-            this.horario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.horario.Location = new System.Drawing.Point(382, 326);
-            this.horario.Name = "horario";
-            this.horario.Size = new System.Drawing.Size(107, 20);
-            this.horario.TabIndex = 22;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -182,14 +182,6 @@
             this.label4.Size = new System.Drawing.Size(47, 24);
             this.label4.TabIndex = 21;
             this.label4.Text = "Data";
-            // 
-            // data
-            // 
-            this.data.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.data.Location = new System.Drawing.Point(382, 261);
-            this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(107, 20);
-            this.data.TabIndex = 20;
             // 
             // cidade
             // 
@@ -315,13 +307,23 @@
             this.text.TabIndex = 0;
             this.text.Text = "nomee";
             // 
-            // servicoslista
+            // data
             // 
-            this.servicoslista.AutoScroll = true;
-            this.servicoslista.Location = new System.Drawing.Point(11, 207);
-            this.servicoslista.Name = "servicoslista";
-            this.servicoslista.Size = new System.Drawing.Size(254, 187);
-            this.servicoslista.TabIndex = 24;
+            this.data.Location = new System.Drawing.Point(382, 272);
+            this.data.Mask = "00/00/0000";
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(107, 20);
+            this.data.TabIndex = 25;
+            this.data.ValidatingType = typeof(System.DateTime);
+            // 
+            // horario
+            // 
+            this.horario.Location = new System.Drawing.Point(382, 333);
+            this.horario.Mask = "00:00";
+            this.horario.Name = "horario";
+            this.horario.Size = new System.Drawing.Size(107, 20);
+            this.horario.TabIndex = 26;
+            this.horario.ValidatingType = typeof(System.DateTime);
             // 
             // Home
             // 
@@ -361,9 +363,9 @@
         private System.Windows.Forms.Label numero;
         private System.Windows.Forms.Label rua;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox data;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox horario;
         private System.Windows.Forms.Panel servicoslista;
+        private System.Windows.Forms.MaskedTextBox horario;
+        private System.Windows.Forms.MaskedTextBox data;
     }
 }
