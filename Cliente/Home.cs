@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace Cliente
     public partial class Home : Form
     {
         int cdempresa = 0, cdcliente = 0;
+        string nomes, id, nomeservicos;
+        int idd = 0,posicliente;
+        dynamic servi;
+        
         public Home()
         {
             InitializeComponent();
@@ -24,12 +29,6 @@ namespace Cliente
             }
 
             gerarEmpresas();
-                //Button button2 = new Button();
-                //button2.Text = "ovo";
-                //Controls.Add(button2);
-                //Button button1 = new Button();
-                //button1.Location = new Point(0,30);
-                //Controls.Add(button1);
                 
         }
 
@@ -55,7 +54,6 @@ namespace Cliente
                 }
             }
 
-            Console.WriteLine(qt);
             int o = 0;
             for (int i = 0; i < qt+1; i++)
             {
@@ -66,6 +64,8 @@ namespace Cliente
                 flow.BorderStyle = BorderStyle.FixedSingle;
                 flow.BackColor = Color.White;
                 flow.Location = new Point(7, 40+i * 80);
+                int nomeposi = new int();
+                nomeposi = i + 1;
 
                 for (; o < content.Length; o++)
                 {
@@ -93,12 +93,12 @@ namespace Cliente
                 {
                     text.Text = label.Text;
 
-                    string nomes = label.Text;
+                    nomes = label.Text;
 
+                    servicoslista.Controls.Clear();
 
+                    pegardados();
 
-                    pegardados("teste");
-                 
                 }
 
                 if (label.Text != " ")
@@ -127,7 +127,7 @@ namespace Cliente
             Application.Exit();
         }
 
-        public void pegardados(string nome)
+        public void pegardados()
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/empresa/");
             httpWebRequest.ContentType = "application/json";
@@ -138,7 +138,7 @@ namespace Cliente
             {
                 string json = new JavaScriptSerializer().Serialize(new
                 {
-                    nome = nome,
+                    nome = nomes.Trim()
                 });
                 streamWriter.Write(json);
                 streamWriter.Flush();
@@ -152,13 +152,102 @@ namespace Cliente
             dynamic m = JsonConvert.DeserializeObject(content);
 
             panel1.Visible = true;
-            numero.Text = m.numero;
-            telefone.Text = m.telefone;
             cidade.Text = m.cidade;
-            cdcliente = 1;
-            cdempresa = m.id;
-
+            telefone.Text = m.telefone;
+            numero.Text = m.numero;
             rua.Text = m.endereco;
+            id = m.id;
+
+            servicos();
+
+        }
+
+        private void servicos()
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/servicoget/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+                    id = id
+                });
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var stream = httpResponse.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic m = JsonConvert.DeserializeObject(content);
+
+            nomeservicos = m.nome;
+            servi = m;
+            var nomeservicosarrey = nomeservicos.ToArray();
+            int qt = 0;
+
+            for (int s = 0; s < nomeservicos.Length; s++)
+            {
+                if (s == 0)
+                {
+                    qt++;
+                }
+                if (nomeservicosarrey[s] == ' ')
+                {
+                    qt++;
+                }
+            }
+            int n = 0;
+            int o = 0;
+            for (int i = 0; i < qt + 1; i++)
+            {
+                String nome = "";
+                RadioButton servi = new RadioButton();
+                servi.ForeColor = Color.White;
+                servi.Location = new Point(0,n);
+                int nomeposi = new int();
+                nomeposi = i + 1;
+                
+                for (; o < nomeservicos.Length; o++)
+                {
+                    if (nomeservicosarrey[o] == ' ')
+                    {
+                        break;
+                    }
+                    if (nomeservicosarrey[o] == '"')
+                    {
+
+                    }
+                    else if (nomeservicosarrey[o] != ' ')
+                    {
+                        nome += nomeservicosarrey[o];
+                    }
+                }
+
+                servi.Text = nome;
+
+
+                servi.Click += new EventHandler(btt);
+
+                void btt(Object sender, EventArgs e)
+                {
+                    posicliente = nomeposi;
+                }
+
+                if (servi.Text != "")
+                {
+                    servicoslista.Controls.Add(servi);
+                }
+
+                nome = "";
+                n += 25;
+                o++;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -198,6 +287,44 @@ namespace Cliente
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            SQLiteConnection ligacao = new SQLiteConnection();
+            ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+            ligacao.Open();
+            string query = "SELECT * FROM login";
+            SQLiteCommand dataa = new SQLiteCommand(query, ligacao);
+            SQLiteDataReader rdr = dataa.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                idd = rdr.GetInt32(0);
+            }
+
+            var ar = nomeservicos.ToArray();
+            int qtd = 0;
+            string idservi = " ",servii = servi.id;
+            var s = servii.ToArray();
+
+
+            for (int i = 0;i < nomeservicos.Length;i++)
+            {
+                if (ar[i] == ' ')
+                {
+                    if (qtd == posicliente)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        qtd++;
+                        idservi = " ";
+                    }
+                }
+                else
+                {
+                    idservi += s[i];
+                }
+            }
+
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/cliente/");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
@@ -209,8 +336,9 @@ namespace Cliente
                 {
                     data = data.Text,
 	                horarioinicio = horario.Text,
-	                id_clientes = 1,
-	                id_empresa = 2
+	                id_clientes = idd,
+	                id_empresa = id,
+                    id_servicos = idservi
                 });
                 streamWriter.Write(json);
                 streamWriter.Flush();
@@ -222,6 +350,10 @@ namespace Cliente
             var sr = new StreamReader(stream);
             var content = sr.ReadToEnd();
             dynamic m = JsonConvert.DeserializeObject(content);
+
+            data.Text = "";
+            horario.Text = "";
+            MessageBox.Show("Agendado com sucesso");
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

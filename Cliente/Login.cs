@@ -103,10 +103,12 @@ namespace Cliente
                     SQLiteCommand comando = new SQLiteCommand(query, ligacao);
                     comando.ExecuteNonQuery();
 
+                    int id = m.id;
+
                     SQLiteConnection liga = new SQLiteConnection();
                     liga.ConnectionString = @"Data source = dados.db; Version=3;";
                     liga.Open();
-                    string querry = "INSERT INTO login VALUES (0,'" + User.Text + "','" + Passwd.Text + "')";
+                    string querry = "INSERT INTO login VALUES ("+id+",'" + User.Text + "','" + Passwd.Text + "')";
                     SQLiteCommand como = new SQLiteCommand(querry, liga);
                     como.ExecuteNonQuery();
                     como.Dispose();
