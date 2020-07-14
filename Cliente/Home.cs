@@ -187,6 +187,8 @@ namespace Cliente
             dynamic m = JsonConvert.DeserializeObject(content);
 
             nomeservicos = m.nome;
+            string idservico = m.id;
+            var idservicosa = idservico.ToArray();
             servi = m;
             var nomeservicosarrey = nomeservicos.ToArray();
             int qt = 0;
@@ -203,14 +205,16 @@ namespace Cliente
                 }
             }
             int n = 0;
-            int o = 0;
+            int o = 0, g = 0;
             for (int i = 0; i < qt + 1; i++)
             {
                 String nome = "";
+                string idser = "";
                 RadioButton servi = new RadioButton();
                 servi.ForeColor = Color.White;
                 servi.Location = new Point(0,n);
                 int nomeposi = new int();
+                int idservi = new int();
                 nomeposi = i + 1;
                 
                 for (; o < nomeservicos.Length; o++)
@@ -229,6 +233,31 @@ namespace Cliente
                     }
                 }
 
+                try
+                {
+                    for (; g < idservico.Length; g++)
+                    {
+                        if (idservicosa[g] == ' ')
+                        {
+                            break;
+                        }
+                        if (idservicosa[g] == '"')
+                        {
+
+                        }
+                        else if (idservicosa[g] != ' ')
+                        {
+                            idser += idservicosa[g];
+                        }
+                    }
+
+                    idservi = Convert.ToInt32(idser.Trim());
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message);
+                }
+
                 servi.Text = nome;
 
 
@@ -236,7 +265,8 @@ namespace Cliente
 
                 void btt(Object sender, EventArgs e)
                 {
-                    posicliente = nomeposi;
+                    posicliente = idservi;
+                    //MessageBox.Show(idservi.ToString());
                 }
 
                 if (servi.Text != "")
@@ -245,8 +275,10 @@ namespace Cliente
                 }
 
                 nome = "";
+                idser = "";
                 n += 25;
                 o++;
+                g++;
             }
         }
 
@@ -287,73 +319,51 @@ namespace Cliente
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            SQLiteConnection ligacao = new SQLiteConnection();
-            ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
-            ligacao.Open();
-            string query = "SELECT * FROM login";
-            SQLiteCommand dataa = new SQLiteCommand(query, ligacao);
-            SQLiteDataReader rdr = dataa.ExecuteReader();
+                SQLiteConnection ligacao = new SQLiteConnection();
+                ligacao.ConnectionString = @"Data source = dados.db; Version=3;";
+                ligacao.Open();
+                string query = "SELECT * FROM login";
+                SQLiteCommand dataa = new SQLiteCommand(query, ligacao);
+                SQLiteDataReader rdr = dataa.ExecuteReader();
 
-            while (rdr.Read())
-            {
-                idd = rdr.GetInt32(0);
-            }
-
-            var ar = nomeservicos.ToArray();
-            int qtd = 0;
-            string idservi = " ",servii = servi.id;
-            var s = servii.ToArray();
-
-
-            for (int i = 0;i < nomeservicos.Length;i++)
-            {
-                if (ar[i] == ' ')
+                while (rdr.Read())
                 {
-                    if (qtd == posicliente)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        qtd++;
-                        idservi = " ";
-                    }
+                    idd = rdr.GetInt32(0);
                 }
-                else
+
+                var ar = nomeservicos.ToArray();
+                int qtd = 0;
+
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/cliente/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    idservi += s[i];
+                    string json = new JavaScriptSerializer().Serialize(new
+                    {
+                        data = data.Text,
+                        horarioinicio = horario.Text,
+                        id_clientes = idd,
+                        id_empresa = id,
+                        id_servicos = posicliente
+                    });
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
                 }
-            }
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://adsangelinabancodedados.uc.r.appspot.com/cliente/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                var stream = httpResponse.GetResponseStream();
+                var sr = new StreamReader(stream);
+                var content = sr.ReadToEnd();
+                dynamic m = JsonConvert.DeserializeObject(content);
 
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
-                string json = new JavaScriptSerializer().Serialize(new
-                {
-                    data = data.Text,
-	                horarioinicio = horario.Text,
-	                id_clientes = idd,
-	                id_empresa = id,
-                    id_servicos = idservi
-                });
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
-
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            var stream = httpResponse.GetResponseStream();
-            var sr = new StreamReader(stream);
-            var content = sr.ReadToEnd();
-            dynamic m = JsonConvert.DeserializeObject(content);
-
-            data.Text = "";
-            horario.Text = "";
-            MessageBox.Show("Agendado com sucesso");
+                data.Text = "";
+                horario.Text = "";
+                MessageBox.Show("Agendado com sucesso");
+            
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
